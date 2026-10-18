@@ -1,0 +1,18 @@
+/* scoped styles for velo */
+.st-velo a{color:inherit}
+.st-velo .disp{font-family:'Fredoka',sans-serif}
+.st-velo .mono{font-family:'JetBrains Mono',monospace}
+.st-velo .hand{font-family:'Caveat',cursive}
+.st-velo .wheel{transform-box:fill-box;transform-origin:center;animation:velo-spin 2.2s linear infinite}
+.st-velo .crank{transform-box:fill-box;transform-origin:center;animation:velo-spin 2.2s linear infinite}
+@keyframes velo-spin{to{transform:rotate(360deg)}}
+.st-velo .fill{transform-box:fill-box;transform-origin:50% 100%;animation:velo-fill 4s ease-in-out infinite}
+@keyframes velo-fill{0%{transform:scaleY(.15)}60%,100%{transform:scaleY(1)}}
+.st-velo .bob{animation:velo-bob 5s ease-in-out infinite}
+.st-velo .bob2{animation:velo-bob 6.5s ease-in-out infinite reverse}
+@keyframes velo-bob{0%,100%{transform:translateY(0) rotate(var(--r,0deg))}50%{transform:translateY(-18px) rotate(calc(var(--r,0deg) + 12deg))}}
+.st-velo .wobble{animation:velo-wobble 3s ease-in-out infinite}
+@keyframes velo-wobble{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
+.st-velo .bubble{animation:velo-bubble 3s ease-in infinite}
+@keyframes velo-bubble{0%{transform:translateY(0);opacity:0}20%{opacity:1}100%{transform:translateY(-60px);opacity:0}}
+@media (prefers-reduced-motion:reduce){.st-velo .wheel,.st-velo .crank,.st-velo .fill,.st-velo .bob,.st-velo .bob2,.st-velo .wobble,.st-velo .bubble{animation:none}}

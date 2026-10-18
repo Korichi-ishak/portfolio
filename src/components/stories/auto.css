@@ -1,0 +1,22 @@
+/* scoped styles for auto */
+.st-auto a{color:inherit}
+.st-auto .mono{font-family:'JetBrains Mono',monospace}
+.st-auto .hand{font-family:'Caveat',cursive}
+.st-auto .paper{background:#FFFDF6;box-shadow:0 1px 0 rgba(0,0,0,.05),0 22px 34px -20px rgba(17,18,20,.45)}
+.st-auto .hazard{background:repeating-linear-gradient(-45deg,#F2A900 0 18px,#111214 18px 36px)}
+.st-auto .lift{animation:auto-lift 6s ease-in-out infinite}
+@keyframes auto-lift{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+.st-auto .sig{stroke-dasharray:6 10;animation:auto-sig 1s linear infinite}
+@keyframes auto-sig{to{stroke-dashoffset:-32}}
+.st-auto .wheel{transform-box:fill-box;transform-origin:center;animation:auto-spin 3s linear infinite}
+@keyframes auto-spin{to{transform:rotate(360deg)}}
+.st-auto .floaty{animation:auto-floaty 7s ease-in-out infinite}
+@keyframes auto-floaty{0%,100%{transform:translateY(0) rotate(var(--r,0deg))}50%{transform:translateY(-14px) rotate(var(--r,0deg))}}
+.st-auto .blink{animation:auto-blink 1.4s steps(2) infinite}
+@keyframes auto-blink{50%{opacity:.2}}
+.st-auto .ping{animation:auto-ping 2.2s ease-out infinite}
+@keyframes auto-ping{0%{transform:scale(.6);opacity:.9}100%{transform:scale(2.4);opacity:0}}
+.st-auto .drawer{transition:transform .3s}
+.st-auto .bar{animation:auto-bar 3.5s ease-in-out infinite}
+@keyframes auto-bar{0%{width:6%}70%,100%{width:100%}}
+@media (prefers-reduced-motion:reduce){.st-auto .lift,.st-auto .sig,.st-auto .wheel,.st-auto .floaty,.st-auto .blink,.st-auto .ping,.st-auto .bar{animation:none}}

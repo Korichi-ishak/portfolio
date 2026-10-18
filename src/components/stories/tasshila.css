@@ -1,0 +1,21 @@
+/* scoped styles for tasshila */
+.st-tasshila a{color:inherit}
+.st-tasshila .mono{font-family:'JetBrains Mono',monospace}
+.st-tasshila .hand{font-family:'Caveat',cursive}
+.st-tasshila .paper{background:#FFFEFA;box-shadow:0 1px 0 rgba(0,0,0,.05),0 22px 34px -20px rgba(15,23,42,.4)}
+.st-tasshila .scan{animation:tasshila-scan 3.2s ease-in-out infinite}
+@keyframes tasshila-scan{0%,100%{top:8%}50%{top:86%}}
+.st-tasshila .floaty{animation:tasshila-floaty 7s ease-in-out infinite}
+@keyframes tasshila-floaty{0%,100%{transform:translateY(0) rotate(var(--r,0deg))}50%{transform:translateY(-14px) rotate(var(--r,0deg))}}
+.st-tasshila .chipfly{animation:tasshila-chipfly 4.5s ease-in-out infinite;opacity:0}
+@keyframes tasshila-chipfly{0%{opacity:0;transform:translate(0,0) scale(.8)}20%{opacity:1}70%{opacity:1;transform:translate(var(--dx),var(--dy)) scale(1)}100%{opacity:0;transform:translate(var(--dx),var(--dy)) scale(1)}}
+.st-tasshila .fill{animation:tasshila-fill 6s ease-in-out infinite;transform-origin:bottom}
+@keyframes tasshila-fill{0%{transform:scaleY(.05)}60%,100%{transform:scaleY(1)}}
+.st-tasshila .draw{stroke-dasharray:600;stroke-dashoffset:600;animation:tasshila-draw 5s ease-in-out infinite}
+@keyframes tasshila-draw{0%{stroke-dashoffset:600}60%,100%{stroke-dashoffset:0}}
+.st-tasshila .pulse{animation:tasshila-pulse 2s ease-in-out infinite}
+@keyframes tasshila-pulse{50%{transform:scale(1.25);opacity:.6}}
+.st-tasshila .hl{background:linear-gradient(transparent 55%,rgba(249,115,22,.45) 55%)}
+@media (prefers-reduced-motion:reduce){.st-tasshila .scan,.st-tasshila .floaty,.st-tasshila .chipfly,.st-tasshila .fill,.st-tasshila .draw,.st-tasshila .pulse{animation:none}
+.st-tasshila .chipfly{opacity:1}
+.st-tasshila .draw{stroke-dashoffset:0}}

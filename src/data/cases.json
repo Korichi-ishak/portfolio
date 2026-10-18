@@ -1,0 +1,4441 @@
+[
+ {
+  "slug": "fds",
+  "name": "FDS Institut",
+  "slash": "language institute platform",
+  "industry": "Education",
+  "platform": "Web app · public site · learner portal",
+  "date": "Apr – Sep 2026",
+  "duration": "Six months",
+  "client": "Freundeskreis Deutsch Sprachinstitut, Annaba",
+  "role": "Head of Digital Transformation — sole designer & developer",
+  "lead": "The public site and the whole operating system of a Goethe-certified language centre: enrolment, billing, attendance, scheduling, certificates and online exams — plus myFDS, the learners' own space.",
+  "methods": [
+   "Stakeholder interviews",
+   "Process audit",
+   "Information architecture",
+   "User flow",
+   "Wireframe",
+   "Design system",
+   "Development"
+  ],
+  "problem": "The institute ran on Excel and paper. Receipts were written by hand, certificates took a long time to produce, printed tests were slow to grade, and learners could only pay or ask anything by coming in person. Every exam session meant closing the doors.",
+  "hmw": "How might we give the office, the teachers and the learners one shared system — without anyone seeing data that isn't theirs?",
+  "research": [
+   "Interviews with the director and office staff",
+   "Audit of paper forms and Excel files",
+   "Teacher walkthroughs",
+   "Review of Goethe exam rules"
+  ],
+  "findings": [
+   [
+    "Paper is the bottleneck",
+    "Every receipt, list and certificate was retyped by hand, so the office was always behind."
+   ],
+   [
+    "Exams stop everything",
+    "Printed tests and manual grading forced the institute to pause classes."
+   ],
+   [
+    "Learners are in the dark",
+    "No way to check a schedule, a payment or a document without coming in."
+   ]
+  ],
+  "users": [
+   [
+    "Office staff",
+    "I want to enrol, bill and print in one place.",
+    "Retyping the same learner in three files."
+   ],
+   [
+    "Teacher",
+    "I want my groups and attendance on my phone.",
+    "Paper attendance sheets get lost."
+   ],
+   [
+    "Learner",
+    "I want to see my classes, payments and certificates.",
+    "Has to come in for every question."
+   ]
+  ],
+  "goals": [
+   "One source of truth",
+   "Exams online",
+   "Privacy by design"
+  ],
+  "ia": {
+   "root": "fdsinstitut.com",
+   "branches": [
+    [
+     "Public site",
+     [
+      "Programmes",
+      "Levels",
+      "Exams",
+      "Enrolment",
+      "Contact"
+     ]
+    ],
+    [
+     "myFDS · learner",
+     [
+      "Courses & schedule",
+      "Attendance",
+      "Payments & receipts",
+      "Certificates",
+      "Profile & requests"
+     ]
+    ],
+    [
+     "Admin · staff",
+     [
+      "Learners",
+      "Groups",
+      "Billing",
+      "Exams",
+      "Certificates",
+      "Roles"
+     ]
+    ]
+   ]
+  },
+  "flow": {
+   "title": "from sign-up to certificate",
+   "steps": [
+    "Enrolment request",
+    "Placement test",
+    "Group assigned",
+    "Payment & receipt",
+    "Classes & attendance",
+    "Online exam",
+    "Certificate"
+   ]
+  },
+  "wfScreen": "admin dashboard",
+  "wf": [
+   "nav",
+   "dash",
+   "cards3",
+   "table"
+  ],
+  "mood": "Warm cream, deep navy and a single orange for action — serious enough for an exam centre, warm enough for a school.",
+  "palette": [
+   [
+    "Navy",
+    "#001829",
+    "text & headers"
+   ],
+   [
+    "Orange",
+    "#FF7700",
+    "actions"
+   ],
+   [
+    "Cream",
+    "#FFFCF5",
+    "background"
+   ],
+   [
+    "Deep blue",
+    "#002F4D",
+    "surfaces"
+   ],
+   [
+    "Taupe",
+    "#6B6157",
+    "secondary text"
+   ]
+  ],
+  "fonts": {
+   "dName": "Halcom Display",
+   "dCss": "'Montserrat', sans-serif",
+   "dNote": "custom brand face — previewed here with a close substitute",
+   "dSample": "Maîtrisez l'allemand",
+   "bName": "Halcom",
+   "bCss": "'Montserrat', sans-serif",
+   "bNote": "custom brand face — previewed here with a close substitute"
+  },
+  "c": {
+   "primary": "#FF7700",
+   "onPrimary": "#001829",
+   "dark": "#001829",
+   "bg": "#FFFCF5",
+   "light": "#FFE9D2",
+   "ink": "#001829",
+   "radius": "8px"
+  },
+  "cta": "S'inscrire maintenant",
+  "cta2": "Passer un test de niveau",
+  "chip1": "Goethe-Institut",
+  "chip2": "Pearson PTE",
+  "input": "Adresse email",
+  "admin": {
+   "url": "fdsinstitut.com/admin",
+   "app": "FDS Admin",
+   "nav": [
+    "Dashboard",
+    "Learners",
+    "Groups",
+    "Schedule",
+    "Billing",
+    "Exams",
+    "Certificates"
+   ],
+   "active": 1,
+   "title": "Learners",
+   "action": "New enrolment",
+   "cards": [
+    "Enrolments this term",
+    "Attendance",
+    "Payments received"
+   ],
+   "cols": [
+    "Learner",
+    "Level",
+    "Group",
+    "Payment"
+   ],
+   "rows": [
+    [
+     "Yasmine B.",
+     "B1",
+     "Evening",
+     "Paid"
+    ],
+    [
+     "Karim L.",
+     "A2",
+     "Morning",
+     "Pending"
+    ],
+    [
+     "Lina M.",
+     "B2",
+     "Intensive",
+     "Paid"
+    ],
+    [
+     "Samir D.",
+     "A1",
+     "Weekend",
+     "Overdue"
+    ],
+    [
+     "Nour H.",
+     "C1",
+     "Evening",
+     "Paid"
+    ]
+   ],
+   "caption": "Admin — learners, groups and billing"
+  },
+  "app": {
+   "title": "myFDS",
+   "sub": "Your courses, attendance and documents",
+   "items": [
+    [
+     "Next class",
+     "German B1 · Tuesday evening"
+    ],
+    [
+     "Attendance",
+     "Up to date this month"
+    ],
+    [
+     "Payments",
+     "Latest receipt available"
+    ],
+    [
+     "Certificate",
+     "Ready to download"
+    ]
+   ],
+   "tabs": [
+    "Courses",
+    "Presence",
+    "Payments",
+    "Docs"
+   ],
+   "caption": "myFDS — the learner's space",
+   "dark": false
+  },
+  "solutionNote": "The public site, the staff back office and the learner portal share one database. Row Level Security in PostgreSQL decides who sees what.",
+  "outcome": [
+   [
+    "Paper retired",
+    "Receipts, lists and certificates now come out of the platform."
+   ],
+   [
+    "Exams without closing",
+    "Tests are taken and graded online."
+   ],
+   [
+    "Learners served online",
+    "Schedule, payments and documents are one login away."
+   ]
+  ],
+  "stack": [
+   "Next.js",
+   "TypeScript",
+   "Supabase",
+   "PostgreSQL",
+   "Row Level Security"
+  ],
+  "url": "https://fdsinstitut.com/fr",
+  "domain": "fdsinstitut.com",
+  "liveLabel": "Visit fdsinstitut.com",
+  "d1": "4cdabf26c4928a98506041820a2433e8",
+  "d2": "a7980301aaf151ef3542259eee50bd33",
+  "d3": "13d9cf4d6e4b18fd91d34c93e85112e2",
+  "m": "433e7ca18a4ea4d63071dee26ca0e76e"
+ },
+ {
+  "slug": "goodloc",
+  "name": "GoodLoc' Permis",
+  "slash": "driving school",
+  "industry": "Education · Mobility",
+  "platform": "Website with online registration",
+  "date": "2025",
+  "duration": "Freelance mission",
+  "client": "GoodLoc' Permis, Montreal",
+  "role": "Full-stack developer",
+  "lead": "An SAAQ-approved driving school in Montreal with two branches — courses from first licence to refresher training, a path for newcomers, and online registration.",
+  "methods": [
+   "Content audit",
+   "User flow",
+   "Information architecture",
+   "Wireframe",
+   "SEO",
+   "Development"
+  ],
+  "problem": "People arrive with very different needs: a first licence, getting back behind the wheel, or exchanging a foreign licence after moving to Quebec. The offer was hard to compare and most sign-ups still went through the phone.",
+  "hmw": "How might we route every visitor to the right course and get them registered without a phone call?",
+  "research": [
+   "Interviews with the school owners",
+   "Review of SAAQ requirements",
+   "Competitor school sites",
+   "Search-term review"
+  ],
+  "findings": [
+   [
+    "Too many paths, one door",
+    "Beginners, refreshers and newcomers all landed on the same page."
+   ],
+   [
+    "Newcomers are lost",
+    "Licence exchange rules are confusing and need their own explanation."
+   ],
+   [
+    "Search brings people in",
+    "Questions about the SAAQ exam are how many learners find a school."
+   ]
+  ],
+  "users": [
+   [
+    "First-time learner",
+    "I want to know what the class 5 course includes.",
+    "Doesn't know where to start."
+   ],
+   [
+    "Newcomer",
+    "I want to exchange my licence quickly.",
+    "Rules differ by country."
+   ],
+   [
+    "Office",
+    "I want registrations to arrive complete.",
+    "Calls with missing information."
+   ]
+  ],
+  "goals": [
+   "Clear packages",
+   "A newcomer path",
+   "Online registration"
+  ],
+  "ia": {
+   "root": "goodlocpermis.ca",
+   "branches": [
+    [
+     "Licence course",
+     [
+      "Class 5 course",
+      "Knowledge tests",
+      "Prices by branch"
+     ]
+    ],
+    [
+     "Refresher",
+     [
+      "Practice hours",
+      "SAAQ exam prep",
+      "Exam with school car"
+     ]
+    ],
+    [
+     "Newcomers",
+     [
+      "Licence exchange",
+      "Prep packages"
+     ]
+    ],
+    [
+     "Help",
+     [
+      "FAQ",
+      "Blog",
+      "Contact",
+      "Become an instructor"
+     ]
+    ]
+   ]
+  },
+  "flow": {
+   "title": "online registration",
+   "steps": [
+    "Choose branch",
+    "Choose package",
+    "Checkout",
+    "Theory phase",
+    "Driving lessons",
+    "SAAQ exam"
+   ]
+  },
+  "wfScreen": "home",
+  "wf": [
+   "nav",
+   "split",
+   "cards4",
+   "split",
+   "cards3",
+   "footer"
+  ],
+  "mood": "Bold orange with friendly round type — energetic, reassuring and easy to read at a glance.",
+  "palette": [
+   [
+    "Orange",
+    "#ED7F10",
+    "brand & actions"
+   ],
+   [
+    "Bright orange",
+    "#FF6600",
+    "highlights"
+   ],
+   [
+    "Peach",
+    "#FFD9B3",
+    "soft sections"
+   ],
+   [
+    "Ink",
+    "#191919",
+    "text"
+   ],
+   [
+    "Slate",
+    "#33373D",
+    "secondary"
+   ]
+  ],
+  "fonts": {
+   "dName": "Poppins",
+   "dCss": "'Poppins', sans-serif",
+   "dNote": "headings, bold",
+   "dSample": "Prends le volant",
+   "bName": "Poppins",
+   "bCss": "'Poppins', sans-serif",
+   "bNote": "body, regular"
+  },
+  "c": {
+   "primary": "#ED7F10",
+   "onPrimary": "#111110",
+   "dark": "#191919",
+   "bg": "#FFFFFF",
+   "light": "#FFE6CC",
+   "ink": "#191919",
+   "radius": "999px"
+  },
+  "cta": "Je m'inscris en ligne",
+  "cta2": "Voir les tarifs",
+  "chip1": "Classe 5",
+  "chip2": "Perfectionnement",
+  "input": "Choisir ma succursale",
+  "admin": {
+   "url": "goodlocpermis.ca/wp-admin",
+   "app": "GoodLoc' Office",
+   "nav": [
+    "Overview",
+    "Registrations",
+    "Sessions",
+    "Instructors",
+    "Packages",
+    "Blog"
+   ],
+   "active": 1,
+   "title": "Registrations",
+   "action": "Add student",
+   "cards": [
+    "Sign-ups this week",
+    "Lessons booked",
+    "Exam slots"
+   ],
+   "cols": [
+    "Student",
+    "Package",
+    "Branch",
+    "Status"
+   ],
+   "rows": [
+    [
+     "Emma T.",
+     "Class 5 course",
+     "Beaubien",
+     "Confirmed"
+    ],
+    [
+     "Lucas P.",
+     "Refresher",
+     "Ontario",
+     "To call"
+    ],
+    [
+     "Sofia R.",
+     "Exam prep",
+     "Beaubien",
+     "Confirmed"
+    ],
+    [
+     "Daniel K.",
+     "Newcomer",
+     "Ontario",
+     "Pending"
+    ]
+   ],
+   "caption": "Office view — registrations by branch"
+  },
+  "app": {
+   "title": "My licence",
+   "sub": "Your path to the SAAQ exam",
+   "items": [
+    [
+     "Theory phase",
+     "Next session · Thursday evening"
+    ],
+    [
+     "Driving lesson",
+     "Book your next hour"
+    ],
+    [
+     "Documents",
+     "Learner's licence uploaded"
+    ],
+    [
+     "SAAQ exam",
+     "Prep package available"
+    ]
+   ],
+   "tabs": [
+    "Path",
+    "Lessons",
+    "Docs",
+    "Help"
+   ],
+   "caption": "Student space — concept"
+  },
+  "solutionNote": "Packages, the newcomer path and the blog all lead to the same registration flow.",
+  "outcome": [
+   [
+    "One page per need",
+    "Beginners, refreshers and newcomers each have their route."
+   ],
+   [
+    "Register online",
+    "Sign-ups arrive complete, by branch."
+   ],
+   [
+    "Found in search",
+    "Guides and FAQ answer the questions learners type."
+   ]
+  ],
+  "stack": [
+   "Next.js",
+   "React",
+   "Tailwind CSS",
+   "SEO"
+  ],
+  "url": "https://goodlocpermis.ca/",
+  "domain": "goodlocpermis.ca",
+  "liveLabel": "Visit goodlocpermis.ca",
+  "d1": "fdfea34cc9487e211d814108a7ac95e3",
+  "d2": "0054487420a784f5bc940aec16f28817",
+  "d3": "9217636abfa8ce69e24698e2c8ad3e06",
+  "m": ""
+ },
+ {
+  "slug": "elite",
+  "name": "Elite Partners",
+  "slash": "consulting firm",
+  "industry": "Consulting",
+  "platform": "Corporate website · bilingual",
+  "date": "2025",
+  "duration": "Freelance mission",
+  "client": "Elite Partners Group, DR Congo",
+  "role": "Full-stack developer",
+  "lead": "Corporate site for a consulting firm that helps companies set up and grow in the Democratic Republic of the Congo.",
+  "methods": [
+   "Stakeholder interview",
+   "Content structure",
+   "Information architecture",
+   "Wireframe",
+   "Visual design",
+   "Development"
+  ],
+  "problem": "Years of expertise across sectors lived in brochures and conversations. Foreign investors and local companies had no clear place to see what the firm does and how to start working with it.",
+  "hmw": "How might we make a broad consulting offer readable in a minute, in French and in English?",
+  "research": [
+   "Interview with the founders",
+   "Service and sector inventory",
+   "Review of consulting firm sites"
+  ],
+  "findings": [
+   [
+    "The offer is wide",
+    "Services cut across several sectors and needed two entry points."
+   ],
+   [
+    "Two audiences, two languages",
+    "Local companies read French, foreign investors often English."
+   ],
+   [
+    "Trust comes first",
+    "Visitors want proof and a person to talk to before anything else."
+   ]
+  ],
+  "users": [
+   [
+    "Foreign investor",
+    "I want to understand the market and who can guide me.",
+    "Little local information online."
+   ],
+   [
+    "Local company",
+    "I want help to structure and grow.",
+    "Doesn't know which service fits."
+   ],
+   [
+    "Partner",
+    "I want to see the firm's credibility.",
+    "No single reference page."
+   ]
+  ],
+  "goals": [
+   "Two entry points",
+   "Bilingual",
+   "Lead to a meeting"
+  ],
+  "ia": {
+   "root": "Elite Partners Group",
+   "branches": [
+    [
+     "Services",
+     [
+      "Strategy",
+      "Market entry",
+      "Operations"
+     ]
+    ],
+    [
+     "Sectors",
+     [
+      "Industry",
+      "Agriculture",
+      "Services"
+     ]
+    ],
+    [
+     "About",
+     [
+      "Mission",
+      "Vision",
+      "Approach"
+     ]
+    ],
+    [
+     "Contact",
+     [
+      "Form",
+      "Phone",
+      "LinkedIn"
+     ]
+    ]
+   ]
+  },
+  "flow": {
+   "title": "first contact",
+   "steps": [
+    "Land on hero",
+    "Pick a service",
+    "See sector fit",
+    "Contact form",
+    "Meeting"
+   ]
+  },
+  "wfScreen": "home",
+  "wf": [
+   "nav",
+   "hero",
+   "split",
+   "stats",
+   "cards3",
+   "cta"
+  ],
+  "mood": "Deep ink and corporate blue with a violet gradient on calls to action — modern, confident, international.",
+  "palette": [
+   [
+    "Ink",
+    "#111827",
+    "text & dark"
+   ],
+   [
+    "Blue",
+    "#2563EB",
+    "brand"
+   ],
+   [
+    "Violet",
+    "#7C3AED",
+    "gradient end"
+   ],
+   [
+    "Slate",
+    "#475569",
+    "secondary"
+   ],
+   [
+    "Mist",
+    "#F9FAFB",
+    "background"
+   ]
+  ],
+  "fonts": {
+   "dName": "Montserrat",
+   "dCss": "'Montserrat', sans-serif",
+   "dNote": "headings",
+   "dSample": "Conseil stratégique",
+   "bName": "System UI",
+   "bCss": "'Inter', system-ui, sans-serif",
+   "bNote": "body — native system font"
+  },
+  "c": {
+   "primary": "#2563EB",
+   "onPrimary": "#FFFFFF",
+   "dark": "#111827",
+   "bg": "#F9FAFB",
+   "light": "#DCE6FB",
+   "ink": "#111827",
+   "radius": "10px"
+  },
+  "cta": "Démarrer maintenant",
+  "cta2": "Découvrir nos services",
+  "chip1": "Market entry",
+  "chip2": "FR / EN",
+  "input": "Votre entreprise",
+  "admin": {
+   "url": "elitepartners — CRM",
+   "app": "EPG Leads",
+   "nav": [
+    "Leads",
+    "Services",
+    "Sectors",
+    "Pages",
+    "Translations"
+   ],
+   "active": 0,
+   "title": "Incoming leads",
+   "action": "Export",
+   "cards": [
+    "New requests",
+    "Meetings set",
+    "By sector"
+   ],
+   "cols": [
+    "Company",
+    "Sector",
+    "Service",
+    "Stage"
+   ],
+   "rows": [
+    [
+     "Kivu Mining",
+     "Mining",
+     "Market entry",
+     "Meeting"
+    ],
+    [
+     "Lumi Agro",
+     "Agriculture",
+     "Feasibility",
+     "New"
+    ],
+    [
+     "Nordline",
+     "Logistics",
+     "Operations",
+     "Proposal"
+    ],
+    [
+     "Bamboo Telecom",
+     "Telecom",
+     "Strategy",
+     "New"
+    ]
+   ],
+   "caption": "Lead inbox — concept for the contact pipeline"
+  },
+  "app": {
+   "title": "Elite Partners",
+   "sub": "Strategic consulting in the DRC",
+   "items": [
+    [
+     "Services",
+     "Strategy, market entry, operations"
+    ],
+    [
+     "Sectors",
+     "Find your industry"
+    ],
+    [
+     "Our approach",
+     "Analysis, then action"
+    ],
+    [
+     "Talk to us",
+     "Book a first meeting"
+    ]
+   ],
+   "tabs": [
+    "Home",
+    "Services",
+    "Sectors",
+    "Contact"
+   ],
+   "caption": "Mobile navigation"
+  },
+  "solutionNote": "A corporate site where every section ends on the same next step: a first conversation.",
+  "outcome": [
+   [
+    "Offer at a glance",
+    "Services and sectors are two clear doors into the same expertise."
+   ],
+   [
+    "Bilingual",
+    "French and English from every page."
+   ],
+   [
+    "Contact everywhere",
+    "Each section ends on a call to action."
+   ]
+  ],
+  "stack": [
+   "Next.js",
+   "React",
+   "Tailwind CSS"
+  ],
+  "url": "https://elitepartnersgroup.vercel.app/",
+  "domain": "elitepartnersgroup.vercel.app",
+  "liveLabel": "Visit the site",
+  "d1": "bfb6a2bb25da71ae2d939ca3b93c883b",
+  "d2": "6cf781c6c92b5daaad6dd0c6773cf205",
+  "d3": "",
+  "m": "c54c8970a18b3cc6c3af0fc5eb0f4b91"
+ },
+ {
+  "slug": "velo",
+  "name": "Voilà Vélo",
+  "slash": "smoothie bikes",
+  "industry": "Events · Food",
+  "platform": "Website with event booking · FR / EN",
+  "date": "2025",
+  "duration": "Freelance mission",
+  "client": "Voilà Vélo, Montreal",
+  "role": "Full-stack developer",
+  "lead": "An event service in Montreal that rents pedal-powered smoothie blenders — for schools, offices, malls and parties.",
+  "methods": [
+   "Client workshop",
+   "Package mapping",
+   "User flow",
+   "Wireframe",
+   "Visual design",
+   "i18n",
+   "Development"
+  ],
+  "problem": "The offer goes from a single child-sized bike to a full parade. Clients struggled to pick the right package, and every booking turned into a long exchange of emails.",
+  "hmw": "How might we let an event organiser pick a package and book in one sitting, in their language?",
+  "research": [
+   "Interview with the founder",
+   "Package and pricing review",
+   "Event organiser questions",
+   "Bilingual content audit"
+  ],
+  "findings": [
+   [
+    "Packages need context",
+    "Organisers choose by event type, not by bike model."
+   ],
+   [
+    "Booking is the goal",
+    "Every page should lead to a booking request."
+   ],
+   [
+    "Bilingual by default",
+    "Montreal clients expect both French and English."
+   ]
+  ],
+  "users": [
+   [
+    "School organiser",
+    "I want a fun activity that teaches healthy habits.",
+    "Unsure which package fits a class."
+   ],
+   [
+    "Corporate planner",
+    "I want a team activity that's easy to book.",
+    "Needs a quote fast."
+   ],
+   [
+    "Parent",
+    "I want something different for a birthday.",
+    "Small budget, small space."
+   ]
+  ],
+  "goals": [
+   "Pick by event",
+   "Book online",
+   "Two languages"
+  ],
+  "ia": {
+   "root": "Voilà Vélo",
+   "branches": [
+    [
+     "Packages",
+     [
+      "La petite Koki",
+      "Pop Solo",
+      "Double Fun",
+      "Smoothie Parade",
+      "Signature"
+     ]
+    ],
+    [
+     "Events",
+     [
+      "Corporate",
+      "Schools",
+      "Malls",
+      "Parties"
+     ]
+    ],
+    [
+     "About",
+     [
+      "Mission",
+      "Partners",
+      "How it works"
+     ]
+    ],
+    [
+     "Book",
+     [
+      "Booking form",
+      "Contact",
+      "Blog"
+     ]
+    ]
+   ]
+  },
+  "flow": {
+   "title": "event booking",
+   "steps": [
+    "Pick event type",
+    "Choose package",
+    "Date & place",
+    "Event details",
+    "Request sent",
+    "Confirmation"
+   ]
+  },
+  "wfScreen": "home",
+  "wf": [
+   "nav",
+   "hero",
+   "cards3",
+   "split",
+   "cards4",
+   "cta"
+  ],
+  "mood": "Juicy coral, honey and leaf green on cream — playful like the bikes, clean like a food brand.",
+  "palette": [
+   [
+    "Coral",
+    "#EC634C",
+    "actions"
+   ],
+   [
+    "Honey",
+    "#F0B860",
+    "accents"
+   ],
+   [
+    "Leaf",
+    "#85BA5D",
+    "eco cues"
+   ],
+   [
+    "Graphite",
+    "#4D4D4D",
+    "text"
+   ],
+   [
+    "Cream",
+    "#FFF6EC",
+    "background"
+   ]
+  ],
+  "fonts": {
+   "dName": "Open Sans",
+   "dCss": "'Open Sans', sans-serif",
+   "dNote": "headings, bold",
+   "dSample": "Propulsés à vélo",
+   "bName": "Open Sans",
+   "bCss": "'Open Sans', sans-serif",
+   "bNote": "body"
+  },
+  "c": {
+   "primary": "#EC634C",
+   "onPrimary": "#FFFFFF",
+   "dark": "#3A2E2A",
+   "bg": "#FFF6EC",
+   "light": "#FBDCD5",
+   "ink": "#4D4D4D",
+   "radius": "999px"
+  },
+  "cta": "Réserver",
+  "cta2": "Voir les forfaits",
+  "chip1": "Éco-responsable",
+  "chip2": "Bilingue",
+  "input": "Type d'événement",
+  "admin": {
+   "url": "voilavelo — bookings",
+   "app": "Voilà Vélo HQ",
+   "nav": [
+    "Bookings",
+    "Calendar",
+    "Packages",
+    "Bikes",
+    "Blog"
+   ],
+   "active": 0,
+   "title": "Booking requests",
+   "action": "Send quote",
+   "cards": [
+    "Requests this week",
+    "Bikes out",
+    "Upcoming events"
+   ],
+   "cols": [
+    "Event",
+    "Package",
+    "Day",
+    "Status"
+   ],
+   "rows": [
+    [
+     "School fair",
+     "Double Fun",
+     "Saturday",
+     "Confirmed"
+    ],
+    [
+     "Corporate day",
+     "Signature",
+     "Friday",
+     "Quote sent"
+    ],
+    [
+     "Mall weekend",
+     "Smoothie Parade",
+     "Sunday",
+     "Confirmed"
+    ],
+    [
+     "Birthday",
+     "La petite Koki",
+     "Saturday",
+     "Pending"
+    ]
+   ],
+   "caption": "Booking inbox — concept"
+  },
+  "app": {
+   "title": "Réserver",
+   "sub": "Step by step booking",
+   "items": [
+    [
+     "Event type",
+     "School · corporate · party"
+    ],
+    [
+     "Package",
+     "Double Fun selected"
+    ],
+    [
+     "Date & place",
+     "Saturday · Montreal"
+    ],
+    [
+     "Your details",
+     "Name, email, phone"
+    ]
+   ],
+   "tabs": [
+    "Book",
+    "Packages",
+    "Events",
+    "Contact"
+   ],
+   "caption": "Booking flow on mobile"
+  },
+  "solutionNote": "Every package page ends on the booking form, in French or English.",
+  "outcome": [
+   [
+    "Packages by event",
+    "Organisers start from their event, not from a catalogue."
+   ],
+   [
+    "Booking in one go",
+    "Requests arrive with date, place and package."
+   ],
+   [
+    "Two languages",
+    "The whole site switches FR / EN."
+   ]
+  ],
+  "stack": [
+   "Next.js",
+   "React",
+   "Tailwind CSS",
+   "i18n"
+  ],
+  "url": "https://v0-image-analysis-d1-lac.vercel.app/",
+  "domain": "voila-velo — preview",
+  "liveLabel": "Visit the preview",
+  "d1": "da8e96b7c7267ffc9f50a856b54cd834",
+  "d2": "9028a1859b0c19ccd31a67c05a61c0ba",
+  "d3": "",
+  "m": "74835d23b68aeadbb8d20233a53ea52a"
+ },
+ {
+  "slug": "ayan",
+  "name": "Ayan Bridge",
+  "slash": "learning platform",
+  "industry": "EdTech",
+  "platform": "Web app · dashboard",
+  "date": "2025 – 2026",
+  "duration": "Freelance mission",
+  "client": "Ayan Bridge",
+  "role": "Full-stack developer",
+  "lead": "A learning platform that grew past its course catalogue: lessons, an AI studio, a marketplace and an investment arm under one account.",
+  "methods": [
+   "Product workshop",
+   "Information architecture",
+   "User flow",
+   "Wireframe",
+   "Design system",
+   "Development"
+  ],
+  "problem": "Four products in one account meant four menus. Learners opened the app and didn't know where they had stopped or what to do next.",
+  "hmw": "How might we make the dashboard answer one question: what should I do now?",
+  "research": [
+   "Product owner interviews",
+   "Feature inventory",
+   "Review of learning apps",
+   "Navigation test with learners"
+  ],
+  "findings": [
+   [
+    "Learners lose their place",
+    "Progress was buried inside each course."
+   ],
+   [
+    "Motivation fades",
+    "Without visible progress, streaks and rewards, learners drop off."
+   ],
+   [
+    "Products compete",
+    "Studio, Learn Hub and Capital fought for the same space."
+   ]
+  ],
+  "users": [
+   [
+    "Learner",
+    "I want to pick up where I left off.",
+    "Too many menus."
+   ],
+   [
+    "Instructor",
+    "I want to publish and track my courses.",
+    "No overview of learners."
+   ],
+   [
+    "Investor-learner",
+    "I want my projects and learning in one place.",
+    "Two separate apps."
+   ]
+  ],
+  "goals": [
+   "Next step first",
+   "Visible progress",
+   "One navigation"
+  ],
+  "ia": {
+   "root": "Ayan Bridge",
+   "branches": [
+    [
+     "Home",
+     [
+      "Current course",
+      "Reviews",
+      "Achievements"
+     ]
+    ],
+    [
+     "Learn Hub",
+     [
+      "Paths",
+      "Courses",
+      "Challenges"
+     ]
+    ],
+    [
+     "Studio IA",
+     [
+      "DataLab",
+      "Notebooks",
+      "Projects"
+     ]
+    ],
+    [
+     "Bridge Capital",
+     [
+      "Opportunities",
+      "Portfolio"
+     ]
+    ]
+   ]
+  },
+  "flow": {
+   "title": "daily session",
+   "steps": [
+    "Open app",
+    "See next lesson",
+    "Continue course",
+    "Practice challenge",
+    "Earn XP",
+    "Streak kept"
+   ]
+  },
+  "wfScreen": "dashboard",
+  "wf": [
+   "nav",
+   "hero",
+   "cards3",
+   "split",
+   "list"
+  ],
+  "mood": "Near-black surfaces with gold for rewards and blue for progress — focused like an IDE, rewarding like a game.",
+  "palette": [
+   [
+    "Night",
+    "#0A0A0A",
+    "background"
+   ],
+   [
+    "Gold",
+    "#EAB308",
+    "rewards"
+   ],
+   [
+    "Sky",
+    "#60A5FA",
+    "progress"
+   ],
+   [
+    "Royal",
+    "#2563EB",
+    "actions"
+   ],
+   [
+    "Smoke",
+    "#A3A3A3",
+    "secondary text"
+   ]
+  ],
+  "fonts": {
+   "dName": "Inter",
+   "dCss": "'Inter', sans-serif",
+   "dNote": "headings, semibold",
+   "dSample": "Server Components",
+   "bName": "Inter",
+   "bCss": "'Inter', sans-serif",
+   "bNote": "body & UI"
+  },
+  "c": {
+   "primary": "#2563EB",
+   "onPrimary": "#FFFFFF",
+   "dark": "#0A0A0A",
+   "bg": "#141414",
+   "light": "#DBE7FB",
+   "ink": "#F5F5F5",
+   "radius": "10px"
+  },
+  "cta": "Continuer le cours",
+  "cta2": "S'entraîner",
+  "chip1": "Avancé",
+  "chip2": "React",
+  "input": "Rechercher un cours",
+  "admin": {
+   "url": "ayan-bridge — studio",
+   "app": "Ayan Studio",
+   "nav": [
+    "Overview",
+    "Courses",
+    "Learners",
+    "Challenges",
+    "Marketplace",
+    "Capital"
+   ],
+   "active": 1,
+   "title": "Courses",
+   "action": "New course",
+   "cards": [
+    "Active learners",
+    "Completions",
+    "Challenge activity"
+   ],
+   "cols": [
+    "Course",
+    "Track",
+    "Level",
+    "Status"
+   ],
+   "rows": [
+    [
+     "React & Server Components",
+     "Web",
+     "Advanced",
+     "Published"
+    ],
+    [
+     "TypeScript types",
+     "Web",
+     "Intermediate",
+     "Draft"
+    ],
+    [
+     "REST API with Node.js",
+     "Backend",
+     "Advanced",
+     "Published"
+    ],
+    [
+     "Pandas for analysis",
+     "Data",
+     "Beginner",
+     "Review"
+    ]
+   ],
+   "caption": "Instructor studio — concept"
+  },
+  "app": {
+   "title": "Ayan",
+   "sub": "Keep your streak going",
+   "items": [
+    [
+     "Continue",
+     "Server Actions & mutations"
+    ],
+    [
+     "Daily streak",
+     "Don't break it today"
+    ],
+    [
+     "New achievement",
+     "React master unlocked"
+    ],
+    [
+     "Next challenge",
+     "API with Node.js"
+    ]
+   ],
+   "tabs": [
+    "Home",
+    "Learn",
+    "Studio",
+    "Capital"
+   ],
+   "caption": "Learner app on mobile"
+  },
+  "solutionNote": "A dark dashboard built around the next lesson, with rewards close enough to keep learners coming back.",
+  "outcome": [
+   [
+    "Next step on top",
+    "The current course and next lesson open the dashboard."
+   ],
+   [
+    "Progress you can see",
+    "XP, rankings and achievements on the home screen."
+   ],
+   [
+    "One navigation",
+    "Learn Hub, Studio and Capital under one bar."
+   ]
+  ],
+  "stack": [
+   "Next.js",
+   "React",
+   "TypeScript",
+   "Tailwind CSS"
+  ],
+  "url": "https://alan-tau-bay.vercel.app/home",
+  "domain": "ayan-bridge — preview",
+  "liveLabel": "Open the app",
+  "d1": "2cc3ba8f959b532ce304e1a2b7a94d40",
+  "d2": "c4e908ddf0e312cdac073cf1d2350d22",
+  "d3": "",
+  "m": "8aba09af3f8b76ebe603a797a4ac4566"
+ },
+ {
+  "slug": "auto",
+  "name": "AutoTechno",
+  "slash": "ECU files platform",
+  "industry": "Automotive",
+  "platform": "E-commerce platform · admin back office",
+  "date": "2025",
+  "duration": "Freelance mission",
+  "client": "AutoTechno, Algeria",
+  "role": "Full-stack developer",
+  "lead": "A catalogue and delivery platform for automotive professionals — ECU files, airbag and dashboard solutions, diagnostic software — with tokens and an admin back office.",
+  "methods": [
+   "Business interview",
+   "Catalogue modelling",
+   "User flow",
+   "Wireframe",
+   "Admin design",
+   "Development"
+  ],
+  "problem": "Files were sent by hand over messaging apps. Finding the right file for a precise vehicle was slow, payments were tracked manually, and the catalogue lived in folders.",
+  "hmw": "How might we let a garage find, pay for and download the right file in a few clicks?",
+  "research": [
+   "Interviews with the owner and a tuner",
+   "Catalogue and folder audit",
+   "Review of file-service platforms"
+  ],
+  "findings": [
+   [
+    "Vehicle first",
+    "Professionals search by brand, model and ECU — never by product name."
+   ],
+   [
+    "Small, frequent purchases",
+    "A token wallet fits better than one payment per file."
+   ],
+   [
+    "The team needs control",
+    "Uploads, prices and orders must be managed without a developer."
+   ]
+  ],
+  "users": [
+   [
+    "Garage owner",
+    "I want the right file now, for this car.",
+    "Waits for a reply on chat."
+   ],
+   [
+    "Tuner",
+    "I want my past downloads in one place.",
+    "Files lost in conversations."
+   ],
+   [
+    "Admin",
+    "I want to add files and follow orders.",
+    "Everything managed by hand."
+   ]
+  ],
+  "goals": [
+   "Search by vehicle",
+   "Token wallet",
+   "Self-serve admin"
+  ],
+  "ia": {
+   "root": "autotechno",
+   "branches": [
+    [
+     "Catalogue",
+     [
+      "ECU files",
+      "Airbag",
+      "Dashboard",
+      "Software",
+      "Other"
+     ]
+    ],
+    [
+     "Brands",
+     [
+      "BMW",
+      "Audi",
+      "Mercedes",
+      "Volkswagen",
+      "All brands"
+     ]
+    ],
+    [
+     "Account",
+     [
+      "Tokens",
+      "Downloads",
+      "Orders"
+     ]
+    ],
+    [
+     "Admin",
+     [
+      "Files",
+      "Orders",
+      "Customers",
+      "Posts"
+     ]
+    ]
+   ]
+  },
+  "flow": {
+   "title": "buy a file",
+   "steps": [
+    "Search vehicle",
+    "Pick file",
+    "Pay with tokens",
+    "Download",
+    "Order history"
+   ]
+  },
+  "wfScreen": "home & catalogue",
+  "wf": [
+   "nav",
+   "hero",
+   "search",
+   "cards3",
+   "list"
+  ],
+  "mood": "Workshop black with amber — technical, high contrast, made for screens in a garage.",
+  "palette": [
+   [
+    "Black",
+    "#0A0A0A",
+    "background"
+   ],
+   [
+    "Steel",
+    "#1F2937",
+    "surfaces"
+   ],
+   [
+    "Amber",
+    "#D99A06",
+    "actions"
+   ],
+   [
+    "Silver",
+    "#D1D5DB",
+    "text"
+   ],
+   [
+    "White",
+    "#FFFFFF",
+    "headings"
+   ]
+  ],
+  "fonts": {
+   "dName": "Arial",
+   "dCss": "Arial, Helvetica, sans-serif",
+   "dNote": "headings, bold — fast system font",
+   "dSample": "Professional ECU Files",
+   "bName": "Arial",
+   "bCss": "Arial, Helvetica, sans-serif",
+   "bNote": "body"
+  },
+  "c": {
+   "primary": "#D99A06",
+   "onPrimary": "#111110",
+   "dark": "#0A0A0A",
+   "bg": "#1F2937",
+   "light": "#FBEFD0",
+   "ink": "#E5E7EB",
+   "radius": "4px"
+  },
+  "cta": "Browse ECU Files",
+  "cta2": "Explore Software",
+  "chip1": "BMW",
+  "chip2": "EDC17",
+  "input": "Search ECU files, models, brands…",
+  "admin": {
+   "url": "autotechno/admin",
+   "app": "AutoTechno Admin",
+   "nav": [
+    "Dashboard",
+    "Catalogue",
+    "Orders",
+    "Customers",
+    "Tokens",
+    "Posts"
+   ],
+   "active": 2,
+   "title": "Orders",
+   "action": "Upload file",
+   "cards": [
+    "Orders today",
+    "Tokens sold",
+    "Files added"
+   ],
+   "cols": [
+    "Customer",
+    "File",
+    "Brand",
+    "Status"
+   ],
+   "rows": [
+    [
+     "Garage Nord",
+     "Stage file",
+     "BMW",
+     "Delivered"
+    ],
+    [
+     "Atelier Sud",
+     "Airbag reset",
+     "Audi",
+     "Processing"
+    ],
+    [
+     "Tuning Pro",
+     "Dashboard file",
+     "Mercedes",
+     "Delivered"
+    ],
+    [
+     "Auto Expert",
+     "Diag software",
+     "Volkswagen",
+     "Pending"
+    ]
+   ],
+   "caption": "Admin — orders and catalogue"
+  },
+  "app": {
+   "title": "My garage",
+   "sub": "Files, tokens and downloads",
+   "items": [
+    [
+     "Search by vehicle",
+     "Brand, model, ECU"
+    ],
+    [
+     "Tokens",
+     "Top up your wallet"
+    ],
+    [
+     "My downloads",
+     "Every file you bought"
+    ],
+    [
+     "Order status",
+     "Track what's in progress"
+    ]
+   ],
+   "tabs": [
+    "Search",
+    "Tokens",
+    "Files",
+    "Account"
+   ],
+   "caption": "Customer account — mobile"
+  },
+  "solutionNote": "Customers buy with tokens and download instantly; the team runs the catalogue from its own back office.",
+  "outcome": [
+   [
+    "Found by vehicle",
+    "Brand and model pages lead straight to the files."
+   ],
+   [
+    "Tokens, not invoices",
+    "Small purchases without back-and-forth."
+   ],
+   [
+    "Admin in-house",
+    "Files, orders and posts managed by the team."
+   ]
+  ],
+  "stack": [
+   "Next.js",
+   "React",
+   "TypeScript",
+   "PostgreSQL"
+  ],
+  "url": "https://autotechno.vercel.app/",
+  "domain": "autotechno.vercel.app",
+  "liveLabel": "Visit the platform",
+  "d1": "36987c219d5f68378b89905433757be5",
+  "d2": "56ef119bf32a6ab0847639b84b0d27c1",
+  "d3": "",
+  "m": "405a14457d955d741665e3fc68500226"
+ },
+ {
+  "slug": "tasshila",
+  "name": "Tasshila",
+  "slash": "lab results from a photo",
+  "industry": "E-health",
+  "platform": "Mobile app · processing pipeline",
+  "date": "2025 – 2026",
+  "duration": "Master's thesis",
+  "client": "Université Badji Mokhtar, Annaba",
+  "role": "Research, design & development",
+  "lead": "An e-health platform that reads biological lab results from a photograph of the report, explains each value and follows it over time.",
+  "methods": [
+   "Literature review",
+   "Patient interviews",
+   "User flow",
+   "Wireframe",
+   "Data pipeline",
+   "Machine learning",
+   "Prototyping"
+  ],
+  "problem": "Patients receive lab reports on paper or as PDFs. The values, units and reference ranges are hard to read, and from one test to the next nobody keeps a history.",
+  "hmw": "How might a patient understand their own results from a simple photo — and see how they change?",
+  "research": [
+   "Literature on OCR for medical documents",
+   "Interviews with patients",
+   "Lab report format review",
+   "Public health datasets"
+  ],
+  "findings": [
+   [
+    "Reports aren't standard",
+    "Each lab prints names, units and ranges differently."
+   ],
+   [
+    "Ranges matter more than values",
+    "Patients mostly want to know: is this normal?"
+   ],
+   [
+    "History is missing",
+    "Results end up in drawers, not in a timeline."
+   ]
+  ],
+  "users": [
+   [
+    "Patient",
+    "I want to know if my results are fine.",
+    "Medical jargon and units."
+   ],
+   [
+    "Chronic patient",
+    "I want to follow my values over time.",
+    "Paper reports get lost."
+   ],
+   [
+    "Doctor",
+    "I want a clean history at the consultation.",
+    "Patients bring scattered papers."
+   ]
+  ],
+  "goals": [
+   "Read from a photo",
+   "Explain each value",
+   "Build a history"
+  ],
+  "ia": {
+   "root": "Tasshila",
+   "branches": [
+    [
+     "Scan",
+     [
+      "Camera",
+      "Import PDF",
+      "Crop & clean"
+     ]
+    ],
+    [
+     "Results",
+     [
+      "Values",
+      "Ranges",
+      "Explanations"
+     ]
+    ],
+    [
+     "History",
+     [
+      "Timeline",
+      "Trends",
+      "Share"
+     ]
+    ],
+    [
+     "Profile",
+     [
+      "Personal info",
+      "Settings"
+     ]
+    ]
+   ]
+  },
+  "flow": {
+   "title": "photo to insight",
+   "steps": [
+    "Photograph report",
+    "Clean image",
+    "OCR extraction",
+    "Normalise units",
+    "Check ranges",
+    "Update history"
+   ]
+  },
+  "wfScreen": "results",
+  "wf": [
+   "nav",
+   "hero",
+   "list",
+   "tabs"
+  ],
+  "mood": "Clinical teal and mint with a warm coral for alerts — calm, trustworthy and readable.",
+  "palette": [
+   [
+    "Teal",
+    "#0F766E",
+    "brand"
+   ],
+   [
+    "Mint",
+    "#CCFBF1",
+    "surfaces"
+   ],
+   [
+    "Ink",
+    "#0F172A",
+    "text"
+   ],
+   [
+    "Coral",
+    "#F97316",
+    "out of range"
+   ],
+   [
+    "White",
+    "#FFFFFF",
+    "background"
+   ]
+  ],
+  "fonts": {
+   "dName": "Plus Jakarta Sans",
+   "dCss": "'Plus Jakarta Sans', sans-serif",
+   "dNote": "headings",
+   "dSample": "Your results",
+   "bName": "Inter",
+   "bCss": "'Inter', sans-serif",
+   "bNote": "body & values"
+  },
+  "c": {
+   "primary": "#0F766E",
+   "onPrimary": "#FFFFFF",
+   "dark": "#0F172A",
+   "bg": "#FFFFFF",
+   "light": "#CCFBF1",
+   "ink": "#0F172A",
+   "radius": "14px"
+  },
+  "cta": "Scan a report",
+  "cta2": "See history",
+  "chip1": "In range",
+  "chip2": "Above range",
+  "input": "Search a test",
+  "admin": {
+   "url": "tasshila — web",
+   "app": "Tasshila",
+   "nav": [
+    "Reports",
+    "Values",
+    "History",
+    "Explanations",
+    "Profile"
+   ],
+   "active": 1,
+   "title": "Values",
+   "action": "Scan report",
+   "cards": [
+    "Recent reports",
+    "Values in range",
+    "Trend"
+   ],
+   "cols": [
+    "Test",
+    "Unit",
+    "Status",
+    "Trend"
+   ],
+   "rows": [
+    [
+     "Glucose",
+     "g/L",
+     "In range",
+     "Stable"
+    ],
+    [
+     "Cholesterol",
+     "g/L",
+     "Above range",
+     "Rising"
+    ],
+    [
+     "Haemoglobin",
+     "g/dL",
+     "In range",
+     "Stable"
+    ],
+    [
+     "Vitamin D",
+     "ng/mL",
+     "Below range",
+     "Falling"
+    ]
+   ],
+   "caption": "Web view — values across reports (concept)"
+  },
+  "app": {
+   "title": "Your results",
+   "sub": "Read from your photo",
+   "items": [
+    [
+     "Glucose",
+     "In range"
+    ],
+    [
+     "Cholesterol",
+     "Above range — see why"
+    ],
+    [
+     "Vitamin D",
+     "Below range"
+    ],
+    [
+     "History",
+     "Compare with last report"
+    ]
+   ],
+   "tabs": [
+    "Scan",
+    "Results",
+    "History",
+    "Profile"
+   ],
+   "caption": "Results screen — concept"
+  },
+  "solutionNote": "Concept screens for the thesis prototype — to be replaced with screenshots of the real app.",
+  "outcome": [
+   [
+    "Photo in, values out",
+    "Names, values, units and ranges extracted from an image."
+   ],
+   [
+    "Plain explanations",
+    "Each value placed against its reference range."
+   ],
+   [
+    "A history at last",
+    "Reports become a timeline the patient can read."
+   ]
+  ],
+  "stack": [
+   "Python",
+   "OCR",
+   "Image processing",
+   "Machine learning"
+  ],
+  "url": "",
+  "domain": "",
+  "liveLabel": "",
+  "d1": "",
+  "d2": "",
+  "d3": "",
+  "m": ""
+ },
+ {
+  "slug": "tiger",
+  "name": "Tiger Bec Cars",
+  "slash": "exceptional cars",
+  "industry": "Automotive retail",
+  "platform": "Showcase website · catalogue",
+  "date": "2025",
+  "duration": "Freelance mission",
+  "client": "Tiger Bec Cars, Quebec",
+  "role": "Full-stack developer",
+  "lead": "Showcase site for a family dealer in Quebec that selects cars of character and sells them one by one.",
+  "methods": [
+   "Brand interview",
+   "Content strategy",
+   "Information architecture",
+   "Wireframe",
+   "Art direction",
+   "Development"
+  ],
+  "problem": "The dealer's cars were listed like any inventory: a photo, a price, a line of specs. The story behind each car — and the family behind the dealer — was lost.",
+  "hmw": "How might each car read like a piece with a history, not a line in a stock list?",
+  "research": [
+   "Interview with the owners",
+   "Review of premium dealer sites",
+   "Photo library audit"
+  ],
+  "findings": [
+   [
+    "Buyers buy stories",
+    "Clients come for the car's history and the dealer's eye."
+   ],
+   [
+    "Photography sells",
+    "The best photos were hidden in small thumbnails."
+   ],
+   [
+    "Contact must be human",
+    "Buyers want to talk to someone, not fill a long form."
+   ]
+  ],
+  "users": [
+   [
+    "Collector",
+    "I want to know where this car comes from.",
+    "Generic listings."
+   ],
+   [
+    "Enthusiast",
+    "I want to browse the collection like a gallery.",
+    "Cluttered catalogues."
+   ],
+   [
+    "Dealer",
+    "I want my cars to look as good online as in the showroom.",
+    "Bad photos online."
+   ]
+  ],
+  "goals": [
+   "Photo first",
+   "Tell the story",
+   "Human contact"
+  ],
+  "ia": {
+   "root": "Tiger Bec Cars",
+   "branches": [
+    [
+     "Collection",
+     [
+      "Catalogue",
+      "Car detail"
+     ]
+    ],
+    [
+     "Expertise",
+     [
+      "History",
+      "Selection process"
+     ]
+    ],
+    [
+     "Contact",
+     [
+      "Call",
+      "Visit",
+      "Instagram"
+     ]
+    ]
+   ]
+  },
+  "flow": {
+   "title": "from story to visit",
+   "steps": [
+    "Read the story",
+    "Browse collection",
+    "Car detail",
+    "Contact dealer",
+    "Visit"
+   ]
+  },
+  "wfScreen": "home",
+  "wf": [
+   "nav",
+   "hero",
+   "split",
+   "gallery",
+   "cta"
+  ],
+  "mood": "Black brick, white type and a red glow — a night-time showroom.",
+  "palette": [
+   [
+    "Black",
+    "#000000",
+    "background"
+   ],
+   [
+    "Red",
+    "#EF4444",
+    "accents"
+   ],
+   [
+    "Violet",
+    "#A855F7",
+    "glow"
+   ],
+   [
+    "Silver",
+    "#D1D5DB",
+    "text"
+   ],
+   [
+    "White",
+    "#FFFFFF",
+    "headings"
+   ]
+  ],
+  "fonts": {
+   "dName": "Montserrat",
+   "dCss": "'Montserrat', sans-serif",
+   "dNote": "headings, bold",
+   "dSample": "Automobile d'Exception",
+   "bName": "Montserrat",
+   "bCss": "'Montserrat', sans-serif",
+   "bNote": "body"
+  },
+  "c": {
+   "primary": "#EF4444",
+   "onPrimary": "#FFFFFF",
+   "dark": "#000000",
+   "bg": "#111111",
+   "light": "#FBD5D5",
+   "ink": "#F3F4F6",
+   "radius": "8px"
+  },
+  "cta": "Découvrir notre univers",
+  "cta2": "Voir la collection",
+  "chip1": "Coupé",
+  "chip2": "FR / EN",
+  "input": "Rechercher un modèle",
+  "admin": {
+   "url": "tigerbec — inventory",
+   "app": "Tiger Bec Admin",
+   "nav": [
+    "Vehicles",
+    "Collections",
+    "Leads",
+    "Pages"
+   ],
+   "active": 0,
+   "title": "Vehicles",
+   "action": "Add vehicle",
+   "cards": [
+    "On display",
+    "Reserved",
+    "Leads"
+   ],
+   "cols": [
+    "Vehicle",
+    "Body",
+    "Status",
+    "Featured"
+   ],
+   "rows": [
+    [
+     "Porsche Carrera",
+     "Coupé",
+     "Available",
+     "Yes"
+    ],
+    [
+     "Mercedes SL",
+     "Roadster",
+     "Reserved",
+     "No"
+    ],
+    [
+     "BMW M Coupé",
+     "Coupé",
+     "Available",
+     "Yes"
+    ],
+    [
+     "Ford Mustang",
+     "Fastback",
+     "Sold",
+     "No"
+    ]
+   ],
+   "caption": "Inventory — concept back office"
+  },
+  "app": {
+   "title": "Collection",
+   "sub": "Cars with a story",
+   "items": [
+    [
+     "Porsche Carrera",
+     "Coupé · available"
+    ],
+    [
+     "Mercedes SL",
+     "Roadster · reserved"
+    ],
+    [
+     "BMW M Coupé",
+     "Coupé · available"
+    ],
+    [
+     "Visit us",
+     "Book a viewing"
+    ]
+   ],
+   "tabs": [
+    "Home",
+    "Cars",
+    "Story",
+    "Contact"
+   ],
+   "caption": "Collection on mobile"
+  },
+  "solutionNote": "A dark, quiet design where large photography and the family story carry the sale.",
+  "outcome": [
+   [
+    "Cars as pieces",
+    "Each vehicle gets its own space and story."
+   ],
+   [
+    "Brand recovered",
+    "The family history is part of the experience."
+   ],
+   [
+    "Talk first",
+    "Contact is one tap away from every car."
+   ]
+  ],
+  "stack": [
+   "Next.js",
+   "React",
+   "Tailwind CSS"
+  ],
+  "url": "https://tigerbec-cars.vercel.app/",
+  "domain": "tigerbec-cars.vercel.app",
+  "liveLabel": "Visit the site",
+  "d1": "d40171d52832d548485c9e68910eade6",
+  "d2": "4639311e0862ae38f0aadb1902702114",
+  "d3": "",
+  "m": "1f01734ce3e61a67f263d28bc2ce9fa8"
+ },
+ {
+  "slug": "picci",
+  "name": "Picci",
+  "slash": "multiservice station",
+  "industry": "Automotive services",
+  "platform": "Website · FR / EN",
+  "date": "2025",
+  "duration": "Freelance mission",
+  "client": "Picci, Montreal",
+  "role": "Full-stack developer",
+  "lead": "A family business serving drivers since the eighties — car wash, mechanics, barbershop, car sales and financing under one roof.",
+  "methods": [
+   "Owner interview",
+   "Service mapping",
+   "Information architecture",
+   "Wireframe",
+   "Visual design",
+   "Development"
+  ],
+  "problem": "Four unrelated trades shared one address. Online, each looked like a different business, and clients didn't know the station offered more than a wash.",
+  "hmw": "How might four different services read as one coherent station — without any of them getting lost?",
+  "research": [
+   "Interview with the owners",
+   "Service inventory",
+   "Local competitor review"
+  ],
+  "findings": [
+   [
+    "One place, many reasons",
+    "Clients come for one service and leave not knowing the others exist."
+   ],
+   [
+    "Trust is local",
+    "The family history and the building are recognised in the area."
+   ],
+   [
+    "Action is a call",
+    "Most clients phone or drive by rather than book online."
+   ]
+  ],
+  "users": [
+   [
+    "Driver",
+    "I want my car washed and checked in one stop.",
+    "Didn't know mechanics was there."
+   ],
+   [
+    "Car buyer",
+    "I want a used car and financing together.",
+    "Two separate searches."
+   ],
+   [
+    "Regular",
+    "I want my haircut while the car is washed.",
+    "Services felt disconnected."
+   ]
+  ],
+  "goals": [
+   "One identity",
+   "A page per trade",
+   "Call or visit"
+  ],
+  "ia": {
+   "root": "Picci",
+   "branches": [
+    [
+     "Car care",
+     [
+      "Car wash",
+      "Mechanics"
+     ]
+    ],
+    [
+     "People",
+     [
+      "Barbershop"
+     ]
+    ],
+    [
+     "Cars",
+     [
+      "Car sales",
+      "Financing",
+      "TCT buying"
+     ]
+    ],
+    [
+     "Visit",
+     [
+      "Directions",
+      "Call",
+      "Instagram"
+     ]
+    ]
+   ]
+  },
+  "flow": {
+   "title": "find a service",
+   "steps": [
+    "Land on station",
+    "Pick a service",
+    "Service page",
+    "Call or directions",
+    "Visit"
+   ]
+  },
+  "wfScreen": "home",
+  "wf": [
+   "nav",
+   "hero",
+   "cards4",
+   "split",
+   "footer"
+  ],
+  "mood": "Night photography of the building with red accents and a classic serif — local, proud and a little vintage.",
+  "palette": [
+   [
+    "Black",
+    "#000000",
+    "background"
+   ],
+   [
+    "Red",
+    "#EF4444",
+    "actions"
+   ],
+   [
+    "Cyan",
+    "#22D3EE",
+    "service accent"
+   ],
+   [
+    "Silver",
+    "#D1D5DB",
+    "text"
+   ],
+   [
+    "White",
+    "#FFFFFF",
+    "headings"
+   ]
+  ],
+  "fonts": {
+   "dName": "Butler",
+   "dCss": "'Playfair Display', serif",
+   "dNote": "display serif — previewed with a close substitute",
+   "dSample": "Fier de vous servir",
+   "bName": "Montserrat",
+   "bCss": "'Montserrat', sans-serif",
+   "bNote": "body"
+  },
+  "c": {
+   "primary": "#EF4444",
+   "onPrimary": "#FFFFFF",
+   "dark": "#000000",
+   "bg": "#111111",
+   "light": "#FBD5D5",
+   "ink": "#F3F4F6",
+   "radius": "8px"
+  },
+  "cta": "Découvrir nos services",
+  "cta2": "Obtenir l'itinéraire",
+  "chip1": "Lave-auto",
+  "chip2": "Barbershop",
+  "input": "Votre numéro",
+  "admin": {
+   "url": "picci — bookings",
+   "app": "Picci Station",
+   "nav": [
+    "Overview",
+    "Services",
+    "Appointments",
+    "Vehicles",
+    "Financing",
+    "TCT"
+   ],
+   "active": 2,
+   "title": "Appointments",
+   "action": "New appointment",
+   "cards": [
+    "Wash bays",
+    "Garage",
+    "Barber chairs"
+   ],
+   "cols": [
+    "Client",
+    "Service",
+    "Day",
+    "Status"
+   ],
+   "rows": [
+    [
+     "Marc L.",
+     "Premium wash",
+     "Monday",
+     "Booked"
+    ],
+    [
+     "Julie R.",
+     "Barbershop",
+     "Tuesday",
+     "Done"
+    ],
+    [
+     "Alex T.",
+     "Brakes",
+     "Wednesday",
+     "In progress"
+    ],
+    [
+     "Nina P.",
+     "Financing",
+     "Thursday",
+     "Review"
+    ]
+   ],
+   "caption": "Station planner — concept"
+  },
+  "app": {
+   "title": "Picci",
+   "sub": "Everything for your car",
+   "items": [
+    [
+     "Car wash",
+     "Premium and express"
+    ],
+    [
+     "Mechanics",
+     "Diagnosis and repair"
+    ],
+    [
+     "Barbershop",
+     "Walk in or book"
+    ],
+    [
+     "Car sales",
+     "Inspected used cars"
+    ]
+   ],
+   "tabs": [
+    "Home",
+    "Services",
+    "Cars",
+    "Visit"
+   ],
+   "caption": "Services on mobile"
+  },
+  "solutionNote": "One identity and one card per trade, each leading to a call or directions.",
+  "outcome": [
+   [
+    "One station",
+    "Four trades read as one place."
+   ],
+   [
+    "Each trade visible",
+    "Every service has its own page."
+   ],
+   [
+    "Easy to reach",
+    "Call and directions on every page."
+   ]
+  ],
+  "stack": [
+   "Next.js",
+   "React",
+   "Tailwind CSS"
+  ],
+  "url": "https://picci-five.vercel.app/",
+  "domain": "picci-five.vercel.app",
+  "liveLabel": "Visit the site",
+  "d1": "6d980b54778f304a6ef6f298bd8f6f7e",
+  "d2": "9216f235244f9040602f4c4c3d01a7b8",
+  "d3": "",
+  "m": "813531179a6a966fcf9aea41834c9d7a"
+ },
+ {
+  "slug": "queen",
+  "name": "Queen de Q",
+  "slash": "self-discovery app",
+  "industry": "Personal development",
+  "platform": "Pre-launch website · FR / EN",
+  "date": "2025",
+  "duration": "Freelance mission",
+  "client": "Queen de Q",
+  "role": "Full-stack developer",
+  "lead": "Pre-launch site for a playful self-discovery app: draw a card, discover an archetype, join the waiting list and unlock perks at launch.",
+  "methods": [
+   "Brand workshop",
+   "Concept design",
+   "User flow",
+   "Wireframe",
+   "Illustration direction",
+   "Development"
+  ],
+  "problem": "A personal-development app with humour can't look like a corporate landing page. The brand needed a first visit that felt like a game — and still filled a waiting list.",
+  "hmw": "How might the first visit feel like opening a gift, and end with a sign-up?",
+  "research": [
+   "Founder workshop",
+   "Brand voice review",
+   "Review of playful pre-launch sites"
+  ],
+  "findings": [
+   [
+    "Curiosity converts",
+    "A small game invites people further than a promise."
+   ],
+   [
+    "Scarcity works",
+    "Limited places make joining feel special."
+   ],
+   [
+    "Voice is everything",
+    "Humour and warmth must carry every line."
+   ]
+  ],
+  "users": [
+   [
+    "Curious visitor",
+    "I want to know what this is about.",
+    "Generic apps feel cold."
+   ],
+   [
+    "Future member",
+    "I want early access and perks.",
+    "No reason to sign up early."
+   ],
+   [
+    "Community",
+    "I want to meet women like me.",
+    "No place to gather before launch."
+   ]
+  ],
+  "goals": [
+   "A game first",
+   "Fill the list",
+   "Keep the voice"
+  ],
+  "ia": {
+   "root": "Queen de Q",
+   "branches": [
+    [
+     "Home",
+     [
+      "Card draw",
+      "Royal wheel",
+      "Waiting list"
+     ]
+    ],
+    [
+     "The app",
+     [
+      "Rituals",
+      "Community"
+     ]
+    ],
+    [
+     "Cabinet",
+     [
+      "Archetype cards"
+     ]
+    ],
+    [
+     "About",
+     [
+      "The story"
+     ]
+    ]
+   ]
+  },
+  "flow": {
+   "title": "draw to join",
+   "steps": [
+    "Arrive",
+    "Draw a card",
+    "Discover archetype",
+    "Join waiting list",
+    "Perk at launch"
+   ]
+  },
+  "wfScreen": "home",
+  "wf": [
+   "nav",
+   "split",
+   "cards3",
+   "cta"
+  ],
+  "mood": "Plum night, gold script and soft rose — a royal, playful world with a wink.",
+  "palette": [
+   [
+    "Plum",
+    "#241B2F",
+    "background"
+   ],
+   [
+    "Gold",
+    "#D6AE60",
+    "titles & actions"
+   ],
+   [
+    "Rose",
+    "#D4B5A5",
+    "soft text"
+   ],
+   [
+    "Purple",
+    "#4A2B6B",
+    "surfaces"
+   ],
+   [
+    "Cream",
+    "#FDF7F2",
+    "light"
+   ]
+  ],
+  "fonts": {
+   "dName": "Playlist Script",
+   "dCss": "'Great Vibes', cursive",
+   "dNote": "script — previewed with a close substitute",
+   "dSample": "Bienvenue Queen",
+   "bName": "Raleway",
+   "bCss": "'Raleway', sans-serif",
+   "bNote": "body"
+  },
+  "c": {
+   "primary": "#D6AE60",
+   "onPrimary": "#241B2F",
+   "dark": "#241B2F",
+   "bg": "#2E2240",
+   "light": "#F2E3C4",
+   "ink": "#FDF7F2",
+   "radius": "999px"
+  },
+  "cta": "Commencer mon voyage",
+  "cta2": "Lire la suite",
+  "chip1": "Places limitées",
+  "chip2": "FR / EN",
+  "input": "Ton prénom",
+  "admin": {
+   "url": "queendeq — waiting list",
+   "app": "Queen HQ",
+   "nav": [
+    "Waiting list",
+    "Cards",
+    "Perks",
+    "Tea Time",
+    "Pages"
+   ],
+   "active": 0,
+   "title": "Waiting list",
+   "action": "Invite",
+   "cards": [
+    "New members",
+    "Cards drawn",
+    "Tea Time sign-ups"
+   ],
+   "cols": [
+    "Member",
+    "Archetype",
+    "Language",
+    "Perk"
+   ],
+   "rows": [
+    [
+     "Clara M.",
+     "The Explorer",
+     "FR",
+     "Early access"
+    ],
+    [
+     "Inès D.",
+     "The Charmer",
+     "FR",
+     "Founder"
+    ],
+    [
+     "Sophie L.",
+     "The Sage",
+     "EN",
+     "Early access"
+    ],
+    [
+     "Maya R.",
+     "The Rebel",
+     "FR",
+     "Tea Time"
+    ]
+   ],
+   "caption": "Waiting list — concept back office"
+  },
+  "app": {
+   "title": "Queen de Q",
+   "sub": "Pioche une carte",
+   "items": [
+    [
+     "Your card",
+     "The Explorer"
+    ],
+    [
+     "What it says",
+     "Read your archetype"
+    ],
+    [
+     "Join the kingdom",
+     "Save your place"
+    ],
+    [
+     "Live Tea Time",
+     "Get a reminder"
+    ]
+   ],
+   "tabs": [
+    "Home",
+    "Cards",
+    "Wheel",
+    "Me"
+   ],
+   "caption": "Card draw on mobile"
+  },
+  "solutionNote": "An illustrated, deliberately unusual interface where every interaction leads to the waiting list.",
+  "outcome": [
+   [
+    "A first visit that plays",
+    "The card draw invites people in."
+   ],
+   [
+    "A list that fills itself",
+    "Limited places shown live make joining feel special."
+   ],
+   [
+    "A voice, not a template",
+    "Script, gold and humour everywhere."
+   ]
+  ],
+  "stack": [
+   "Next.js",
+   "React",
+   "Tailwind CSS"
+  ],
+  "url": "https://queen-q.vercel.app/",
+  "domain": "queen-q.vercel.app",
+  "liveLabel": "Visit the site",
+  "d1": "1771ce01a77607448cee0ea5a02e357f",
+  "d2": "de8c0bb4be8aa2040b702d6d9b702182",
+  "d3": "",
+  "m": "6a421573bb87bc407445d872ca00e709"
+ },
+ {
+  "slug": "bdtech",
+  "name": "BDTECH",
+  "slash": "IT services",
+  "industry": "IT & security",
+  "platform": "Corporate website · client login",
+  "date": "2025",
+  "duration": "Freelance mission",
+  "client": "BDTECH Solutions, Dubai",
+  "role": "Full-stack developer",
+  "lead": "Site for an IT services company that selects, integrates and deploys equipment for businesses — infrastructure, security and mobility.",
+  "methods": [
+   "Stakeholder interview",
+   "Content strategy",
+   "Information architecture",
+   "Wireframe",
+   "Visual design",
+   "Development"
+  ],
+  "problem": "Decision-makers landing on the company had to dig to understand its scope. Services, partners and contact were spread across documents and calls.",
+  "hmw": "How might a busy decision-maker understand the scope and ask for a quote in one visit?",
+  "research": [
+   "Interview with the founders",
+   "Service catalogue review",
+   "Review of IT integrator sites"
+  ],
+  "findings": [
+   [
+    "Scope before detail",
+    "Visitors want to know if the company covers their need before reading more."
+   ],
+   [
+    "Partners build trust",
+    "Known hardware brands reassure buyers."
+   ],
+   [
+    "Quotes start with a call",
+    "Clients prefer to talk to someone quickly."
+   ]
+  ],
+  "users": [
+   [
+    "IT manager",
+    "I want a partner for workstations and network security.",
+    "Too many small vendors."
+   ],
+   [
+    "CEO",
+    "I want to know if they're credible.",
+    "No proof up front."
+   ],
+   [
+    "Existing client",
+    "I want access to my documents and support.",
+    "Everything by email."
+   ]
+  ],
+  "goals": [
+   "Scope in one screen",
+   "Proof with partners",
+   "Quote request"
+  ],
+  "ia": {
+   "root": "BDTECH Solutions",
+   "branches": [
+    [
+     "About",
+     [
+      "Story",
+      "Vision",
+      "Approach"
+     ]
+    ],
+    [
+     "Services",
+     [
+      "Infrastructure",
+      "Security",
+      "Mobility"
+     ]
+    ],
+    [
+     "Partners",
+     [
+      "Hardware brands"
+     ]
+    ],
+    [
+     "Contact",
+     [
+      "Call",
+      "Email",
+      "Client login"
+     ]
+    ]
+   ]
+  },
+  "flow": {
+   "title": "quote request",
+   "steps": [
+    "Scan scope",
+    "Service detail",
+    "See partners",
+    "Call or email",
+    "Quote"
+   ]
+  },
+  "wfScreen": "home",
+  "wf": [
+   "nav",
+   "split",
+   "split",
+   "cards3",
+   "cta"
+  ],
+  "mood": "Navy and electric blue on white with floating hardware — clean, technical and corporate.",
+  "palette": [
+   [
+    "Navy",
+    "#1B2F4B",
+    "text"
+   ],
+   [
+    "Blue",
+    "#0065B3",
+    "actions"
+   ],
+   [
+    "Sky",
+    "#28BBF1",
+    "accents"
+   ],
+   [
+    "Slate",
+    "#374151",
+    "secondary"
+   ],
+   [
+    "White",
+    "#FFFFFF",
+    "background"
+   ]
+  ],
+  "fonts": {
+   "dName": "Inter",
+   "dCss": "'Inter', sans-serif",
+   "dNote": "headings, bold",
+   "dSample": "Equip yourself intelligently",
+   "bName": "Inter",
+   "bCss": "'Inter', sans-serif",
+   "bNote": "body"
+  },
+  "c": {
+   "primary": "#0065B3",
+   "onPrimary": "#FFFFFF",
+   "dark": "#1B2F4B",
+   "bg": "#F4F8FC",
+   "light": "#D4ECFA",
+   "ink": "#1B2F4B",
+   "radius": "8px"
+  },
+  "cta": "Our Services",
+  "cta2": "Contact Us",
+  "chip1": "Security",
+  "chip2": "Mobility",
+  "input": "Company email",
+  "admin": {
+   "url": "bdtech — client portal",
+   "app": "BDTECH Portal",
+   "nav": [
+    "Requests",
+    "Clients",
+    "Equipment",
+    "Services",
+    "Partners"
+   ],
+   "active": 0,
+   "title": "Quote requests",
+   "action": "New quote",
+   "cards": [
+    "Open requests",
+    "Deployments",
+    "Support"
+   ],
+   "cols": [
+    "Company",
+    "Need",
+    "Category",
+    "Status"
+   ],
+   "rows": [
+    [
+     "Harbor Logistics",
+     "Workstations",
+     "Hardware",
+     "Quoted"
+    ],
+    [
+     "Delta Clinic",
+     "Firewall",
+     "Security",
+     "New"
+    ],
+    [
+     "Nova Retail",
+     "Mobile fleet",
+     "Mobility",
+     "Meeting"
+    ],
+    [
+     "Atlas Build",
+     "Servers",
+     "Infrastructure",
+     "Won"
+    ]
+   ],
+   "caption": "Client portal & requests — concept"
+  },
+  "app": {
+   "title": "BDTECH",
+   "sub": "Client space",
+   "items": [
+    [
+     "My equipment",
+     "Workstations and servers"
+    ],
+    [
+     "Support request",
+     "Open a ticket"
+    ],
+    [
+     "Documents",
+     "Quotes and invoices"
+    ],
+    [
+     "Contact",
+     "Call your account manager"
+    ]
+   ],
+   "tabs": [
+    "Home",
+    "Equipment",
+    "Support",
+    "Docs"
+   ],
+   "caption": "Client space — concept"
+  },
+  "solutionNote": "A clear corporate site with a client login behind it.",
+  "outcome": [
+   [
+    "Scope at a glance",
+    "Infrastructure, security and mobility in the first screen."
+   ],
+   [
+    "Proof on the page",
+    "Story, vision and partners build trust."
+   ],
+   [
+    "Straight to a quote",
+    "Call and email from every section."
+   ]
+  ],
+  "stack": [
+   "Next.js",
+   "React",
+   "Tailwind CSS"
+  ],
+  "url": "https://bdtech-azure.vercel.app/",
+  "domain": "bdtech-azure.vercel.app",
+  "liveLabel": "Visit the site",
+  "d1": "38c57bdd87eba75d6badad244e190fbe",
+  "d2": "21ba4b62c7ca1cb431e10274d8d111a0",
+  "d3": "",
+  "m": "028679de4af88e42ba73d3422fd2dde8"
+ },
+ {
+  "slug": "goodpc",
+  "name": "GoodPc",
+  "slash": "refurbished tech",
+  "industry": "E-commerce",
+  "platform": "Marketplace · back office",
+  "date": "2025",
+  "duration": "Freelance mission",
+  "client": "GoodPc Canada",
+  "role": "Full-stack developer",
+  "lead": "A refurbished-technology retailer in Canada — a marketplace built to make second-hand hardware feel like a premium purchase.",
+  "methods": [
+   "Business interview",
+   "Competitor review",
+   "User flow",
+   "Wireframe",
+   "Visual design",
+   "Development"
+  ],
+  "problem": "Refurbished hardware carries doubt: is it reliable, is it guaranteed, who checked it? The store had to remove that doubt before the cart.",
+  "hmw": "How might buying a refurbished laptop feel as safe as buying a new one?",
+  "research": [
+   "Interview with the owner",
+   "Refurbished market review",
+   "Customer questions review"
+  ],
+  "findings": [
+   [
+    "Doubt kills the cart",
+    "Buyers hesitate without warranty and inspection details."
+   ],
+   [
+    "Grade matters",
+    "Clear condition grades make comparison easy."
+   ],
+   [
+    "Service is a second business",
+    "Many visitors want their own device refurbished."
+   ]
+  ],
+  "users": [
+   [
+    "Student",
+    "I want a reliable laptop on a budget.",
+    "Fear of a bad second-hand buy."
+   ],
+   [
+    "Small business",
+    "I want several machines with warranty.",
+    "No clear grades."
+   ],
+   [
+    "Owner of an old PC",
+    "I want mine refurbished.",
+    "Doesn't know it's possible."
+   ]
+  ],
+  "goals": [
+   "Remove doubt",
+   "Clear grades",
+   "Sell the service"
+  ],
+  "ia": {
+   "root": "GoodPc",
+   "branches": [
+    [
+     "Marketplace",
+     [
+      "Laptops",
+      "Parts",
+      "Product page"
+     ]
+    ],
+    [
+     "Services",
+     [
+      "Refurbishing",
+      "Repairs"
+     ]
+    ],
+    [
+     "Trust",
+     [
+      "Warranty",
+      "Delivery",
+      "Support"
+     ]
+    ],
+    [
+     "Contact",
+     [
+      "Form",
+      "Phone"
+     ]
+    ]
+   ]
+  },
+  "flow": {
+   "title": "buy refurbished",
+   "steps": [
+    "Browse marketplace",
+    "Product page",
+    "Check warranty",
+    "Cart",
+    "Delivery"
+   ]
+  },
+  "wfScreen": "home",
+  "wf": [
+   "nav",
+   "hero",
+   "stats",
+   "cards4",
+   "cta"
+  ],
+  "mood": "Bright white with a blue-to-green gradient — fresh, optimistic and a little techy.",
+  "palette": [
+   [
+    "Ink",
+    "#111827",
+    "text"
+   ],
+   [
+    "Blue",
+    "#3BA6E0",
+    "gradient start"
+   ],
+   [
+    "Green",
+    "#5FBF6B",
+    "gradient end"
+   ],
+   [
+    "Gray",
+    "#525252",
+    "secondary"
+   ],
+   [
+    "White",
+    "#FFFFFF",
+    "background"
+   ]
+  ],
+  "fonts": {
+   "dName": "Poppins",
+   "dCss": "'Poppins', sans-serif",
+   "dNote": "headings, bold",
+   "dSample": "Qualité Premium",
+   "bName": "Inter",
+   "bCss": "'Inter', sans-serif",
+   "bNote": "body"
+  },
+  "c": {
+   "primary": "#3BA6E0",
+   "onPrimary": "#FFFFFF",
+   "dark": "#111827",
+   "bg": "#FFFFFF",
+   "light": "#D7EEF9",
+   "ink": "#111827",
+   "radius": "12px"
+  },
+  "cta": "Explorer nos produits",
+  "cta2": "Nous contacter",
+  "chip1": "Grade A",
+  "chip2": "Garantie",
+  "input": "Rechercher un produit",
+  "admin": {
+   "url": "goodpc — admin",
+   "app": "GoodPc Admin",
+   "nav": [
+    "Products",
+    "Orders",
+    "Refurbishing",
+    "Customers",
+    "Warranty"
+   ],
+   "active": 0,
+   "title": "Products",
+   "action": "Add product",
+   "cards": [
+    "Orders",
+    "Devices in workshop",
+    "Warranty claims"
+   ],
+   "cols": [
+    "Product",
+    "Category",
+    "Grade",
+    "Stock"
+   ],
+   "rows": [
+    [
+     "ThinkPad T-series",
+     "Laptop",
+     "Grade A",
+     "In stock"
+    ],
+    [
+     "MacBook Air",
+     "Laptop",
+     "Grade A",
+     "Low stock"
+    ],
+    [
+     "Dell Latitude",
+     "Laptop",
+     "Grade B",
+     "In stock"
+    ],
+    [
+     "SSD module",
+     "Parts",
+     "New",
+     "Out of stock"
+    ]
+   ],
+   "caption": "Product back office — concept"
+  },
+  "app": {
+   "title": "GoodPc",
+   "sub": "Refurbished, guaranteed",
+   "items": [
+    [
+     "ThinkPad T-series",
+     "Grade A · warranty included"
+    ],
+    [
+     "MacBook Air",
+     "Grade A · free delivery"
+    ],
+    [
+     "Refurbish mine",
+     "Book a repair"
+    ],
+    [
+     "Support",
+     "We answer fast"
+    ]
+   ],
+   "tabs": [
+    "Shop",
+    "Search",
+    "Cart",
+    "Account"
+   ],
+   "caption": "Marketplace on mobile"
+  },
+  "solutionNote": "Warranty, grades and support sit next to every product to remove doubt before checkout.",
+  "outcome": [
+   [
+    "Trust up front",
+    "Warranty, delivery and support shown with products."
+   ],
+   [
+    "Comparable grades",
+    "Condition is clear at a glance."
+   ],
+   [
+    "Service sold too",
+    "Refurbishing has its own entry."
+   ]
+  ],
+  "stack": [
+   "Next.js",
+   "React",
+   "Tailwind CSS",
+   "E-commerce"
+  ],
+  "url": "https://itech-theta.vercel.app/",
+  "domain": "itech-theta.vercel.app",
+  "liveLabel": "Visit the store",
+  "d1": "aca8d7f627a22b3d22f192d1591ba155",
+  "d2": "b492362ea51c49f48df59f9a1ff7017e",
+  "d3": "",
+  "m": "85c8cafd7e36631f1e3e34a2b3fdfd66"
+ },
+ {
+  "slug": "aqua",
+  "name": "CFAQ",
+  "slash": "aquatic training centre",
+  "industry": "Sport & education",
+  "platform": "Website · shop · bilingual",
+  "date": "2025",
+  "duration": "Freelance mission",
+  "client": "Centre de Formation Aquatique du Québec",
+  "role": "Full-stack developer",
+  "lead": "An aquatic training centre in Quebec — swimming, lifesaving and water fitness programmes for every age, with a shop and video lessons.",
+  "methods": [
+   "Stakeholder interview",
+   "Programme mapping",
+   "Information architecture",
+   "Wireframe",
+   "Visual design",
+   "Development"
+  ],
+  "problem": "Programmes for toddlers, children, teens and instructors were listed together. Parents and trainees had trouble finding their level, and material was sold separately.",
+  "hmw": "How might every family or trainee find the right programme in a few taps?",
+  "research": [
+   "Interview with the centre",
+   "Programme catalogue review",
+   "Parent questions review"
+  ],
+  "findings": [
+   [
+    "Age is the entry point",
+    "Parents look for their child's age first."
+   ],
+   [
+    "Trainers need their own path",
+    "Instructor training is a different audience."
+   ],
+   [
+    "Material belongs online",
+    "The shop and videos support the courses."
+   ]
+  ],
+  "users": [
+   [
+    "Parent",
+    "I want the right class for my child's age.",
+    "Programme names don't say the age."
+   ],
+   [
+    "Teen",
+    "I want to become a lifeguard.",
+    "Doesn't know the path."
+   ],
+   [
+    "Instructor",
+    "I want training material and videos.",
+    "Material scattered."
+   ]
+  ],
+  "goals": [
+   "Sort by age",
+   "Sell material",
+   "Two languages"
+  ],
+  "ia": {
+   "root": "CFAQ",
+   "branches": [
+    [
+     "Programmes",
+     [
+      "Anim'eau",
+      "Récré'eau",
+      "Ad'eau",
+      "Trainers"
+     ]
+    ],
+    [
+     "Shop",
+     [
+      "Material",
+      "Cart"
+     ]
+    ],
+    [
+     "Videos",
+     [
+      "Lessons"
+     ]
+    ],
+    [
+     "About",
+     [
+      "Mission",
+      "News",
+      "Contact"
+     ]
+    ]
+   ]
+  },
+  "flow": {
+   "title": "register a child",
+   "steps": [
+    "Pick age group",
+    "Programme detail",
+    "Sign up",
+    "Account",
+    "Confirmation"
+   ]
+  },
+  "wfScreen": "home",
+  "wf": [
+   "nav",
+   "hero",
+   "cards3",
+   "split",
+   "footer"
+  ],
+  "mood": "Pool teal and sunny yellow on white — calm water with a playful touch.",
+  "palette": [
+   [
+    "Teal",
+    "#00B4AA",
+    "actions"
+   ],
+   [
+    "Sun",
+    "#FACC15",
+    "highlights"
+   ],
+   [
+    "Pool",
+    "#3E7C86",
+    "imagery"
+   ],
+   [
+    "Ink",
+    "#111827",
+    "text"
+   ],
+   [
+    "White",
+    "#FFFFFF",
+    "background"
+   ]
+  ],
+  "fonts": {
+   "dName": "System UI",
+   "dCss": "'Inter', system-ui, sans-serif",
+   "dNote": "native system font",
+   "dSample": "Formation aquatique",
+   "bName": "System UI",
+   "bCss": "'Inter', system-ui, sans-serif",
+   "bNote": "body"
+  },
+  "c": {
+   "primary": "#00B4AA",
+   "onPrimary": "#FFFFFF",
+   "dark": "#0F3B40",
+   "bg": "#F3FAFA",
+   "light": "#CCF2EF",
+   "ink": "#111827",
+   "radius": "10px"
+  },
+  "cta": "Voir nos programmes",
+  "cta2": "Nous contacter",
+  "chip1": "6 à 12 ans",
+  "chip2": "Sauvetage",
+  "input": "Âge de l'enfant",
+  "admin": {
+   "url": "cfaq — admin",
+   "app": "CFAQ Admin",
+   "nav": [
+    "Programmes",
+    "Registrations",
+    "Shop orders",
+    "Videos",
+    "News"
+   ],
+   "active": 1,
+   "title": "Registrations",
+   "action": "New session",
+   "cards": [
+    "Registrations",
+    "Shop orders",
+    "Waiting lists"
+   ],
+   "cols": [
+    "Participant",
+    "Programme",
+    "Centre",
+    "Status"
+   ],
+   "rows": [
+    [
+     "Léa B.",
+     "Anim'eau",
+     "Laval",
+     "Confirmed"
+    ],
+    [
+     "Noah C.",
+     "Récré'eau",
+     "Laval",
+     "Waiting list"
+    ],
+    [
+     "Zoé F.",
+     "Ad'eau",
+     "Longueuil",
+     "Confirmed"
+    ],
+    [
+     "Trainer course",
+     "Trainers",
+     "Laval",
+     "Open"
+    ]
+   ],
+   "caption": "Registrations & shop — concept"
+  },
+  "app": {
+   "title": "CFAQ",
+   "sub": "Programmes by age",
+   "items": [
+    [
+     "Anim'eau",
+     "Preschool water play"
+    ],
+    [
+     "Récré'eau",
+     "Swimming & lifesaving"
+    ],
+    [
+     "Ad'eau",
+     "Teens"
+    ],
+    [
+     "Shop",
+     "Training material"
+    ]
+   ],
+   "tabs": [
+    "Home",
+    "Programmes",
+    "Shop",
+    "Account"
+   ],
+   "caption": "Programmes on mobile"
+  },
+  "solutionNote": "Programmes organised by age, with sign-up, shop and videos in the same account.",
+  "outcome": [
+   [
+    "Found by age",
+    "Families start from their child."
+   ],
+   [
+    "Shop and videos",
+    "Material and lessons support each programme."
+   ],
+   [
+    "Bilingual",
+    "French and English throughout."
+   ]
+  ],
+  "stack": [
+   "Next.js",
+   "React",
+   "Tailwind CSS"
+  ],
+  "url": "https://aqua-blush-nu.vercel.app/",
+  "domain": "aqua-blush-nu.vercel.app",
+  "liveLabel": "Visit the site",
+  "d1": "09e6bb366ed138ccd459cced85a7f6a9",
+  "d2": "858e1a61a5fc2e9c7b3a78d4510b6a66",
+  "d3": "",
+  "m": "80495e7d173b027da2d2cfe8a00f378a"
+ },
+ {
+  "slug": "divan",
+  "name": "Divan Hane",
+  "slash": "Turkish restaurant",
+  "industry": "Restaurant",
+  "platform": "Website · mobile first",
+  "date": "2024",
+  "duration": "Freelance mission",
+  "client": "Divan Hane",
+  "role": "Full-stack developer",
+  "lead": "A restaurant site built around appetite: full-bleed food photography, an ornamental identity and a menu that reads as an invitation.",
+  "methods": [
+   "Owner interview",
+   "Menu structure",
+   "Art direction",
+   "Wireframe",
+   "Visual design",
+   "Development"
+  ],
+  "problem": "The menu lived as a long price list in a PDF. Nothing online showed the room, the dishes or the warmth of the place.",
+  "hmw": "How might a menu make people want to come, not just compare prices?",
+  "research": [
+   "Interview with the owner",
+   "Menu review",
+   "Review of restaurant sites"
+  ],
+  "findings": [
+   [
+    "People eat with their eyes",
+    "Photos decide the visit more than descriptions."
+   ],
+   [
+    "Phone first",
+    "Most visitors open the site on the street or at the table."
+   ],
+   [
+    "Reservation is a call",
+    "Guests prefer to phone the restaurant."
+   ]
+  ],
+  "users": [
+   [
+    "Passer-by",
+    "I want to see if it looks good.",
+    "Only a PDF menu."
+   ],
+   [
+    "Family",
+    "I want to know the dishes before coming.",
+    "No photos of the food."
+   ],
+   [
+    "Regular",
+    "I want to reserve quickly.",
+    "Number hard to find."
+   ]
+  ],
+  "goals": [
+   "Food first",
+   "Mobile first",
+   "One-tap call"
+  ],
+  "ia": {
+   "root": "Divan Hane",
+   "branches": [
+    [
+     "Specialities",
+     [
+      "Breakfast",
+      "Grills",
+      "Pide"
+     ]
+    ],
+    [
+     "Full menu",
+     [
+      "Soups",
+      "Salads",
+      "Mains",
+      "Sauces"
+     ]
+    ],
+    [
+     "Visit",
+     [
+      "Location",
+      "Call to reserve",
+      "Instagram"
+     ]
+    ]
+   ]
+  },
+  "flow": {
+   "title": "from craving to table",
+   "steps": [
+    "Hero photo",
+    "Specialities",
+    "Full menu",
+    "Call to reserve",
+    "Table"
+   ]
+  },
+  "wfScreen": "home",
+  "wf": [
+   "nav",
+   "hero",
+   "gallery",
+   "cta"
+  ],
+  "mood": "Black, antique gold and wine red with an engraved serif — warm, ornamental, evening light.",
+  "palette": [
+   [
+    "Black",
+    "#000000",
+    "background"
+   ],
+   [
+    "Gold",
+    "#A88236",
+    "titles"
+   ],
+   [
+    "Wine",
+    "#9B1C2E",
+    "actions"
+   ],
+   [
+    "Linen",
+    "#F4F1EE",
+    "text"
+   ]
+  ],
+  "fonts": {
+   "dName": "Cinzel",
+   "dCss": "'Cinzel', serif",
+   "dNote": "display, engraved capitals",
+   "dSample": "Divan Hane",
+   "bName": "Playfair Display",
+   "bCss": "'Playfair Display', serif",
+   "bNote": "body"
+  },
+  "c": {
+   "primary": "#9B1C2E",
+   "onPrimary": "#F4F1EE",
+   "dark": "#000000",
+   "bg": "#120D0A",
+   "light": "#EBDDBF",
+   "ink": "#F4F1EE",
+   "radius": "8px"
+  },
+  "cta": "Découvrir nos plats",
+  "cta2": "Voir le menu complet",
+  "chip1": "Spécialité",
+  "chip2": "Végétarien",
+  "input": "Votre numéro",
+  "admin": {
+   "url": "divanhane — menu",
+   "app": "Divan Hane",
+   "nav": [
+    "Menu",
+    "Sections",
+    "Photos",
+    "Hours"
+   ],
+   "active": 0,
+   "title": "Menu",
+   "action": "Add dish",
+   "cards": [
+    "Dishes",
+    "Photos",
+    "Sections"
+   ],
+   "cols": [
+    "Dish",
+    "Section",
+    "Tag",
+    "Visible"
+   ],
+   "rows": [
+    [
+     "Serpme Kahvaltı",
+     "Breakfast",
+     "Signature",
+     "Yes"
+    ],
+    [
+     "İskender",
+     "Grills",
+     "Chef's pick",
+     "Yes"
+    ],
+    [
+     "Lahmacun",
+     "Pide",
+     "Classic",
+     "Yes"
+    ],
+    [
+     "Mercimek Çorbası",
+     "Soups",
+     "Vegetarian",
+     "Yes"
+    ]
+   ],
+   "caption": "Menu editor — concept"
+  },
+  "app": {
+   "title": "Divan Hane",
+   "sub": "L'art de la cuisine turque",
+   "items": [
+    [
+     "Kahvaltı Tabağı",
+     "Turkish breakfast plate"
+    ],
+    [
+     "İskender",
+     "Grills"
+    ],
+    [
+     "Lahmacun",
+     "Pide & oven"
+    ],
+    [
+     "Reserve",
+     "Call the restaurant"
+    ]
+   ],
+   "tabs": [
+    "Menu",
+    "Photos",
+    "Visit",
+    "Call"
+   ],
+   "caption": "Menu on mobile"
+  },
+  "solutionNote": "Full-bleed photography and a dark ornamental frame, designed for the phone.",
+  "outcome": [
+   [
+    "Appetite first",
+    "Dishes shown big before any price."
+   ],
+   [
+    "A real identity",
+    "Gold, ornaments and serif type across the site."
+   ],
+   [
+    "Reserve in one tap",
+    "The call button follows the visitor."
+   ]
+  ],
+  "stack": [
+   "Next.js",
+   "React",
+   "Tailwind CSS"
+  ],
+  "url": "https://divanhane.vercel.app/",
+  "domain": "divanhane.vercel.app",
+  "liveLabel": "Visit the site",
+  "d1": "9d7b8449af097dc6bc542ed764f4c69a",
+  "d2": "9d56cea9e16b7094d1c46f25be4de9c4",
+  "d3": "",
+  "m": "86de96f2f8137a34443be4d7a199a000"
+ },
+ {
+  "slug": "pdl",
+  "name": "Point de Location",
+  "slash": "car rental",
+  "industry": "Car rental",
+  "platform": "WordPress website · FR / EN",
+  "date": "2024 – 2025",
+  "duration": "Freelance mission",
+  "client": "Le Point de Location, Annaba",
+  "role": "WordPress developer",
+  "lead": "A car rental agency in Annaba that ran on a Word contract template. I built its online presence and fleet catalogue.",
+  "methods": [
+   "Owner interview",
+   "Fleet inventory",
+   "Information architecture",
+   "Wireframe",
+   "WordPress build",
+   "SEO"
+  ],
+  "problem": "Clients couldn't see the fleet, the conditions or what a car included before calling. Every booking started from zero on the phone.",
+  "hmw": "How might a client choose a car and send a booking request before the first call?",
+  "research": [
+   "Interview with the agency",
+   "Fleet and conditions review",
+   "Review of rental sites"
+  ],
+  "findings": [
+   [
+    "Clients compare cars",
+    "They want specs and conditions side by side."
+   ],
+   [
+    "Conditions cause calls",
+    "Deposit and rules were explained again and again."
+   ],
+   [
+    "Visitors from abroad",
+    "Diaspora and tourists read English."
+   ]
+  ],
+  "users": [
+   [
+    "Tourist",
+    "I want a car ready when I land.",
+    "No way to see the fleet."
+   ],
+   [
+    "Business traveller",
+    "I want clear conditions.",
+    "Rules only explained by phone."
+   ],
+   [
+    "Agency",
+    "I want complete requests.",
+    "Calls with missing details."
+   ]
+  ],
+  "goals": [
+   "Show the fleet",
+   "Request online",
+   "Two languages"
+  ],
+  "ia": {
+   "root": "Point de Location",
+   "branches": [
+    [
+     "Our cars",
+     [
+      "Fleet",
+      "Car sheet",
+      "Booking request"
+     ]
+    ],
+    [
+     "Conditions",
+     [
+      "General conditions"
+     ]
+    ],
+    [
+     "About",
+     [
+      "Agency"
+     ]
+    ],
+    [
+     "Contact",
+     [
+      "Form",
+      "WhatsApp"
+     ]
+    ]
+   ]
+  },
+  "flow": {
+   "title": "booking request",
+   "steps": [
+    "Browse fleet",
+    "Car sheet",
+    "Booking request",
+    "Agency calls back",
+    "Contract"
+   ]
+  },
+  "wfScreen": "fleet",
+  "wf": [
+   "nav",
+   "hero",
+   "cards3",
+   "cards3",
+   "footer"
+  ],
+  "mood": "Black and gold from the agency's logo on white — classic and premium.",
+  "palette": [
+   [
+    "Gold",
+    "#E0A93B",
+    "actions"
+   ],
+   [
+    "Black",
+    "#111111",
+    "text"
+   ],
+   [
+    "Gray",
+    "#6B6B6B",
+    "secondary"
+   ],
+   [
+    "White",
+    "#FFFFFF",
+    "background"
+   ]
+  ],
+  "fonts": {
+   "dName": "Poppins",
+   "dCss": "'Poppins', sans-serif",
+   "dNote": "headings",
+   "dSample": "Car Rental in Annaba",
+   "bName": "Poppins",
+   "bCss": "'Poppins', sans-serif",
+   "bNote": "body"
+  },
+  "c": {
+   "primary": "#E0A93B",
+   "onPrimary": "#111111",
+   "dark": "#111111",
+   "bg": "#FFFFFF",
+   "light": "#F7E7C4",
+   "ink": "#111111",
+   "radius": "999px"
+  },
+  "cta": "Réserver",
+  "cta2": "Nos voitures",
+  "chip1": "Automatique",
+  "chip2": "SUV",
+  "input": "Date de retrait",
+  "admin": {
+   "url": "lepointdelocation.com/wp-admin",
+   "app": "WordPress",
+   "nav": [
+    "Dashboard",
+    "Vehicles",
+    "Requests",
+    "Conditions",
+    "Settings"
+   ],
+   "active": 1,
+   "title": "Vehicles",
+   "action": "Add vehicle",
+   "cards": [
+    "Requests",
+    "Cars out",
+    "Cars available"
+   ],
+   "cols": [
+    "Vehicle",
+    "Category",
+    "Gearbox",
+    "Status"
+   ],
+   "rows": [
+    [
+     "Renault Clio",
+     "City",
+     "Manual",
+     "Available"
+    ],
+    [
+     "Hyundai Tucson",
+     "SUV",
+     "Automatic",
+     "Booked"
+    ],
+    [
+     "Peugeot Partner",
+     "Utility",
+     "Manual",
+     "Available"
+    ],
+    [
+     "Seat Ibiza",
+     "City",
+     "Manual",
+     "Booked"
+    ]
+   ],
+   "caption": "Fleet management in WordPress — concept"
+  },
+  "app": {
+   "title": "Point de Location",
+   "sub": "Rent your car in Annaba",
+   "items": [
+    [
+     "Renault Clio",
+     "City · manual"
+    ],
+    [
+     "Hyundai Tucson",
+     "SUV · automatic"
+    ],
+    [
+     "Conditions",
+     "Read before booking"
+    ],
+    [
+     "Request a car",
+     "We call you back"
+    ]
+   ],
+   "tabs": [
+    "Cars",
+    "Request",
+    "Rules",
+    "Contact"
+   ],
+   "caption": "Fleet on mobile"
+  },
+  "solutionNote": "Each car has its own sheet with a request form; conditions are published once, in two languages.",
+  "outcome": [
+   [
+    "Fleet online",
+    "Every car with its full spec sheet."
+   ],
+   [
+    "Requests, not calls",
+    "Clients send a request from the car's page."
+   ],
+   [
+    "Rules published",
+    "Conditions clear in French and English."
+   ]
+  ],
+  "stack": [
+   "WordPress",
+   "Elementor",
+   "PHP",
+   "SEO"
+  ],
+  "url": "",
+  "domain": "lepointdelocation.com",
+  "liveLabel": "",
+  "d1": "93705082662e6388a23a2d18730150b9",
+  "d2": "93705082662e6388a23a2d18730150b9",
+  "d3": "",
+  "m": "",
+  "d1ratio": "1400 / 996"
+ },
+ {
+  "slug": "mobile",
+  "name": "Mobile apps",
+  "slash": "react native",
+  "industry": "Mobility · Health",
+  "platform": "iOS & Android",
+  "date": "2023 – 2024",
+  "duration": "Final-year project & freelance",
+  "client": "Wassalni · Clinical · Astrolabs",
+  "role": "Mobile & back-end developer",
+  "lead": "Three apps shipped with React Native and a Node.js back end: Wassalni for carpooling, Clinical for medical follow-up, Astrolabs for mental health and personal assistance.",
+  "methods": [
+   "User interviews",
+   "User flow",
+   "Wireframe",
+   "Prototyping",
+   "Mobile development",
+   "API design"
+  ],
+  "problem": "Everyday needs — getting a ride, getting care, getting support — still went through phone calls and word of mouth. People needed simple apps on the phone they already carry.",
+  "hmw": "How might one small team ship three simple apps on one stack?",
+  "research": [
+   "Interviews with students and drivers",
+   "Patient and clinic interviews",
+   "Review of carpooling and health apps"
+  ],
+  "findings": [
+   [
+    "Trust is the barrier",
+    "Riders want to know who the driver is before booking."
+   ],
+   [
+    "Simple beats complete",
+    "Users drop apps with long sign-ups."
+   ],
+   [
+    "One back end is enough",
+    "Rides, appointments and chats share the same building blocks."
+   ]
+  ],
+  "users": [
+   [
+    "Student rider",
+    "I want a cheap ride home at the weekend.",
+    "Unsure who is driving."
+   ],
+   [
+    "Driver",
+    "I want to share costs on my route.",
+    "Hard to find passengers."
+   ],
+   [
+    "Patient",
+    "I want to reach my clinic easily.",
+    "Phone lines always busy."
+   ]
+  ],
+  "goals": [
+   "Trust first",
+   "Short flows",
+   "Shared back end"
+  ],
+  "ia": {
+   "root": "Wassalni",
+   "branches": [
+    [
+     "Find a ride",
+     [
+      "Search route",
+      "Driver profile",
+      "Request seat"
+     ]
+    ],
+    [
+     "Offer a ride",
+     [
+      "Route",
+      "Seats",
+      "Requests"
+     ]
+    ],
+    [
+     "My trips",
+     [
+      "Upcoming",
+      "History"
+     ]
+    ],
+    [
+     "Account",
+     [
+      "Messages",
+      "Profile"
+     ]
+    ]
+   ]
+  },
+  "flow": {
+   "title": "Wassalni — book a ride",
+   "steps": [
+    "Search route",
+    "Pick a driver",
+    "Request seat",
+    "Driver accepts",
+    "Ride"
+   ]
+  },
+  "wfScreen": "Wassalni search",
+  "wf": [
+   "nav",
+   "search",
+   "list",
+   "tabs"
+  ],
+  "mood": "Each app has its own colour — blue for Wassalni, green for Clinical, indigo for Astrolabs — on a shared, simple component set.",
+  "palette": [
+   [
+    "Wassalni blue",
+    "#2F6BFF",
+    "Wassalni"
+   ],
+   [
+    "Clinical green",
+    "#16A34A",
+    "Clinical"
+   ],
+   [
+    "Astrolabs indigo",
+    "#4F46E5",
+    "Astrolabs"
+   ],
+   [
+    "Ink",
+    "#0F172A",
+    "text"
+   ],
+   [
+    "White",
+    "#FFFFFF",
+    "background"
+   ]
+  ],
+  "fonts": {
+   "dName": "System (SF Pro / Roboto)",
+   "dCss": "'Inter', system-ui, sans-serif",
+   "dNote": "native platform fonts",
+   "dSample": "Find a ride",
+   "bName": "System (SF Pro / Roboto)",
+   "bCss": "'Inter', system-ui, sans-serif",
+   "bNote": "native platform fonts"
+  },
+  "c": {
+   "primary": "#2F6BFF",
+   "onPrimary": "#FFFFFF",
+   "dark": "#0F172A",
+   "bg": "#FFFFFF",
+   "light": "#DCE6FF",
+   "ink": "#0F172A",
+   "radius": "12px"
+  },
+  "cta": "Find a ride",
+  "cta2": "Offer a ride",
+  "chip1": "Verified driver",
+  "chip2": "Women only",
+  "input": "Where to?",
+  "admin": {
+   "url": "wassalni — admin",
+   "app": "Wassalni Admin",
+   "nav": [
+    "Rides",
+    "Users",
+    "Reports",
+    "Support"
+   ],
+   "active": 0,
+   "title": "Rides",
+   "action": "Verify driver",
+   "cards": [
+    "Rides today",
+    "New drivers",
+    "Reports"
+   ],
+   "cols": [
+    "Driver",
+    "Route",
+    "Day",
+    "Status"
+   ],
+   "rows": [
+    [
+     "Yacine B.",
+     "Annaba → Constantine",
+     "Friday",
+     "Full"
+    ],
+    [
+     "Sara K.",
+     "Annaba → El Tarf",
+     "Saturday",
+     "Open"
+    ],
+    [
+     "Walid M.",
+     "Guelma → Annaba",
+     "Sunday",
+     "Open"
+    ],
+    [
+     "Amel T.",
+     "Annaba → Skikda",
+     "Thursday",
+     "Cancelled"
+    ]
+   ],
+   "caption": "Wassalni admin — concept"
+  },
+  "app": {
+   "title": "Wassalni",
+   "sub": "Where are you going?",
+   "items": [
+    [
+     "Annaba → Constantine",
+     "Friday morning · verified driver"
+    ],
+    [
+     "Annaba → El Tarf",
+     "Saturday · seats left"
+    ],
+    [
+     "Offer a ride",
+     "Share your route"
+    ],
+    [
+     "My trips",
+     "Upcoming and past"
+    ]
+   ],
+   "tabs": [
+    "Search",
+    "Offer",
+    "Trips",
+    "Profile"
+   ],
+   "caption": "Wassalni — search screen"
+  },
+  "solutionNote": "Presentation boards of the three apps, and the Wassalni flows redrawn.",
+  "outcome": [
+   [
+    "Startup label",
+    "Wassalni was selected under the university startup framework."
+   ],
+   [
+    "Published",
+    "Astrolabs is live on Google Play."
+   ],
+   [
+    "One stack",
+    "React Native and Node.js shared across the three apps."
+   ]
+  ],
+  "stack": [
+   "React Native",
+   "Node.js",
+   "MongoDB",
+   "Firebase Firestore"
+  ],
+  "url": "https://play.google.com/store/apps/details?id=com.knoxdrill.frontend",
+  "domain": "Google Play",
+  "liveLabel": "Astrolabs on Google Play",
+  "d1": "",
+  "d2": "",
+  "d3": "",
+  "m": "",
+  "boards": [
+   [
+    "fd5e88a784c51de040c69bf1ea8aa5ca",
+    "Wassalni",
+    "Carpooling"
+   ],
+   [
+    "19364a49fcfc7e6ccfa1c8c2519410b7",
+    "Clinical",
+    "Medical"
+   ],
+   [
+    "e9831fd971857a717cc2ba6284d0a6ba",
+    "Astrolabs",
+    "Mental health"
+   ]
+  ]
+ }
+]

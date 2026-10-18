@@ -1,0 +1,17 @@
+/* scoped styles for ayan */
+.st-ayan a{color:inherit}
+.st-ayan .hud{font-family:'Chakra Petch',sans-serif;text-transform:uppercase}
+.st-ayan .mono{font-family:'JetBrains Mono',monospace}
+.st-ayan .trophy{width:100%;aspect-ratio:420/480;background-image:url(/img/09c98c40a80c0dbfcd1e36dc3f443845.webp);background-size:2400% 100%;background-repeat:no-repeat;animation:ayan-spr 5s steps(24,jump-none) infinite}
+@keyframes ayan-spr{from{background-position:0 0}to{background-position:100% 0}}
+.st-ayan .toast{animation:ayan-toast 7s ease-in-out infinite}
+@keyframes ayan-toast{0%,8%{opacity:0;transform:translateY(-16px)}14%,80%{opacity:1;transform:none}90%,100%{opacity:0;transform:translateY(-16px)}}
+.st-ayan .fillbar{animation:ayan-fillbar 6s ease-in-out infinite}
+@keyframes ayan-fillbar{0%{width:8%}70%,100%{width:100%}}
+.st-ayan .glowp{animation:ayan-glowp 3s ease-in-out infinite}
+@keyframes ayan-glowp{50%{box-shadow:0 0 0 1px rgba(234,179,8,.6),0 0 40px -4px rgba(234,179,8,.55)}}
+.st-ayan .float{animation:ayan-float 6s ease-in-out infinite}
+@keyframes ayan-float{50%{transform:translateY(-12px)}}
+.st-ayan .edge{stroke-dasharray:5 7;animation:ayan-edge 1.6s linear infinite}
+@keyframes ayan-edge{to{stroke-dashoffset:-24}}
+@media (prefers-reduced-motion:reduce){.st-ayan .trophy,.st-ayan .toast,.st-ayan .fillbar,.st-ayan .glowp,.st-ayan .float,.st-ayan .edge{animation:none}}
