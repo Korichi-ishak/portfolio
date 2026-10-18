@@ -908,7 +908,7 @@ export default function QueenStory() {
               border: "1.5px solid #8A6424",
             }}
           >
-            <span className="cinzel" style={{ fontSize: "13px", color: "#8A6424", letterSpacing: ".2em" }}>
+            <span className="cinzel" style={{ fontSize: "13px", color: "#7F5C21", letterSpacing: ".2em" }}>
               IV · L'ÉBAUCHE
             </span>
             <span style={{ fontSize: "13px" }}>wireframes</span>
@@ -1683,7 +1683,7 @@ export default function QueenStory() {
                       borderRadius: "12px",
                       border: "1px solid #D4B5A5",
                       fontSize: "12px",
-                      color: "#8E6E60",
+                      color: "#836558",
                       textAlign: "left",
                     }}
                   >
@@ -1696,7 +1696,7 @@ export default function QueenStory() {
                       borderRadius: "12px",
                       border: "1px solid #D4B5A5",
                       fontSize: "12px",
-                      color: "#8E6E60",
+                      color: "#836558",
                       textAlign: "left",
                     }}
                   >

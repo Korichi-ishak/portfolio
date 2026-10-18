@@ -27,7 +27,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;700&display=swap"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <div id="top" />
+        {children}
+      </body>
     </html>
   );
 }

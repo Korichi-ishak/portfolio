@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import SiteFooter from "@/components/SiteFooter";
 import SiteNav from "@/components/SiteNav";
 import { ProjectCard, WorkHeading } from "@/components/work";
 import { academic, projects } from "@/data/projects";
@@ -13,20 +14,23 @@ export default function WorkIndex() {
   return (
     <>
       <SiteNav />
-      <main className="work-index">
+      <main id="main" tabIndex={-1} className="work-index">
         <section className="work-intro">
           <WorkHeading
             index="01"
             kicker="client work"
             title="All"
             dim="/projects"
+            level={1}
             text="Platforms, back offices and business sites for clients in Algeria, France, Canada and DR Congo. Each card opens its story."
           />
-          <div className="project-grid">
+          <ul className="project-grid">
             {client.map((slug) => (
-              <ProjectCard key={slug} slug={slug} />
+              <li key={slug}>
+                <ProjectCard slug={slug} />
+              </li>
             ))}
-          </div>
+          </ul>
         </section>
         <section className="work-intro">
           <WorkHeading
@@ -36,13 +40,16 @@ export default function WorkIndex() {
             dim="/university"
             text="A master's thesis in e-health and the apps built under the student startup framework."
           />
-          <div className="project-grid">
+          <ul className="project-grid">
             {academic.map((slug) => (
-              <ProjectCard key={slug} slug={slug} />
+              <li key={slug}>
+                <ProjectCard slug={slug} />
+              </li>
             ))}
-          </div>
+          </ul>
         </section>
       </main>
+      <SiteFooter />
     </>
   );
 }

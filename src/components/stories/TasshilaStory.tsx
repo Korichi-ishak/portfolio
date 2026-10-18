@@ -33,7 +33,7 @@ export default function TasshilaStory() {
           }}
         >
           <div style={{ flex: "1 1 420px", minWidth: "0" }}>
-            <p className="mono" style={{ margin: "0 0 22px", fontSize: "13px", color: "#64748B" }}>
+            <p className="mono" style={{ margin: "0 0 22px", fontSize: "13px", color: "#526175" }}>
               a story in seven chapters
             </p>
             <h1
@@ -158,9 +158,9 @@ export default function TasshilaStory() {
                 }}
               >
                 {" "}
-                <span style={{ color: "#94A3B8" }}>test</span>
-                <span style={{ color: "#94A3B8" }}>unit</span>
-                <span style={{ color: "#94A3B8" }}>range</span> <span>Glycémie</span>
+                <span style={{ color: "#6A7584" }}>test</span>
+                <span style={{ color: "#6A7584" }}>unit</span>
+                <span style={{ color: "#6A7584" }}>range</span> <span>Glycémie</span>
                 <span>g/L</span>
                 <span
                   style={{ height: "6px", marginTop: "4px", background: "#CBD5E1", borderRadius: "3px" }}
@@ -415,7 +415,7 @@ export default function TasshilaStory() {
                 top: "360px",
                 padding: "8px 12px",
                 borderRadius: "999px",
-                background: "#F97316",
+                background: "#B25210",
                 color: "#fff",
                 fontSize: "12px",
                 fontWeight: "700",
@@ -564,7 +564,7 @@ export default function TasshilaStory() {
           }}
         >
           <div style={{ flex: "1 1 400px", minWidth: "0" }}>
-            <p className="mono" style={{ margin: "0 0 16px", fontSize: "13px", color: "#0F766E" }}>
+            <p className="mono" style={{ margin: "0 0 16px", fontSize: "13px", color: "#0E6D65" }}>
               chapter 01 — before
             </p>
             <h2
@@ -584,7 +584,7 @@ export default function TasshilaStory() {
             </p>
             <p style={{ margin: "14px 0 0", fontSize: "18px", lineHeight: "1.65", color: "#334155" }}>
               Next time, the question{" "}
-              <span className="hand" style={{ fontSize: "26px", color: "#F97316" }}>
+              <span className="hand" style={{ fontSize: "26px", color: "#D36113" }}>
                 “was it higher last time?”
               </span>{" "}
               has no answer — the old report is somewhere under the others.
@@ -730,7 +730,7 @@ export default function TasshilaStory() {
               <span
                 style={{ display: "block", height: "4px", margin: "8px 0", width: "60%", background: "#CBD5E1" }}
               ></span>
-              <span className="mono" style={{ fontSize: "9px", color: "#94A3B8" }}>
+              <span className="mono" style={{ fontSize: "9px", color: "#6A7584" }}>
                 spring
               </span>
             </div>
@@ -753,7 +753,7 @@ export default function TasshilaStory() {
               <span
                 style={{ display: "block", height: "4px", margin: "8px 0", width: "60%", background: "#CBD5E1" }}
               ></span>
-              <span className="mono" style={{ fontSize: "9px", color: "#94A3B8" }}>
+              <span className="mono" style={{ fontSize: "9px", color: "#6A7584" }}>
                 autumn
               </span>
             </div>
@@ -776,7 +776,7 @@ export default function TasshilaStory() {
               <span
                 style={{ display: "block", height: "4px", margin: "8px 0", width: "60%", background: "#CBD5E1" }}
               ></span>
-              <span className="mono" style={{ fontSize: "9px", color: "#94A3B8" }}>
+              <span className="mono" style={{ fontSize: "9px", color: "#6A7584" }}>
                 printed?
               </span>
             </div>{" "}
@@ -986,7 +986,7 @@ export default function TasshilaStory() {
                 borderLeft: "6px solid #F97316",
               }}
             >
-              <p className="mono" style={{ margin: "0", fontSize: "11px", color: "#F97316" }}>
+              <p className="mono" style={{ margin: "0", fontSize: "11px", color: "#B25210" }}>
                 finding
               </p>
               <b style={{ display: "block", marginTop: "6px", fontSize: "19px" }}>
@@ -1095,7 +1095,7 @@ export default function TasshilaStory() {
                   }}
                 >
                   <b>Scan</b>
-                  <span className="hand" style={{ fontSize: "20px" }}>
+                  <span className="hand" style={{ fontSize: "20px", color: "#FFFFFF"}}>
                     “read my paper”
                   </span>
                 </div>
@@ -1122,7 +1122,7 @@ export default function TasshilaStory() {
                 <div
                   style={{
                     padding: "12px 18px",
-                    background: "#F97316",
+                    background: "#C2410C",
                     color: "#fff",
                     display: "flex",
                     justifyContent: "space-between",
@@ -1130,7 +1130,7 @@ export default function TasshilaStory() {
                   }}
                 >
                   <b>Results</b>
-                  <span className="hand" style={{ fontSize: "20px" }}>
+                  <span className="hand" style={{ fontSize: "20px", color: "#FFFFFF"}}>
                     “is it normal?”
                   </span>
                 </div>
@@ -1503,7 +1503,7 @@ export default function TasshilaStory() {
                   <b style={{ fontFamily: "Georgia, serif", fontSize: "30px", color: "#0F766E", fontStyle: "italic" }}>
                     Rx
                   </b>
-                  <span className="mono" style={{ fontSize: "10px", color: "#94A3B8" }}>
+                  <span className="mono" style={{ fontSize: "10px", color: "#6A7584" }}>
                     results screen — v0
                   </span>
                 </div>
@@ -1534,7 +1534,7 @@ export default function TasshilaStory() {
                     strokeWidth="2.5"
                   ></path>
                 </svg>
-                <p className="hand" style={{ margin: "10px 0 0", fontSize: "22px", color: "#EA580C" }}>
+                <p className="hand" style={{ margin: "10px 0 0", fontSize: "22px", color: "#C64A0A" }}>
                   → orange only when out of range!
                 </p>
               </div>
@@ -1621,7 +1621,7 @@ export default function TasshilaStory() {
                 {" "}
                 <b style={{ fontSize: "18px" }}>Your results</b>{" "}
                 <div style={{ padding: "14px", borderRadius: "14px", background: "#0F766E", color: "#fff" }}>
-                  <p className="mono" style={{ margin: "0", fontSize: "10px", opacity: ".8" }}>
+                  <p className="mono" style={{ margin: "0", fontSize: "10px" , color: "#E2EFED"}}>
                     report of this week
                   </p>
                   <p style={{ margin: "4px 0 0", fontWeight: "800" }}>Mostly in range</p>
@@ -1667,7 +1667,7 @@ export default function TasshilaStory() {
                 <div style={{ padding: "12px", borderRadius: "12px", background: "#FFF7ED" }}>
                   <div style={{ display: "flex", justifyContent: "space-between", fontSize: "13px" }}>
                     <b>Cholesterol</b>
-                    <span style={{ color: "#EA580C", fontWeight: "700" }}>Above range</span>
+                    <span style={{ color: "#B64509", fontWeight: "700" }}>Above range</span>
                   </div>
                   <div
                     style={{
@@ -1743,7 +1743,7 @@ export default function TasshilaStory() {
               </div>
               <figcaption style={{ marginTop: "16px", fontWeight: "700" }}>
                 Final screen{" "}
-                <span className="mono" style={{ fontWeight: "400", fontSize: "12px", color: "#64748B" }}>
+                <span className="mono" style={{ fontWeight: "400", fontSize: "12px", color: "#5C6B80" }}>
                   · concept
                 </span>
               </figcaption>
@@ -2259,7 +2259,7 @@ export default function TasshilaStory() {
                         justifyContent: "space-between",
                         marginTop: "10px",
                         fontSize: "10px",
-                        color: "#64748B",
+                        color: "#526175",
                       }}
                     >
                       <span>low</span>
@@ -2286,7 +2286,7 @@ export default function TasshilaStory() {
                     }}
                   >
                     <span>Compared to last report</span>
-                    <b style={{ color: "#EA580C" }}>rising ↗</b>
+                    <b style={{ color: "#B64509" }}>rising ↗</b>
                   </div>{" "}
                   <span
                     style={{
@@ -2379,7 +2379,7 @@ export default function TasshilaStory() {
                       }}
                     >
                       <b>Latest report</b>
-                      <span style={{ color: "#EA580C" }}>1 to watch</span>
+                      <span style={{ color: "#C64A0A" }}>1 to watch</span>
                     </div>
                     <div
                       style={{
@@ -2541,7 +2541,7 @@ export default function TasshilaStory() {
                             gridTemplateColumns: "1.4fr .8fr 1.2fr 1fr",
                             padding: "9px 12px",
                             fontSize: "10px",
-                            color: "#64748B",
+                            color: "#526175",
                             background: "#F1F5F9",
                           }}
                         >
@@ -2720,13 +2720,13 @@ export default function TasshilaStory() {
               </div>
               <figcaption style={{ marginTop: "22px", fontWeight: "700" }}>
                 Web view — values across reports{" "}
-                <span className="mono" style={{ fontWeight: "400", fontSize: "12px", color: "#64748B" }}>
+                <span className="mono" style={{ fontWeight: "400", fontSize: "12px", color: "#526175" }}>
                   · illustrative data
                 </span>
               </figcaption>
             </figure>
           </div>
-          <p className="mono" style={{ margin: "40px 0 0", textAlign: "center", fontSize: "12px", color: "#64748B" }}>
+          <p className="mono" style={{ margin: "40px 0 0", textAlign: "center", fontSize: "12px", color: "#526175" }}>
             concept screens of the thesis prototype, redrawn for this case study
           </p>
         </div>
@@ -2766,7 +2766,7 @@ export default function TasshilaStory() {
                 style={{
                   flex: "1 1 240px",
                   fontSize: "27px",
-                  color: "#94A3B8",
+                  color: "#66768C",
                   textDecoration: "line-through",
                   textDecorationColor: "#F97316",
                 }}
@@ -2805,7 +2805,7 @@ export default function TasshilaStory() {
                 style={{
                   flex: "1 1 240px",
                   fontSize: "27px",
-                  color: "#94A3B8",
+                  color: "#66768C",
                   textDecoration: "line-through",
                   textDecorationColor: "#F97316",
                 }}
@@ -2844,7 +2844,7 @@ export default function TasshilaStory() {
                 style={{
                   flex: "1 1 240px",
                   fontSize: "27px",
-                  color: "#94A3B8",
+                  color: "#66768C",
                   textDecoration: "line-through",
                   textDecorationColor: "#F97316",
                 }}

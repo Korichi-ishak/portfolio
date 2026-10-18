@@ -84,9 +84,6 @@ export const cards: Record<string, { what: string; year: string; bg: string }> =
   mobile: { what: "Wassalni · Clinical · Astrolabs", year: "2023–24", bg: "#FFFFFF" },
 };
 
-/** Projects shown in full on the home page. */
-export const homeClient = ["fds", "velo"];
-export const homeAcademic = ["tasshila"];
 /** Academic & startup projects (shown under their own heading on /work). */
 export const academic = ["tasshila", "mobile"];
 

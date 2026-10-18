@@ -12,6 +12,8 @@ export type Theme = {
   display: string; // heading font-family
   radius: string;
   dark?: boolean;
+  accentText?: string; // accent adjusted for text contrast (computed)
+  onAccent?: string; // text colour on an accent fill (computed)
 };
 
 export const storyThemes: Record<string, Theme> = {

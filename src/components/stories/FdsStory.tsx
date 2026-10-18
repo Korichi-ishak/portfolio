@@ -271,7 +271,7 @@ export default function FdsStory() {
           }}
         >
           <div style={{ flex: "1 1 380px", minWidth: "0" }}>
-            <p className="mono" style={{ margin: "0 0 16px", fontSize: "13px", color: "#FF7700" }}>
+            <p className="mono" style={{ margin: "0 0 16px", fontSize: "13px", color: "#A84E00" }}>
               chapter 01 — before
             </p>
             <h2
@@ -509,7 +509,7 @@ export default function FdsStory() {
       {/* 02 LISTENING */}
       <section style={{ background: "#FFFCF5", padding: "110px 24px" }}>
         <div style={{ maxWidth: "1240px", margin: "0 auto" }}>
-          <p className="mono" style={{ margin: "0 0 16px", fontSize: "13px", color: "#FF7700" }}>
+          <p className="mono" style={{ margin: "0 0 16px", fontSize: "13px", color: "#B75500" }}>
             chapter 02 — listening
           </p>
           <h2
@@ -666,7 +666,7 @@ export default function FdsStory() {
       {/* 03 PASSPORT */}
       <section style={{ background: "linear-gradient(#FFFCF5, #F3EBDD)", padding: "110px 24px" }}>
         <div style={{ maxWidth: "1240px", margin: "0 auto" }}>
-          <p className="mono" style={{ margin: "0 0 16px", fontSize: "13px", color: "#FF7700" }}>
+          <p className="mono" style={{ margin: "0 0 16px", fontSize: "13px", color: "#B75500" }}>
             chapter 03 — structure
           </p>
           <h2
@@ -1036,7 +1036,7 @@ export default function FdsStory() {
       {/* 04 SKETCHES */}
       <section style={{ background: "#FFFCF5", padding: "110px 24px" }}>
         <div style={{ maxWidth: "1240px", margin: "0 auto" }}>
-          <p className="mono" style={{ margin: "0 0 16px", fontSize: "13px", color: "#FF7700" }}>
+          <p className="mono" style={{ margin: "0 0 16px", fontSize: "13px", color: "#B75500" }}>
             chapter 04 — sketches
           </p>
           <h2
@@ -2112,7 +2112,7 @@ export default function FdsStory() {
                       }}
                     >
                       <span style={{ fontSize: "13px", fontWeight: "700" }}>Latest receipt</span>
-                      <span style={{ fontSize: "11px", color: "#FF7700", fontWeight: "700" }}>Download</span>
+                      <span style={{ fontSize: "11px", color: "#B75500", fontWeight: "700" }}>Download</span>
                     </div>
                     <div
                       style={{
@@ -2126,7 +2126,7 @@ export default function FdsStory() {
                       }}
                     >
                       <span style={{ fontSize: "13px", fontWeight: "700" }}>Certificate A2</span>
-                      <span style={{ fontSize: "11px", color: "#FF7700", fontWeight: "700" }}>Ready</span>
+                      <span style={{ fontSize: "11px", color: "#B75500", fontWeight: "700" }}>Ready</span>
                     </div>
                     <div
                       style={{
@@ -2151,7 +2151,7 @@ export default function FdsStory() {
                       fontSize: "10px",
                     }}
                   >
-                    <span style={{ color: "#FF7700", fontWeight: "700" }}>Home</span>
+                    <span style={{ color: "#B75500", fontWeight: "700" }}>Home</span>
                     <span>Courses</span>
                     <span>Payments</span>
                     <span>Docs</span>

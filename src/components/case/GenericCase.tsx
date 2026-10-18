@@ -1,6 +1,7 @@
 import type { CSSProperties, ReactNode } from "react";
 import { fontsHref, img, type Project } from "@/data/projects";
 import { CaseFile, Personas } from "./blocks";
+import { ratio as contrast, readable } from "@/lib/contrast";
 import { themeFromProject } from "./theme";
 
 /*
@@ -71,6 +72,12 @@ export default function GenericCase({ p }: { p: Project }) {
   const [first, ...rest] = p.findings;
   const tilt = [-2, 1.5, -1];
   const notes = ["#FFF59D", "#FFFFFF", c.light];
+  // brand colour, adjusted so text stays readable (WCAG AA) on each surface
+  const onLight = readable(c.primary, "#EEEBE3");
+  const onTint = readable(c.primary, c.light);
+  const onDark = readable(c.primary, c.dark);
+  const onPhone = readable(c.primary, "#F7F6F2");
+  const fill = contrast("#FFFFFF", c.primary) >= 4.5 ? "#FFFFFF" : "#111110"; // text on a brand-coloured fill
 
   return (
     <div className={`st st-${p.slug}`} style={{ fontFamily: p.fonts.bCss, color: t.ink, background: t.bg, width: "100%", overflow: "hidden" }}>
@@ -82,7 +89,7 @@ export default function GenericCase({ p }: { p: Project }) {
           <div style={{ flex: "1 1 420px", minWidth: 0 }}>
             <p style={{ ...mono, margin: "0 0 22px", fontSize: 13, color: t.muted }}>a story in seven chapters</p>
             <h1 style={{ margin: 0, fontFamily: disp, fontSize: "clamp(56px, 8vw, 116px)", lineHeight: 0.92, fontWeight: 800, letterSpacing: "-0.045em" }}>{p.name}</h1>
-            <p style={{ ...hand, margin: "12px 0 0", fontSize: "clamp(32px, 3.6vw, 48px)", color: c.primary }}>{p.slash}</p>
+            <p style={{ ...hand, margin: "12px 0 0", fontSize: "clamp(32px, 3.6vw, 48px)", color: onTint }}>{p.slash}</p>
             <p style={{ margin: "22px 0 0", maxWidth: 480, fontSize: 18, lineHeight: 1.6, color: "#3A3934" }}>{p.lead}</p>
             <CaseFile slug={p.slug} methods />
           </div>
@@ -123,7 +130,7 @@ export default function GenericCase({ p }: { p: Project }) {
       <section style={{ background: "#EEEBE3", padding: "110px 24px" }}>
         <div style={{ ...wrap, display: "flex", flexWrap: "wrap", gap: 56, alignItems: "center" }}>
           <div style={{ flex: "1 1 420px", minWidth: 0 }}>
-            <Chapter n={1} name="before" color={c.primary} />
+            <Chapter n={1} name="before" color={onLight} />
             <H2 font={disp}>{first ? first[0] + "." : "What wasn't working."}</H2>
             <p style={{ margin: "22px 0 0", fontSize: 18, lineHeight: 1.65, color: "#3A3934" }}>{p.problem}</p>
           </div>
@@ -149,20 +156,20 @@ export default function GenericCase({ p }: { p: Project }) {
       {/* 02 LISTENING */}
       <section style={{ background: t.bg, padding: "110px 24px 40px" }}>
         <div style={wrap}>
-          <Chapter n={2} name="listening" color={c.primary} />
+          <Chapter n={2} name="listening" color={onLight} />
           <H2 font={disp}>What I heard.</H2>
           <div style={{ marginTop: 56, display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: 28 }}>
             {[first, ...rest].filter(Boolean).map(([title, text], i) => (
               <figure key={title} style={{ margin: 0, position: "relative", padding: "30px 26px 26px", background: notes[i % 3], transform: `rotate(${tilt[i % 3]}deg)`, boxShadow: "0 20px 30px -18px rgba(0,0,0,.45)", color: "#1E1E1C" }}>
                 <span aria-hidden="true" style={{ position: "absolute", top: -12, left: "40%", width: 70, height: 22, background: "rgba(255,255,255,.6)", transform: "rotate(-3deg)" }} />
-                <p style={{ ...mono, margin: 0, fontSize: 11, opacity: 0.7 }}>finding 0{i + 1}</p>
+                <p style={{ ...mono, margin: 0, fontSize: 11, color: "#4A4943" }}>finding 0{i + 1}</p>
                 <p style={{ ...hand, margin: "10px 0 0", fontSize: 30, lineHeight: 1.05 }}>{title}</p>
                 <p style={{ margin: "10px 0 0", fontSize: 15, lineHeight: 1.5 }}>{text}</p>
               </figure>
             ))}
           </div>
           <div style={{ marginTop: 56, display: "flex", flexWrap: "wrap", alignItems: "center", gap: 24, padding: "32px 36px", borderRadius: 24, background: c.dark, color: "#F4F3EF" }}>
-            <span style={{ ...mono, fontSize: 12, color: c.primary }}>how might we</span>
+            <span style={{ ...mono, fontSize: 12, color: onDark }}>how might we</span>
             <p style={{ margin: 0, flex: "1 1 520px", fontSize: "clamp(22px, 2.4vw, 30px)", lineHeight: 1.3, fontWeight: 700 }}>{p.hmw.replace(/^How might we\s*/i, "")}</p>
           </div>
         </div>
@@ -173,10 +180,10 @@ export default function GenericCase({ p }: { p: Project }) {
       {/* 03 STRUCTURE */}
       <section style={{ background: "linear-gradient(#F6F4EF, #EEEBE3)", padding: "110px 24px" }}>
         <div style={wrap}>
-          <Chapter n={3} name="structure" color={c.primary} />
+          <Chapter n={3} name="structure" color={onLight} />
           <H2 font={disp}>Everything in its place.</H2>
           <div style={{ marginTop: 50, padding: 26, borderRadius: 26, background: c.dark, color: "#F4F3EF" }}>
-            <span style={{ display: "inline-block", padding: "10px 18px", borderRadius: 999, background: c.primary, color: c.onPrimary, fontWeight: 800 }}>{p.ia.root}</span>
+            <span style={{ display: "inline-block", padding: "10px 18px", borderRadius: 999, background: c.primary, color: fill, fontWeight: 800 }}>{p.ia.root}</span>
             <div style={{ marginTop: 20, display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(210px, 1fr))", gap: 14 }}>
               {p.ia.branches.map(([b, kids]) => (
                 <div key={b} style={{ padding: "16px 18px", borderRadius: 16, background: "rgba(255,255,255,.07)", border: "1px solid rgba(255,255,255,.12)" }}>
@@ -190,7 +197,7 @@ export default function GenericCase({ p }: { p: Project }) {
               ))}
             </div>
           </div>
-          <p style={{ ...mono, margin: "70px 0 12px", fontSize: 13, color: c.primary }}>the path — {p.flow.title}</p>
+          <p style={{ ...mono, margin: "70px 0 12px", fontSize: 13, color: onLight }}>the path — {p.flow.title}</p>
           <div style={{ position: "relative", marginTop: 26 }}>
             <div aria-hidden="true" style={{ position: "absolute", left: "6%", right: "6%", top: 40, borderTop: `3px dashed ${c.primary}` }} />
             <span aria-hidden="true" className="g-walk" style={{ position: "absolute", top: 30, marginLeft: -12, width: 24, height: 24, borderRadius: "50%", background: c.primary, boxShadow: `0 0 0 6px ${c.light}` }} />
@@ -211,7 +218,7 @@ export default function GenericCase({ p }: { p: Project }) {
       {/* 04 SKETCHES */}
       <section style={{ background: t.bg, padding: "110px 24px" }}>
         <div style={wrap}>
-          <Chapter n={4} name="sketches" color={c.primary} />
+          <Chapter n={4} name="sketches" color={onLight} />
           <H2 font={disp}>From a rough sketch to the shipped screen.</H2>
           <div style={{ marginTop: 50, display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 28, alignItems: "start" }}>
             <figure style={{ margin: 0 }}>
@@ -255,32 +262,32 @@ export default function GenericCase({ p }: { p: Project }) {
       {/* 05 VISUAL LANGUAGE */}
       <section style={{ background: c.dark, color: "#F4F3EF", padding: "120px 24px" }}>
         <div style={wrap}>
-          <Chapter n={5} name="visual language" color={c.primary} />
+          <Chapter n={5} name="visual language" color={onDark} />
           <H2 font={disp} style={{ maxWidth: 900 }}>{p.mood}</H2>
           <div style={{ marginTop: 56, display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: 22 }}>
             {p.palette.map(([n, hex, use], i) => (
               <div key={n} style={{ display: "flex", flexDirection: "column", gap: 10 }}>
                 <div aria-hidden="true" className="g-floaty" style={{ animationDelay: `${i * 0.5}s`, height: 150, borderRadius: 18, background: hex, border: "1px solid rgba(255,255,255,.18)", boxShadow: "0 24px 30px -20px rgba(0,0,0,.6)" }} />
                 <b>{n}</b>
-                <span style={{ ...mono, fontSize: 12, opacity: 0.7 }}>{hex} · {use}</span>
+                <span style={{ ...mono, fontSize: 12, color: "#CFCDC5" }}>{hex} · {use}</span>
               </div>
             ))}
           </div>
           <div style={{ marginTop: 50, display: "flex", flexWrap: "wrap", gap: 18 }}>
             <div style={{ flex: "1 1 340px", padding: 28, borderRadius: 20, background: "rgba(255,255,255,.06)" }}>
-              <p style={{ ...mono, margin: 0, fontSize: 11, opacity: 0.7 }}>{p.fonts.dName} — {p.fonts.dNote}</p>
+              <p style={{ ...mono, margin: 0, fontSize: 11, color: "#CFCDC5" }}>{p.fonts.dName} — {p.fonts.dNote}</p>
               <p style={{ margin: "10px 0 0", fontFamily: p.fonts.dCss, fontSize: 46, lineHeight: 1.05, fontWeight: 700 }}>{p.fonts.dSample}</p>
-              <p style={{ margin: "14px 0 0", fontFamily: p.fonts.bCss, opacity: 0.75 }}>{p.fonts.bName} — {p.fonts.bNote}</p>
+              <p style={{ margin: "14px 0 0", fontFamily: p.fonts.bCss, color: "#CFCDC5" }}>{p.fonts.bName} — {p.fonts.bNote}</p>
             </div>
             <div style={{ flex: "1 1 300px", padding: 28, borderRadius: 20, background: "rgba(255,255,255,.06)", display: "flex", flexDirection: "column", gap: 12, alignItems: "flex-start" }}>
-              <p style={{ ...mono, margin: 0, fontSize: 11, opacity: 0.7 }}>components</p>
-              <span style={{ padding: "13px 22px", borderRadius: c.radius, background: c.primary, color: c.onPrimary, fontWeight: 800 }}>{p.cta}</span>
+              <p style={{ ...mono, margin: 0, fontSize: 11, color: "#CFCDC5" }}>components</p>
+              <span style={{ padding: "13px 22px", borderRadius: c.radius, background: c.primary, color: fill, fontWeight: 800 }}>{p.cta}</span>
               <span style={{ padding: "12px 21px", borderRadius: c.radius, border: `1.5px solid ${c.primary}`, fontWeight: 700 }}>{p.cta2}</span>
               <div style={{ display: "flex", gap: 8 }}>
                 <span style={{ padding: "6px 12px", borderRadius: 999, background: c.light, color: c.dark, fontSize: 13, fontWeight: 600 }}>{p.chip1}</span>
                 <span style={{ padding: "6px 12px", borderRadius: 999, border: "1px solid rgba(255,255,255,.3)", fontSize: 13 }}>{p.chip2}</span>
               </div>
-              <span style={{ alignSelf: "stretch", padding: "12px 14px", borderRadius: 10, background: "#FFFFFF", color: "#8E8C84", fontSize: 14 }}>{p.input}</span>
+              <span style={{ alignSelf: "stretch", padding: "12px 14px", borderRadius: 10, background: "#FFFFFF", color: "#6B6A64", fontSize: 14 }}>{p.input}</span>
             </div>
           </div>
         </div>
@@ -289,7 +296,7 @@ export default function GenericCase({ p }: { p: Project }) {
       {/* 06 SOLUTION */}
       <section style={{ background: `radial-gradient(90% 70% at 20% 10%, ${c.light}, ${t.bg} 60%)`, padding: "120px 24px" }}>
         <div style={wrap}>
-          <Chapter n={6} name="the solution" color={c.primary} />
+          <Chapter n={6} name="the solution" color={onLight} />
           <H2 font={disp}>{p.solutionNote}</H2>
           <div style={{ marginTop: 60, display: "flex", flexWrap: "wrap", alignItems: "flex-end", gap: 40 }}>
             <figure style={{ flex: "3 1 620px", minWidth: 0, margin: 0 }}>
@@ -298,13 +305,13 @@ export default function GenericCase({ p }: { p: Project }) {
                   <div style={{ flex: "0 0 150px", background: c.dark, color: "#F4F3EF", padding: "16px 10px", display: "flex", flexDirection: "column", gap: 4 }}>
                     <b style={{ margin: "0 8px 14px" }}>{p.admin.app}</b>
                     {p.admin.nav.map((n, i) => (
-                      <span key={n} style={{ padding: 8, borderRadius: 6, background: i === p.admin.active ? c.primary : "transparent", color: i === p.admin.active ? c.onPrimary : "rgba(255,255,255,.72)", fontWeight: i === p.admin.active ? 800 : 400 }}>{n}</span>
+                      <span key={n} style={{ padding: 8, borderRadius: 6, background: i === p.admin.active ? c.primary : "transparent", color: i === p.admin.active ? fill : "rgba(255,255,255,.72)", fontWeight: i === p.admin.active ? 800 : 400 }}>{n}</span>
                     ))}
                   </div>
                   <div style={{ flex: 1, minWidth: 0, background: "#F7F6F2", padding: "16px 18px", display: "flex", flexDirection: "column", gap: 12 }}>
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                       <b style={{ fontSize: 18 }}>{p.admin.title}</b>
-                      <span style={{ padding: "7px 12px", borderRadius: 8, background: c.primary, color: c.onPrimary, fontWeight: 800, fontSize: 11 }}>{p.admin.action}</span>
+                      <span style={{ padding: "7px 12px", borderRadius: 8, background: c.primary, color: fill, fontWeight: 800, fontSize: 11 }}>{p.admin.action}</span>
                     </div>
                     <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 8 }}>
                       {p.admin.cards.map((card, k) => (
@@ -340,16 +347,16 @@ export default function GenericCase({ p }: { p: Project }) {
             <figure style={{ flex: "1 1 240px", margin: 0, display: "flex", flexDirection: "column", alignItems: "center" }}>
               <Phone rotate={4}>
                 <div style={{ height: 500, background: "#F7F6F2", padding: "28px 16px 0", display: "flex", flexDirection: "column", gap: 10 }}>
-                  <p style={{ ...mono, margin: 0, fontSize: 10, color: c.primary }}>{p.app.sub}</p>
+                  <p style={{ ...mono, margin: 0, fontSize: 10, color: onPhone }}>{p.app.sub}</p>
                   <b style={{ fontSize: 22, fontFamily: disp }}>{p.app.title}</b>
                   {p.app.items.map(([a, b], k) => (
-                    <div key={a} style={{ padding: 12, borderRadius: 12, background: k === 0 ? c.primary : "#FFFFFF", color: k === 0 ? c.onPrimary : "#1E1E1C" }}>
+                    <div key={a} style={{ padding: 12, borderRadius: 12, background: k === 0 ? c.primary : "#FFFFFF", color: k === 0 ? fill : "#1E1E1C" }}>
                       <b style={{ fontSize: 14 }}>{a}</b>
-                      <p style={{ margin: "3px 0 0", fontSize: 11, opacity: 0.8 }}>{b}</p>
+                      <p style={{ margin: "3px 0 0", fontSize: 11 }}>{b}</p>
                     </div>
                   ))}
                   <div style={{ marginTop: "auto", display: "flex", justifyContent: "space-around", padding: "12px 0 16px", borderTop: "1px solid #E2E0D9", fontSize: 11 }}>
-                    {p.app.tabs.map((tb, k) => <span key={tb} style={{ color: k === 0 ? c.primary : "#8E8C84", fontWeight: k === 0 ? 800 : 500 }}>{tb}</span>)}
+                    {p.app.tabs.map((tb, k) => <span key={tb} style={{ color: k === 0 ? onPhone : "#6B6A64", fontWeight: k === 0 ? 800 : 500 }}>{tb}</span>)}
                   </div>
                 </div>
               </Phone>
@@ -386,12 +393,12 @@ export default function GenericCase({ p }: { p: Project }) {
       {/* 07 AFTER */}
       <section style={{ background: c.dark, color: "#F4F3EF", padding: "120px 24px" }}>
         <div style={wrap}>
-          <Chapter n={7} name="after" color={c.primary} />
+          <Chapter n={7} name="after" color={onDark} />
           <H2 font={disp}>What changed.</H2>
           <div style={{ marginTop: 50, display: "flex", flexDirection: "column", gap: 14 }}>
             {p.outcome.map(([a, b]) => (
               <div key={a} style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 18, padding: "24px 28px", borderRadius: 18, background: "rgba(255,255,255,.06)" }}>
-                <span style={{ ...hand, flex: "1 1 240px", fontSize: 29, color: c.primary }}>{a}</span>
+                <span style={{ ...hand, flex: "1 1 240px", fontSize: 29, color: onDark }}>{a}</span>
                 <svg width="40" height="20" viewBox="0 0 40 20" fill="none" stroke={c.primary} strokeWidth="2.5" aria-hidden="true"><path d="M1 10h36M29 2l8 8-8 8" /></svg>
                 <span style={{ flex: "1 1 320px", fontSize: 20, fontWeight: 700 }}>{b}</span>
               </div>
@@ -400,7 +407,7 @@ export default function GenericCase({ p }: { p: Project }) {
           <div style={{ marginTop: 50, display: "flex", flexWrap: "wrap", alignItems: "center", gap: 10 }}>
             {p.stack.map((s) => <span key={s} style={{ padding: "9px 16px", borderRadius: 999, border: "1px solid rgba(255,255,255,.22)", fontSize: 14 }}>{s}</span>)}
             {p.url && (
-              <a href={p.url} target="_blank" rel="noreferrer" style={{ marginLeft: "auto", display: "inline-flex", alignItems: "center", gap: 10, minHeight: 52, padding: "0 26px", borderRadius: 999, background: c.primary, color: c.onPrimary, fontWeight: 800, textDecoration: "none" }}>
+              <a href={p.url} target="_blank" rel="noreferrer" style={{ marginLeft: "auto", display: "inline-flex", alignItems: "center", gap: 10, minHeight: 52, padding: "0 26px", borderRadius: 999, background: c.primary, color: fill, fontWeight: 800, textDecoration: "none" }}>
                 {p.liveLabel || "Visit the site"}
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8" /></svg>
               </a>

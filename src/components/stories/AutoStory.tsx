@@ -301,7 +301,7 @@ export default function AutoStory() {
           }}
         >
           <div style={{ flex: "1 1 400px", minWidth: "0" }}>
-            <p className="mono" style={{ margin: "0 0 16px", fontSize: "13px", color: "#C98A00" }}>
+            <p className="mono" style={{ margin: "0 0 16px", fontSize: "13px", color: "#7A5400" }}>
               chapter 01 — before
             </p>
             <h2
@@ -613,7 +613,7 @@ export default function AutoStory() {
       {/* 02 LISTENING */}
       <section style={{ background: "#EEEBE4", padding: "110px 24px" }}>
         <div style={{ maxWidth: "1240px", margin: "0 auto" }}>
-          <p className="mono" style={{ margin: "0 0 16px", fontSize: "13px", color: "#C98A00" }}>
+          <p className="mono" style={{ margin: "0 0 16px", fontSize: "13px", color: "#845B00" }}>
             chapter 02 — listening
           </p>
           <h2
@@ -781,7 +781,7 @@ export default function AutoStory() {
       {/* 03 THE TOOL CABINET (structure) */}
       <section style={{ background: "linear-gradient(#EEEBE4, #E4DFD4)", padding: "110px 24px" }}>
         <div style={{ maxWidth: "1240px", margin: "0 auto" }}>
-          <p className="mono" style={{ margin: "0 0 16px", fontSize: "13px", color: "#C98A00" }}>
+          <p className="mono" style={{ margin: "0 0 16px", fontSize: "13px", color: "#845B00" }}>
             chapter 03 — structure
           </p>
           <h2
@@ -1123,7 +1123,7 @@ export default function AutoStory() {
       {/* 04 SKETCHES */}
       <section style={{ background: "#EEEBE4", padding: "110px 24px" }}>
         <div style={{ maxWidth: "1240px", margin: "0 auto" }}>
-          <p className="mono" style={{ margin: "0 0 16px", fontSize: "13px", color: "#C98A00" }}>
+          <p className="mono" style={{ margin: "0 0 16px", fontSize: "13px", color: "#845B00" }}>
             chapter 04 — sketches
           </p>
           <h2

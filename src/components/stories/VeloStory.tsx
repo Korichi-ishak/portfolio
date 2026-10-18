@@ -815,7 +815,7 @@ export default function VeloStory() {
                   }}
                 ></span>
               </div>
-              <p className="disp" style={{ margin: "0", fontSize: "18px", fontWeight: "600", color: "#EC634C" }}>
+              <p className="disp" style={{ margin: "0", fontSize: "18px", fontWeight: "600", color: "#B84D3B" }}>
                 Booked!
               </p>
               <p style={{ margin: "0", fontSize: "13px", color: "#7A6A62" }}>confirmation</p>
@@ -1251,7 +1251,7 @@ export default function VeloStory() {
                   alignSelf: "flex-start",
                   padding: "12px 22px",
                   borderRadius: "999px",
-                  background: "#EC634C",
+                  background: "#B84D3B",
                   color: "#fff",
                   fontWeight: "700",
                 }}
@@ -1372,7 +1372,7 @@ export default function VeloStory() {
                       style={{
                         padding: "16px 10px",
                         borderRadius: "16px",
-                        background: "#EC634C",
+                        background: "#B84D3B",
                         color: "#fff",
                         fontWeight: "700",
                         fontSize: "13px",
@@ -1557,7 +1557,7 @@ export default function VeloStory() {
                       marginTop: "auto",
                       padding: "12px",
                       borderRadius: "999px",
-                      background: "#EC634C",
+                      background: "#B84D3B",
                       color: "#fff",
                       textAlign: "center",
                       fontWeight: "700",
@@ -1666,7 +1666,7 @@ export default function VeloStory() {
         </div>
       </section>
       {/* 07 CHEERS */}
-      <section style={{ background: "#85BA5D", color: "#1F3312", padding: "110px 24px" }}>
+      <section style={{ background: "#4E7F31", color: "#1F3312", padding: "110px 24px" }}>
         <div
           style={{
             maxWidth: "1240px",
@@ -1678,7 +1678,7 @@ export default function VeloStory() {
           }}
         >
           <div style={{ flex: "1 1 460px" }}>
-            <p className="hand" style={{ margin: "0", fontSize: "28px", color: "#FFF6EC" }}>
+            <p className="hand" style={{ margin: "0", fontSize: "28px", color: "#FFFFFF" }}>
               step seven — cheers
             </p>
             <h2
@@ -1783,7 +1783,7 @@ export default function VeloStory() {
                   minHeight: "48px",
                   padding: "0 22px",
                   borderRadius: "999px",
-                  background: "#EC634C",
+                  background: "#B84D3B",
                   color: "#fff",
                   fontWeight: "700",
                   textDecoration: "none",

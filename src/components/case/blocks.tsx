@@ -1,4 +1,5 @@
 import { getProject, img, type Project } from "@/data/projects";
+import { readable, ratio } from "@/lib/contrast";
 import { storyThemes, themeFromProject, type Theme } from "./theme";
 
 const mono = { fontFamily: "'JetBrains Mono', monospace" } as const;
@@ -7,7 +8,9 @@ const hand = { fontFamily: "'Caveat', cursive" } as const;
 function resolve(slug: string): { p: Project; t: Theme } {
   const p = getProject(slug);
   if (!p) throw new Error(`Unknown project ${slug}`);
-  return { p, t: storyThemes[slug] ?? themeFromProject(p) };
+  const t = storyThemes[slug] ?? themeFromProject(p);
+  // accent used as text must stay readable on the section and card backgrounds
+  return { p, t: { ...t, muted: readable(readable(t.muted, t.bg), t.card), accentText: readable(readable(t.accent, t.bg), t.card), onAccent: ratio("#FFFFFF", t.accent) >= 4.5 ? "#FFFFFF" : "#111110" } };
 }
 
 /** The "case file" card: the facts a recruiter scans for, placed in the story's hero. */
@@ -65,7 +68,7 @@ export function Personas({ slug, label = "who it's for", compact = false }: { sl
   return (
     <section style={{ background: t.bg, color: t.ink, padding: "40px 24px 110px" }}>
       <div style={{ maxWidth: 1240, margin: "0 auto" }}>
-        <p style={{ ...mono, margin: "0 0 16px", fontSize: 13, color: t.accent }}>{label}</p>
+        <p style={{ ...mono, margin: "0 0 16px", fontSize: 13, color: t.accentText }}>{label}</p>
         <h2
           style={{
             margin: 0,
@@ -108,7 +111,7 @@ export function Personas({ slug, label = "who it's for", compact = false }: { sl
                     height: 42,
                     borderRadius: "50%",
                     background: t.accent,
-                    color: t.dark ? t.bg : "#fff",
+                    color: t.onAccent,
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -126,7 +129,7 @@ export function Personas({ slug, label = "who it's for", compact = false }: { sl
                 </>
               )}
               <p style={{ ...mono, margin: "16px 0 4px", fontSize: 11, color: t.muted }}>struggles with</p>
-              <p style={compact ? { ...hand, margin: 0, fontSize: 26, lineHeight: 1.1 } : { margin: 0, fontSize: 15, lineHeight: 1.5, opacity: 0.85 }}>{pain}</p>
+              <p style={compact ? { margin: 0, fontSize: 18, lineHeight: 1.45, fontWeight: 600 } : { margin: 0, fontSize: 15, lineHeight: 1.5, opacity: 0.85 }}>{pain}</p>
             </article>
           ))}
         </div>
@@ -143,7 +146,7 @@ export function Personas({ slug, label = "who it's for", compact = false }: { sl
                 fontSize: 14,
               }}
             >
-              <span style={{ ...mono, color: t.accent, marginRight: 8 }}>0{i + 1}</span>
+              <span style={{ ...mono, color: t.accentText, marginRight: 8 }}>0{i + 1}</span>
               {g}
             </span>
           ))}
@@ -160,7 +163,7 @@ export function Boards({ slug }: { slug: string }) {
   return (
     <section style={{ background: t.bg, color: t.ink, padding: "100px 24px" }}>
       <div style={{ maxWidth: 1240, margin: "0 auto" }}>
-        <p style={{ ...mono, margin: "0 0 16px", fontSize: 13, color: t.accent }}>the other two apps</p>
+        <p style={{ ...mono, margin: "0 0 16px", fontSize: 13, color: t.accentText }}>the other two apps</p>
         <h2
           style={{
             margin: 0,

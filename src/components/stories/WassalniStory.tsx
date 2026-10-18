@@ -403,7 +403,7 @@ export default function WassalniStory() {
                 top: "40px",
                 padding: "10px 14px",
                 borderRadius: "14px",
-                background: "#FF5A4E",
+                background: "#C7463D",
                 color: "#fff",
                 fontWeight: "800",
                 fontSize: "14px",
@@ -558,7 +558,7 @@ export default function WassalniStory() {
               marginTop: "60px",
               padding: "30px 34px",
               borderRadius: "26px",
-              background: "#2F6BFF",
+              background: "#2456D9",
               color: "#fff",
               display: "flex",
               flexWrap: "wrap",
@@ -567,7 +567,7 @@ export default function WassalniStory() {
             }}
           >
             {" "}
-            <span className="mono" style={{ fontSize: "12px", opacity: ".8" }}>
+            <span className="mono" style={{ fontSize: "12px" , color: "#FFFFFF"}}>
               how might we
             </span>{" "}
             <p
@@ -1163,7 +1163,7 @@ export default function WassalniStory() {
                   display: "flex",
                   alignItems: "center",
                   padding: "0 12px",
-                  background: "#2F6BFF",
+                  background: "#2B62EB",
                   color: "#fff",
                   fontWeight: "800",
                   fontSize: "14px",
@@ -1333,7 +1333,7 @@ export default function WassalniStory() {
                       style={{
                         padding: "12px",
                         borderRadius: "12px",
-                        background: "#2F6BFF",
+                        background: "#2B62EB",
                         color: "#fff",
                         textAlign: "center",
                         fontWeight: "700",
@@ -1541,7 +1541,7 @@ export default function WassalniStory() {
                   </svg>
                   <div style={{ display: "flex", gap: "10px", marginTop: "14px", fontSize: "10px", color: "#64748B" }}>
                     <span>■ taken</span>
-                    <span style={{ color: "#B7850A" }}>■ yours</span>
+                    <span style={{ color: "#8E6808" }}>■ yours</span>
                     <span>□ free</span>
                   </div>{" "}
                   <span
@@ -1550,7 +1550,7 @@ export default function WassalniStory() {
                       width: "100%",
                       padding: "12px",
                       borderRadius: "12px",
-                      background: "#2F6BFF",
+                      background: "#2B62EB",
                       color: "#fff",
                       textAlign: "center",
                       fontWeight: "700",
@@ -1685,7 +1685,7 @@ export default function WassalniStory() {
                           flex: "1",
                           padding: "10px",
                           borderRadius: "12px",
-                          background: "#2F6BFF",
+                          background: "#2B62EB",
                           color: "#fff",
                           textAlign: "center",
                           fontSize: "12px",

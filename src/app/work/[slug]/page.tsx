@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import JourneyStrip from "@/components/journey/JourneyStrip";
 import ProjectStory from "@/components/ProjectStory";
+import SiteFooter from "@/components/SiteFooter";
 import SiteNav from "@/components/SiteNav";
-import { getProject, nextProject, projectNumber, projects } from "@/data/projects";
+import { getProject, projectNumber, projects } from "@/data/projects";
 
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
@@ -20,31 +22,29 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   const { slug } = await params;
   const p = getProject(slug);
   if (!p) notFound();
-  const next = nextProject(slug);
 
   return (
     <>
       <SiteNav />
-      <div className="crumbs">
-        <Link href="/work">← All projects</Link>
-        <span>
+      <nav aria-label="Breadcrumb" className="crumbs">
+        <ol>
+          <li>
+            <Link href="/">Journey</Link>
+          </li>
+          <li>
+            <Link href="/work">Projects</Link>
+          </li>
+          <li aria-current="page">{p.name}</li>
+        </ol>
+        <span aria-hidden="true">
           {projectNumber(slug)} / {String(projects.length).padStart(2, "0")}
         </span>
-      </div>
-      <main>
+      </nav>
+      <main id="main" tabIndex={-1}>
         <ProjectStory slug={slug} />
+        <JourneyStrip slug={slug} />
       </main>
-      <Link href={`/work/${next.slug}`} className="next-project">
-        <span>
-          <span className="next-project__kicker">next project · {projectNumber(next.slug)}</span>
-          <span className="next-project__name">{next.name}</span>
-        </span>
-        <span className="next-project__arrow" aria-hidden="true">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M5 12h14M13 6l6 6-6 6" />
-          </svg>
-        </span>
-      </Link>
+      <SiteFooter />
     </>
   );
 }
