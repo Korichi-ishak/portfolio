@@ -24,6 +24,7 @@ export default function WorkIndex() {
             level={1}
             text="Platforms, back offices and business sites for clients in Algeria, France, Canada and the Middle East. Each card opens its story."
           />
+          <h2 className="sr-only">Client work</h2>
           <ul className="project-grid">
             {client.map((slug) => (
               <li key={slug}>

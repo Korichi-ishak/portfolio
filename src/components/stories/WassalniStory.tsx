@@ -457,7 +457,7 @@ export default function WassalniStory() {
             style={{
               marginTop: "54px",
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(270px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(270px, 100%), 1fr))",
               gap: "30px",
             }}
           >
@@ -771,7 +771,7 @@ export default function WassalniStory() {
               style={{
                 marginTop: "-14px",
                 display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+                gridTemplateColumns: "repeat(auto-fit, minmax(min(220px, 100%), 1fr))",
                 gap: "18px",
               }}
             >
@@ -855,7 +855,7 @@ export default function WassalniStory() {
             style={{
               marginTop: "50px",
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(300px, 100%), 1fr))",
               gap: "30px",
               alignItems: "center",
             }}
@@ -1039,7 +1039,7 @@ export default function WassalniStory() {
             style={{
               marginTop: "54px",
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(190px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(190px, 100%), 1fr))",
               gap: "22px",
               alignItems: "end",
             }}
@@ -1735,7 +1735,7 @@ export default function WassalniStory() {
             style={{
               marginTop: "40px",
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(250px, 100%), 1fr))",
               gap: "16px",
             }}
           >

@@ -158,7 +158,7 @@ export default function GenericCase({ p }: { p: Project }) {
         <div style={wrap}>
           <Chapter n={2} name="listening" color={onLight} />
           <H2 font={disp}>What I heard.</H2>
-          <div style={{ marginTop: 56, display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: 28 }}>
+          <div style={{ marginTop: 56, display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(250px, 100%), 1fr))", gap: 28 }}>
             {[first, ...rest].filter(Boolean).map(([title, text], i) => (
               <figure key={title} style={{ margin: 0, position: "relative", padding: "30px 26px 26px", background: notes[i % 3], transform: `rotate(${tilt[i % 3]}deg)`, boxShadow: "0 20px 30px -18px rgba(0,0,0,.45)", color: "#1E1E1C" }}>
                 <span aria-hidden="true" style={{ position: "absolute", top: -12, left: "40%", width: 70, height: 22, background: "rgba(255,255,255,.6)", transform: "rotate(-3deg)" }} />
@@ -184,7 +184,7 @@ export default function GenericCase({ p }: { p: Project }) {
           <H2 font={disp}>Everything in its place.</H2>
           <div style={{ marginTop: 50, padding: 26, borderRadius: 26, background: c.dark, color: "#F4F3EF" }}>
             <span style={{ display: "inline-block", padding: "10px 18px", borderRadius: 999, background: c.primary, color: fill, fontWeight: 800 }}>{p.ia.root}</span>
-            <div style={{ marginTop: 20, display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(210px, 1fr))", gap: 14 }}>
+            <div style={{ marginTop: 20, display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(210px, 100%), 1fr))", gap: 14 }}>
               {p.ia.branches.map(([b, kids]) => (
                 <div key={b} style={{ padding: "16px 18px", borderRadius: 16, background: "rgba(255,255,255,.07)", border: "1px solid rgba(255,255,255,.12)" }}>
                   <b style={{ fontSize: 17 }}>{b}</b>
@@ -201,7 +201,7 @@ export default function GenericCase({ p }: { p: Project }) {
           <div style={{ position: "relative", marginTop: 26 }}>
             <div aria-hidden="true" style={{ position: "absolute", left: "6%", right: "6%", top: 40, borderTop: `3px dashed ${c.primary}` }} />
             <span aria-hidden="true" className="g-walk" style={{ position: "absolute", top: 30, marginLeft: -12, width: 24, height: 24, borderRadius: "50%", background: c.primary, boxShadow: `0 0 0 6px ${c.light}` }} />
-            <ol style={{ position: "relative", margin: 0, padding: 0, listStyle: "none", display: "grid", gridTemplateColumns: `repeat(auto-fit, minmax(130px, 1fr))`, gap: 14 }}>
+            <ol style={{ position: "relative", margin: 0, padding: 0, listStyle: "none", display: "grid", gridTemplateColumns: `repeat(auto-fit, minmax(min(130px, 100%), 1fr))`, gap: 14 }}>
               {p.flow.steps.map((s, i) => (
                 <li key={s} style={{ textAlign: "center" }}>
                   <span style={{ margin: "0 auto", width: 80, height: 80, borderRadius: "50%", background: i === 0 || i === p.flow.steps.length - 1 ? c.dark : "#FFFFFF", color: i === 0 || i === p.flow.steps.length - 1 ? "#F4F3EF" : t.ink, boxShadow: "0 14px 20px -12px rgba(0,0,0,.35)", display: "flex", alignItems: "center", justifyContent: "center", ...mono, fontSize: 18 }}>
@@ -220,7 +220,7 @@ export default function GenericCase({ p }: { p: Project }) {
         <div style={wrap}>
           <Chapter n={4} name="sketches" color={onLight} />
           <H2 font={disp}>From a rough sketch to the shipped screen.</H2>
-          <div style={{ marginTop: 50, display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 28, alignItems: "start" }}>
+          <div style={{ marginTop: 50, display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(300px, 100%), 1fr))", gap: 28, alignItems: "start" }}>
             <figure style={{ margin: 0 }}>
               <div style={{ padding: 24, minHeight: 360, background: "#FBF7EC", backgroundImage: "linear-gradient(#E3EAF2 1px, transparent 1px), linear-gradient(90deg, #E3EAF2 1px, transparent 1px)", backgroundSize: "18px 18px", boxShadow: "0 24px 40px -26px rgba(0,0,0,.5)", transform: "rotate(-1.5deg)", display: "flex", flexDirection: "column", gap: 10 }}>
                 <p style={{ ...hand, margin: 0, fontSize: 25, color: "#1F3B8A" }}>{p.wfScreen}</p>
@@ -264,7 +264,7 @@ export default function GenericCase({ p }: { p: Project }) {
         <div style={wrap}>
           <Chapter n={5} name="visual language" color={onDark} />
           <H2 font={disp} style={{ maxWidth: 900 }}>{p.mood}</H2>
-          <div style={{ marginTop: 56, display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: 22 }}>
+          <div style={{ marginTop: 56, display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(150px, 100%), 1fr))", gap: 22 }}>
             {p.palette.map(([n, hex, use], i) => (
               <div key={n} style={{ display: "flex", flexDirection: "column", gap: 10 }}>
                 <div aria-hidden="true" className="g-floaty" style={{ animationDelay: `${i * 0.5}s`, height: 150, borderRadius: 18, background: hex, border: "1px solid rgba(255,255,255,.18)", boxShadow: "0 24px 30px -20px rgba(0,0,0,.6)" }} />
@@ -302,7 +302,7 @@ export default function GenericCase({ p }: { p: Project }) {
             <figure style={{ flex: "3 1 620px", minWidth: 0, margin: 0 }}>
               <Laptop>
                 <div style={{ display: "flex", minHeight: 360, fontSize: 12, color: "#1E1E1C" }}>
-                  <div style={{ flex: "0 0 150px", background: c.dark, color: "#F4F3EF", padding: "16px 10px", display: "flex", flexDirection: "column", gap: 4 }}>
+                  <div className="g-admin-side" style={{ flex: "0 0 150px", background: c.dark, color: "#F4F3EF", padding: "16px 10px", display: "flex", flexDirection: "column", gap: 4 }}>
                     <b style={{ margin: "0 8px 14px" }}>{p.admin.app}</b>
                     {p.admin.nav.map((n, i) => (
                       <span key={n} style={{ padding: 8, borderRadius: 6, background: i === p.admin.active ? c.primary : "transparent", color: i === p.admin.active ? fill : "rgba(255,255,255,.72)", fontWeight: i === p.admin.active ? 800 : 400 }}>{n}</span>

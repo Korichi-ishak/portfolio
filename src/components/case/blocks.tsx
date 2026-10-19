@@ -28,7 +28,7 @@ export function CaseFile({ slug, methods = false }: { slug: string; methods?: bo
         margin: "26px 0 0",
         maxWidth: 540,
         display: "grid",
-        gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+        gridTemplateColumns: "repeat(auto-fit, minmax(min(200px, 100%), 1fr))",
         gap: "14px 18px",
         padding: 18,
         borderRadius: t.radius,
@@ -86,7 +86,7 @@ export function Personas({ slug, label = "who it's for", compact = false }: { sl
           style={{
             marginTop: 44,
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(min(260px, 100%), 1fr))",
             gap: 22,
           }}
         >
@@ -176,7 +176,7 @@ export function Boards({ slug }: { slug: string }) {
         >
           Same stack, three products.
         </h2>
-        <div style={{ marginTop: 44, display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 26 }}>
+        <div style={{ marginTop: 44, display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(300px, 100%), 1fr))", gap: 26 }}>
           {p.boards.map(([id, name, what]) => (
             <figure key={id} style={{ margin: 0 }}>
               <div style={{ borderRadius: t.radius, overflow: "hidden", boxShadow: "0 30px 50px -30px rgba(0,0,0,.5)" }}>

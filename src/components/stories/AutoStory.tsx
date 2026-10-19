@@ -653,7 +653,7 @@ export default function AutoStory() {
                 background: "rgba(0,0,0,.2)",
               }}
             ></div>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "28px" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(250px, 100%), 1fr))", gap: "28px" }}>
               <figure
                 style={{
                   margin: "0",
@@ -1141,7 +1141,7 @@ export default function AutoStory() {
             style={{
               marginTop: "50px",
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(300px, 100%), 1fr))",
               gap: "28px",
               alignItems: "start",
             }}
@@ -1283,7 +1283,7 @@ export default function AutoStory() {
             style={{
               marginTop: "56px",
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(180px, 100%), 1fr))",
               gap: "30px",
               alignItems: "end",
             }}
@@ -1577,7 +1577,7 @@ export default function AutoStory() {
                       color: "#E5E7EB",
                     }}
                   >
-                    <div
+                    <div className="g-admin-side"
                       style={{
                         flex: "0 0 150px",
                         background: "#0A0A0A",

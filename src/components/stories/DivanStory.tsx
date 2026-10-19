@@ -657,7 +657,7 @@ export default function DivanStory() {
             style={{
               marginTop: "56px",
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(260px, 100%), 1fr))",
               gap: "30px",
             }}
           >
@@ -990,7 +990,7 @@ export default function DivanStory() {
               <div
                 style={{
                   display: "grid",
-                  gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))",
+                  gridTemplateColumns: "repeat(auto-fit, minmax(min(150px, 100%), 1fr))",
                   gap: "16px",
                   position: "relative",
                 }}
@@ -1152,7 +1152,7 @@ export default function DivanStory() {
             style={{
               marginTop: "50px",
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(300px, 100%), 1fr))",
               gap: "28px",
               alignItems: "start",
             }}
@@ -1327,7 +1327,7 @@ export default function DivanStory() {
             style={{
               marginTop: "60px",
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(190px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(190px, 100%), 1fr))",
               gap: "34px",
             }}
           >

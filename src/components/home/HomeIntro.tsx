@@ -1,9 +1,11 @@
 import Link from "next/link";
+import { dict, localize, type Lang } from "@/i18n";
 
 
 /* Generated from the validated maquette (Main.dc.html), then edited by hand. */
 /** Home intro: hero + about (from the validated maquette). */
-export default function HomeIntro() {
+export default function HomeIntro({ lang = "en" }: { lang?: Lang }) {
+  const t = dict[lang];
   return (
     <div
       className="st st-home"
@@ -144,7 +146,7 @@ export default function HomeIntro() {
               color: "#3A3934",
             }}
           >
-            Full-stack developer. I build the CRMs, ERPs and internal platforms that replace spreadsheets and paper.
+            {t.hero.lead}
           </p>
           <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "12px", marginTop: "34px" }}>
             <a
@@ -161,10 +163,10 @@ export default function HomeIntro() {
                 fontWeight: "600",
               }}
             >
-              See my path
+              {t.hero.path}
             </a>
             <Link
-              href="/work"
+              href={localize(lang, "/work")}
               style={{
                 display: "inline-flex",
                 alignItems: "center",
@@ -176,7 +178,7 @@ export default function HomeIntro() {
                 fontWeight: "600",
               }}
             >
-              See the projects
+              {t.hero.projects}
             </Link>
           </div>
           <div aria-hidden="true" style={{ position: "absolute", top: "14px", right: "3%" }}>
@@ -192,7 +194,7 @@ export default function HomeIntro() {
                 fontWeight: "500",
               }}
             >
-              Full-stack
+              {t.hero.tags[0]}
             </span>{" "}
           </div>
           <div aria-hidden="true" style={{ position: "absolute", top: "47%", left: "0" }}>
@@ -208,7 +210,7 @@ export default function HomeIntro() {
                 fontWeight: "500",
               }}
             >
-              CRM / ERP
+              {t.hero.tags[1]}
             </span>{" "}
           </div>
           <div aria-hidden="true" style={{ position: "absolute", bottom: "24px", right: "8%" }}>
@@ -224,7 +226,7 @@ export default function HomeIntro() {
                 fontWeight: "500",
               }}
             >
-              Assistive tech
+              {t.hero.tags[2]}
             </span>{" "}
           </div>
           <div aria-hidden="true" style={{ position: "absolute", top: "6%", left: "9%" }}>
@@ -247,8 +249,8 @@ export default function HomeIntro() {
             aria-hidden="true"
             style={{
               position: "absolute",
-              top: "56%",
-              left: "60%",
+              bottom: "6px",
+              left: "44%",
               display: "flex",
               alignItems: "flex-start",
               gap: "2px",
@@ -310,7 +312,7 @@ export default function HomeIntro() {
                 whiteSpace: "nowrap",
               }}
             >
-              you?
+              {t.hero.you}
             </span>{" "}
           </div>
         </div>
@@ -388,7 +390,7 @@ export default function HomeIntro() {
               ></span>{" "}
               <img
                 src="/img/87beb1500b044cded092e095374dd38a.jpg"
-                alt="Portrait of Ishak Korichi"
+                alt={t.about.portrait}
                 style={{
                   display: "block",
                   width: "300px",
@@ -421,7 +423,7 @@ export default function HomeIntro() {
                 color: "#6B6A64",
               }}
             >
-              01 — about
+              {t.about.kicker}
             </p>
             <p
               style={{
@@ -432,19 +434,17 @@ export default function HomeIntro() {
                 letterSpacing: "-0.015em",
               }}
             >
-              I build software for businesses that still ran on spreadsheets, paper forms and WhatsApp — rental
-              agencies, driving schools, dealerships, a language institute.
+              {t.about.big}
             </p>
             <p
               style={{ margin: "22px 0 0", fontSize: "18px", lineHeight: "1.55", color: "#4A4943", maxWidth: "700px" }}
             >
-              I hold an M.Sc. in Big Data Management and Analysis, and I'm now studying assistive technology at Université Paris 8 — how software actually reaches the
-              people it's built for.
+              {t.about.body}
             </p>
             <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "14px", marginTop: "30px" }}>
               {" "}
               <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "13px", color: "#6B6A64" }}>
-                clients in Algeria · France · Canada · the Middle East
+                {t.about.clients}
               </span>{" "}
               <span style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}>
                 <svg
@@ -472,7 +472,7 @@ export default function HomeIntro() {
                     borderRadius: "4px 14px 14px 14px",
                   }}
                 >
-                  Software that replaced a filing cabinet
+                  {t.about.badge}
                 </span>{" "}
               </span>{" "}
             </div>

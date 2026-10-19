@@ -532,7 +532,7 @@ export default function QueenStory() {
             style={{
               marginTop: "54px",
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(260px, 100%), 1fr))",
               gap: "30px",
             }}
           >
@@ -754,7 +754,7 @@ export default function QueenStory() {
           <p style={{ margin: "0 0 30px", maxWidth: "600px", fontSize: "17px", lineHeight: "1.6", color: "#EADBD2" }}>
             The main user flow, laid out like a five-card reading.
           </p>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(170px, 1fr))", gap: "18px" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(170px, 100%), 1fr))", gap: "18px" }}>
             <div
               style={{
                 aspectRatio: "5 / 8",
@@ -923,7 +923,7 @@ export default function QueenStory() {
             style={{
               marginTop: "50px",
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(300px, 100%), 1fr))",
               gap: "30px",
               alignItems: "start",
             }}
@@ -1066,7 +1066,7 @@ export default function QueenStory() {
             style={{
               marginTop: "54px",
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(170px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(170px, 100%), 1fr))",
               gap: "26px",
             }}
           >
@@ -1200,6 +1200,7 @@ export default function QueenStory() {
             <div
               style={{
                 flex: "1 1 300px",
+                minWidth: "0",
                 padding: "28px",
                 borderRadius: "24px",
                 background: "#2E2240",
@@ -1209,7 +1210,7 @@ export default function QueenStory() {
               <p className="mono" style={{ margin: "0", fontSize: "11px", color: "#D4B5A5" }}>
                 script · Playlist (shown with Great Vibes)
               </p>
-              <p className="script shine" style={{ margin: "6px 0 0", fontSize: "64px", lineHeight: "1.1" }}>
+              <p className="script shine" style={{ margin: "6px 0 0", fontSize: "clamp(40px, 12vw, 64px)", lineHeight: "1.1" }}>
                 Bienvenue, Reine
               </p>
             </div>
@@ -1364,7 +1365,7 @@ export default function QueenStory() {
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(180px, 100%), 1fr))",
               gap: "22px",
               maxWidth: "980px",
               margin: "0 auto",

@@ -861,7 +861,7 @@ export default function TasshilaStory() {
                 }}
               ></span>
             </div>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "28px" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(250px, 100%), 1fr))", gap: "28px" }}>
               <figure
                 style={{
                   margin: "0",
@@ -958,7 +958,7 @@ export default function TasshilaStory() {
             style={{
               marginTop: "44px",
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(260px, 100%), 1fr))",
               gap: "18px",
             }}
           >
@@ -1075,7 +1075,7 @@ export default function TasshilaStory() {
               boxShadow: "inset 0 -10px 0 rgba(0,0,0,.08), 0 40px 60px -36px rgba(15,118,110,.7)",
             }}
           >
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(230px, 1fr))", gap: "16px" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(230px, 100%), 1fr))", gap: "16px" }}>
               <div
                 style={{
                   padding: "0 0 18px",
@@ -1472,7 +1472,7 @@ export default function TasshilaStory() {
             style={{
               marginTop: "50px",
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(300px, 100%), 1fr))",
               gap: "28px",
               alignItems: "start",
             }}
@@ -1797,7 +1797,7 @@ export default function TasshilaStory() {
             style={{
               marginTop: "60px",
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(190px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(190px, 100%), 1fr))",
               gap: "34px",
             }}
           >
@@ -2471,7 +2471,7 @@ export default function TasshilaStory() {
                       color: "#0F172A",
                     }}
                   >
-                    <div
+                    <div className="g-admin-side"
                       style={{
                         flex: "0 0 150px",
                         background: "#0B3B37",

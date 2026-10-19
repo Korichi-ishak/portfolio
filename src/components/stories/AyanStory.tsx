@@ -132,7 +132,7 @@ export default function AyanStory() {
             maxWidth: "1240px",
             margin: "0 auto",
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(min(340px, 100%), 1fr))",
             gap: "60px",
             alignItems: "center",
           }}
@@ -204,7 +204,7 @@ export default function AyanStory() {
             style={{
               marginTop: "50px",
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(270px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(270px, 100%), 1fr))",
               gap: "18px",
             }}
           >
@@ -386,7 +386,7 @@ export default function AyanStory() {
             style={{
               marginTop: "60px",
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(150px, 100%), 1fr))",
               gap: "10px",
             }}
           >
@@ -452,7 +452,7 @@ export default function AyanStory() {
             style={{
               marginTop: "50px",
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(300px, 100%), 1fr))",
               gap: "20px",
             }}
           >
@@ -545,7 +545,7 @@ export default function AyanStory() {
             style={{
               marginTop: "50px",
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(200px, 100%), 1fr))",
               gap: "14px",
             }}
           >
@@ -602,7 +602,7 @@ export default function AyanStory() {
             style={{
               marginTop: "30px",
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(300px, 100%), 1fr))",
               gap: "14px",
             }}
           >
@@ -735,7 +735,7 @@ export default function AyanStory() {
             style={{
               marginTop: "40px",
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(260px, 100%), 1fr))",
               gap: "16px",
             }}
           >

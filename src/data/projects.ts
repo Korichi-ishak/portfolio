@@ -85,6 +85,26 @@ export const cards: Record<string, { what: string; year: string; bg: string }> =
 };
 
 /** Academic & startup projects (shown under their own heading on /work). */
+/** French card labels. */
+export const whatFr: Record<string, string> = {
+  fds: "CRM · ERP · e-learning",
+  goodloc: "Auto-école",
+  elite: "Cabinet de conseil",
+  velo: "Vélos à smoothies",
+  ayan: "Plateforme d'apprentissage",
+  auto: "Plateforme de fichiers ECU",
+  tasshila: "Mémoire de master · e-santé",
+  tiger: "Voitures d'exception",
+  picci: "Station multiservice",
+  queen: "Application de développement personnel",
+  bdtech: "Services informatiques",
+  goodpc: "Boutique tech reconditionnée",
+  aqua: "Centre de formation aquatique",
+  divan: "Restaurant turc",
+  pdl: "Location de voitures · WordPress",
+  mobile: "Wassalni · Clinical · Astrolabs",
+};
+
 export const academic = ["tasshila", "mobile"];
 
 const files = imageMap as Record<string, string>;

@@ -532,7 +532,7 @@ export default function FdsStory() {
             style={{
               marginTop: "56px",
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(270px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(270px, 100%), 1fr))",
               gap: "30px",
             }}
           >
@@ -745,7 +745,7 @@ export default function FdsStory() {
                   background: "repeating-linear-gradient(0deg, #FBF6EA 0 31px, #EFE6D3 31px 32px)",
                   boxSizing: "border-box",
                   display: "grid",
-                  gridTemplateColumns: "repeat(auto-fill, minmax(140px, 1fr))",
+                  gridTemplateColumns: "repeat(auto-fill, minmax(min(140px, 100%), 1fr))",
                   gap: "22px",
                   alignContent: "center",
                 }}
@@ -909,7 +909,7 @@ export default function FdsStory() {
             The public site, the learner's space and the staff back office read the same data. PostgreSQL Row Level
             Security decides who sees what.
           </p>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "18px" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(260px, 100%), 1fr))", gap: "18px" }}>
             <div
               style={{
                 borderRadius: "26px",
@@ -1054,7 +1054,7 @@ export default function FdsStory() {
             style={{
               marginTop: "50px",
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(300px, 100%), 1fr))",
               gap: "28px",
               alignItems: "start",
             }}
@@ -1449,7 +1449,7 @@ export default function FdsStory() {
             </div>
             <div style={{ flex: "2 1 520px", display: "flex", flexDirection: "column", gap: "18px" }}>
               <div
-                style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(130px, 1fr))", gap: "14px" }}
+                style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(130px, 100%), 1fr))", gap: "14px" }}
               >
                 <div style={{ borderRadius: "20px", overflow: "hidden", background: "#0A2B45" }}>
                   <div style={{ height: "100px", background: "#001829", borderBottom: "1px solid #23435E" }}></div>
@@ -1593,7 +1593,7 @@ export default function FdsStory() {
                       fontSize: "12px",
                     }}
                   >
-                    <div
+                    <div className="g-admin-side"
                       style={{
                         flex: "0 0 150px",
                         background: "#001829",
@@ -2237,7 +2237,7 @@ export default function FdsStory() {
             style={{
               marginTop: "90px",
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(320px, 100%), 1fr))",
               gap: "22px",
             }}
           >

@@ -3,18 +3,36 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { dict, langFromPath, langs, localize, switchPath } from "@/i18n";
 
-const links = [
-  { href: "/", label: "Home", match: (p: string) => p === "/" },
-  { href: "/#path", label: "Path", match: () => false },
-  { href: "/work", label: "Projects", match: (p: string) => p.startsWith("/work") },
-];
+/*
+  Header in the language of the hero: a Figma-like toolbar.
+  The name sits in a selection frame, the breadcrumb shows where you are,
+  the pages are tool tabs and "Let's talk" is the blue Share button.
+*/
+
+const tabs = [
+  { key: "home", href: "/", icon: "M4 11l8-7 8 7v9h-5v-6h-6v6H4z", match: (p: string) => p === "/" },
+  { key: "path", href: "/#path", icon: "M6 4v16 M18 4v16 M6 9h12 M6 15h12", match: () => false },
+  { key: "projects", href: "/work", icon: "M4 5h7v6H4z M13 5h7v6h-7z M4 13h7v6H4z M13 13h7v6h-7z", match: (p: string) => p.startsWith("/work") },
+] as const;
+
+/** "/fr/work/fds" → ["portfolio", "projets", "fds"] */
+function crumb(bare: string, words: { home: string; projects: string }) {
+  if (bare === "/") return ["portfolio", words.home];
+  const parts = bare.split("/").filter(Boolean);
+  if (parts[0] === "work") return parts[1] ? ["portfolio", words.projects, parts[1]] : ["portfolio", words.projects];
+  return ["portfolio", ...parts];
+}
 
 export default function SiteNav() {
   const pathname = usePathname() || "/";
+  const lang = langFromPath(pathname);
+  const bare = pathname.replace(/^\/fr(?=\/|$)/, "") || "/";
+  const t = dict[lang];
   const [open, setOpen] = useState(false);
+  const path = crumb(bare, t.nav.crumbs);
 
-  // close the mobile menu on navigation and with Escape
   useEffect(() => setOpen(false), [pathname]);
   useEffect(() => {
     if (!open) return;
@@ -24,50 +42,69 @@ export default function SiteNav() {
   }, [open]);
 
   return (
-    <header className="site-nav">
+    <header className="tb">
       <a href="#main" className="skip-link">
-        Skip to content
+        {t.skip}
       </a>
-      <div className="site-nav__bar" data-open={open}>
-        <Link href="/" className="site-nav__brand" aria-label="Ishak Korichi, full-stack developer — home">
-          <span className="site-nav__logo" aria-hidden="true">
-            IK
-          </span>
-          <span className="site-nav__id" aria-hidden="true">
-            <span className="site-nav__name">Ishak Korichi</span>
-            <span className="site-nav__role">Full-stack developer</span>
-          </span>
+      <div className="tb__bar" data-open={open}>
+        <Link href={localize(lang, "/")} className="tb__frame" aria-label={`Ishak Korichi — ${t.nav.home}`}>
+          <span className="tb__frame-name">Ishak Korichi</span>
+          <span className="tb__h tb__h--tl" aria-hidden="true" />
+          <span className="tb__h tb__h--tr" aria-hidden="true" />
+          <span className="tb__h tb__h--bl" aria-hidden="true" />
+          <span className="tb__h tb__h--br" aria-hidden="true" />
         </Link>
 
-        <button
-          type="button"
-          className="site-nav__toggle"
-          aria-expanded={open}
-          aria-controls="site-menu"
-          onClick={() => setOpen((v) => !v)}
-        >
-          <span className="sr-only">{open ? "Close menu" : "Open menu"}</span>
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
+        <p className="tb__crumb" aria-label={t.nav.here}>
+          {path.map((c, i) => (
+            <span key={i} className={i === path.length - 1 ? "tb__crumb-now" : undefined}>
+              {i > 0 && <span aria-hidden="true"> / </span>}
+              {c}
+            </span>
+          ))}
+        </p>
+
+        <button type="button" className="tb__toggle" aria-expanded={open} aria-controls="tb-menu" onClick={() => setOpen((v) => !v)}>
+          <span className="sr-only">{open ? t.nav.close : t.nav.open}</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
             {open ? <path d="M6 6l12 12M18 6L6 18" /> : <path d="M4 7h16M4 12h16M4 17h16" />}
           </svg>
         </button>
 
-        <nav id="site-menu" aria-label="Main" className="site-nav__menu">
-          <ul>
-            {links.map((l) => {
-              const current = l.match(pathname);
+        <nav id="tb-menu" aria-label="Main" className="tb__menu">
+          <ul className="tb__tools">
+            {tabs.map((tab) => {
+              const current = tab.match(bare);
               return (
-                <li key={l.href}>
-                  <Link href={l.href} aria-current={current ? "page" : undefined} className="site-nav__link">
-                    {l.label}
+                <li key={tab.key}>
+                  <Link href={localize(lang, tab.href)} className="tb__tool" aria-current={current ? "page" : undefined}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" aria-hidden="true">
+                      <path d={tab.icon} />
+                    </svg>
+                    {t.nav[tab.key]}
                   </Link>
                 </li>
               );
             })}
           </ul>
-          <a href="#contact" className="site-nav__cta">
-            <span className="site-nav__pulse" aria-hidden="true" />
-            Let&apos;s talk
+          <ul className="tb__lang" aria-label={t.nav.lang}>
+            {langs.map((l) => (
+              <li key={l}>
+                <a
+                  href={switchPath(pathname, l)}
+                  hrefLang={l}
+                  lang={l}
+                  className="tb__lang-link"
+                  aria-current={l === lang ? "true" : undefined}
+                >
+                  <span aria-hidden="true">{l.toUpperCase()}</span>
+                  <span className="sr-only">{l === "en" ? "English" : "Français"}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+          <a href="#contact" className="tb__share">
+            {t.nav.talk}
           </a>
         </nav>
       </div>

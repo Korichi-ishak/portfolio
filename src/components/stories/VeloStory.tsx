@@ -65,7 +65,7 @@ export default function VeloStory() {
               style={{
                 marginTop: "26px",
                 display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))",
+                gridTemplateColumns: "repeat(auto-fit, minmax(min(150px, 100%), 1fr))",
                 gap: "10px",
                 maxWidth: "520px",
                 padding: "18px",
@@ -435,7 +435,7 @@ export default function VeloStory() {
             style={{
               marginTop: "50px",
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(270px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(270px, 100%), 1fr))",
               gap: "24px",
             }}
           >
@@ -580,7 +580,7 @@ export default function VeloStory() {
             style={{
               marginTop: "50px",
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(160px, 100%), 1fr))",
               gap: "18px",
               alignItems: "end",
             }}
@@ -838,7 +838,7 @@ export default function VeloStory() {
               style={{
                 marginTop: "22px",
                 display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(210px, 1fr))",
+                gridTemplateColumns: "repeat(auto-fit, minmax(min(210px, 100%), 1fr))",
                 gap: "28px",
               }}
             >
@@ -922,7 +922,7 @@ export default function VeloStory() {
             style={{
               marginTop: "50px",
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(300px, 100%), 1fr))",
               gap: "30px",
               alignItems: "start",
             }}
@@ -1079,7 +1079,7 @@ export default function VeloStory() {
             style={{
               marginTop: "54px",
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(170px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(170px, 100%), 1fr))",
               gap: "26px",
             }}
           >

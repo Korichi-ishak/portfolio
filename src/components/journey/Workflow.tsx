@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 import { getProject } from "@/data/projects";
-import { laneInfo, rows, type JourneyItem, type Lane } from "@/data/journey";
+import { rows, textOf, type JourneyItem, type Lane } from "@/data/journey";
+import { dict, localize, type Lang } from "@/i18n";
 
 /*
   Two lanes read top to bottom: education on the left, experience on the right,
@@ -27,29 +28,31 @@ function LaneIcon({ lane }: { lane: Lane }) {
   );
 }
 
-function Card({ n }: { n: JourneyItem }) {
+function Card({ n, lang }: { n: JourneyItem; lang: Lang }) {
+  const t = dict[lang].path;
+  const x = textOf(n, lang);
   return (
     <article className="wf-card" data-lane={n.lane} aria-labelledby={`wf-${n.id}`}>
       <span className="wf-port wf-port--in" aria-hidden="true" />
       <header className="wf-card__head">
         <span className="wf-lane-badge">
           <LaneIcon lane={n.lane} />
-          {laneInfo[n.lane].label}
+          {t.lanes[n.lane].label}
         </span>
-        <span className="wf-card__when">{n.when}</span>
-        {n.note && <span className="wf-card__note">{n.note}</span>}
+        <span className="wf-card__when">{x.when}</span>
+        {x.note && <span className="wf-card__note">{x.note}</span>}
       </header>
       <div className="wf-card__body">
         <h3 id={`wf-${n.id}`} className="wf-card__title">
-          {n.title}
+          {x.title}
         </h3>
-        <p className="wf-card__org">{n.org}</p>
-        {n.text && <p className="wf-card__text">{n.text}</p>}
+        <p className="wf-card__org">{x.org}</p>
+        {x.text && <p className="wf-card__text">{x.text}</p>}
         {n.stack && <p className="wf-card__stack">{n.stack}</p>}
         {n.projects && n.projects.length > 0 && (
           <div className="wf-card__projects">
             <p className="wf-card__projects-label" id={`wf-${n.id}-p`}>
-              {n.projects.length > 1 ? `${n.projects.length} projects from this step` : "Read the case study"}
+              {n.projects.length > 1 ? t.projectsFrom(n.projects.length) : t.readCase}
             </p>
             <ul aria-labelledby={`wf-${n.id}-p`}>
               {n.projects.map((slug) => {
@@ -57,7 +60,7 @@ function Card({ n }: { n: JourneyItem }) {
                 if (!p) return null;
                 return (
                   <li key={slug}>
-                    <Link href={`/work/${slug}`} className="wf-chip">
+                    <Link href={localize(lang, `/work/${slug}`)} className="wf-chip">
                       {p.name}
                       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" aria-hidden="true">
                         <path d="M5 12h14M13 6l6 6-6 6" />
@@ -77,7 +80,8 @@ function Card({ n }: { n: JourneyItem }) {
 
 type Rail = { base: SVGPathElement; live: SVGPathElement; dot: SVGGElement; cards: HTMLElement[]; total: number; stops: number[] };
 
-export default function Workflow() {
+export default function Workflow({ lang = "en" }: { lang?: Lang }) {
+  const t = dict[lang].path;
   const rootRef = useRef<HTMLDivElement>(null);
   const svgRef = useRef<SVGSVGElement>(null);
 
@@ -222,8 +226,8 @@ export default function Workflow() {
               <LaneIcon lane={lane} />
             </span>
             <span>
-              <b>{laneInfo[lane].label}</b>
-              <span className="wf-head__hint">{laneInfo[lane].hint}</span>
+              <b>{t.lanes[lane].label}</b>
+              <span className="wf-head__hint">{t.lanes[lane].hint}</span>
             </span>
           </p>
         ))}
@@ -233,12 +237,12 @@ export default function Workflow() {
         {rows.map((row, i) => (
           <li key={i} className="wf-row">
             <p className="wf-year">
-              <span className="sr-only">From </span>
+              <span className="sr-only">{t.from}</span>
               {row.year}
             </p>
             {row.items.map((n) => (
               <div key={n.id} className="wf-slot" data-lane={n.lane}>
-                <Card n={n} />
+                <Card n={n} lang={lang} />
               </div>
             ))}
           </li>
