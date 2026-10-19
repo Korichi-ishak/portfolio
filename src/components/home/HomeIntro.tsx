@@ -48,7 +48,7 @@ export default function HomeIntro() {
               letterSpacing: "0.04em",
             }}
           >
-            crm · erp · web · mobile — Annaba → Paris
+            crm · erp · web · mobile · full-stack
           </p>
           <div
             style={{
@@ -148,7 +148,7 @@ export default function HomeIntro() {
           </p>
           <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "12px", marginTop: "34px" }}>
             <a
-              href="#journey"
+              href="#path"
               style={{
                 display: "inline-flex",
                 alignItems: "center",
@@ -161,7 +161,7 @@ export default function HomeIntro() {
                 fontWeight: "600",
               }}
             >
-              Follow the journey
+              See my path
             </a>
             <Link
               href="/work"
@@ -438,14 +438,13 @@ export default function HomeIntro() {
             <p
               style={{ margin: "22px 0 0", fontSize: "18px", lineHeight: "1.55", color: "#4A4943", maxWidth: "700px" }}
             >
-              I'm from Annaba, Algeria, now based in the Paris area. I hold an M.Sc. in Big Data Management and
-              Analysis, and I'm studying assistive technology at Université Paris 8 — how software actually reaches the
+              I hold an M.Sc. in Big Data Management and Analysis, and I'm now studying assistive technology at Université Paris 8 — how software actually reaches the
               people it's built for.
             </p>
             <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "14px", marginTop: "30px" }}>
               {" "}
               <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "13px", color: "#6B6A64" }}>
-                clients in Algeria · France · Canada · DR Congo
+                clients in Algeria · France · Canada · the Middle East
               </span>{" "}
               <span style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}>
                 <svg

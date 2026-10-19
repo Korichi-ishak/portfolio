@@ -13,13 +13,15 @@ import "@/components/stories/wassalni.css";
 export const metadata: Metadata = {
   title: "Ishak Korichi — Full-stack developer",
   description:
-    "Full-stack developer. I build the CRMs, ERPs and internal platforms that replace spreadsheets and paper. Annaba → Paris.",
+    "Full-stack developer. I build the CRMs, ERPs and internal platforms that replace spreadsheets and paper.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
+        {/* lets CSS know JS is on (the mobile menu stays open without it) */}
+        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link

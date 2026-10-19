@@ -579,9 +579,9 @@
   "platform": "Corporate website · bilingual",
   "date": "2025",
   "duration": "Freelance mission",
-  "client": "Elite Partners Group, DR Congo",
+  "client": "Elite Partners Group",
   "role": "Full-stack developer",
-  "lead": "Corporate site for a consulting firm that helps companies set up and grow in the Democratic Republic of the Congo.",
+  "lead": "Corporate site for a strategy consulting firm that helps companies set up and grow in new markets.",
   "methods": [
    "Stakeholder interview",
    "Content structure",
@@ -794,7 +794,7 @@
   },
   "app": {
    "title": "Elite Partners",
-   "sub": "Strategic consulting in the DRC",
+   "sub": "Strategic consulting",
    "items": [
     [
      "Services",

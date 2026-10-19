@@ -22,7 +22,7 @@ export default function WorkIndex() {
             title="All"
             dim="/projects"
             level={1}
-            text="Platforms, back offices and business sites for clients in Algeria, France, Canada and DR Congo. Each card opens its story."
+            text="Platforms, back offices and business sites for clients in Algeria, France, Canada and the Middle East. Each card opens its story."
           />
           <ul className="project-grid">
             {client.map((slug) => (

@@ -12,31 +12,30 @@ export default function Home() {
       <SiteNav />
       <main id="main" tabIndex={-1}>
         <HomeIntro />
+        <Toolbox />
 
-        <section id="journey" className="journey" aria-labelledby="journey-title">
+        <section id="path" className="journey" aria-labelledby="path-title">
           <div className="journey__head">
             <div>
-              <p className="kicker">02 — journey</p>
-              <h2 id="journey-title" className="section-title">
-                From Annaba to Paris, <span className="muted">one node at a time.</span>
+              <p className="kicker">03 — path</p>
+              <h2 id="path-title" className="section-title">
+                Education and experience, <span className="muted">side by side.</span>
               </h2>
             </div>
-            <p className="journey__lead">
-              Studies, jobs and freelance work, in the order they started. Each step links to the projects it produced — every project has its own page.
-            </p>
+            <div className="journey__aside">
+              <p className="journey__lead">
+                Read top to bottom. Studies on one rail, work on the other, years in the middle. Each step links to the projects it produced.
+              </p>
+              <Link href="/work" className="btn btn--ghost-dark">
+                All {projects.length} projects
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </Link>
+            </div>
           </div>
           <Workflow />
-          <div className="journey__end">
-            <Link href="/work" className="btn btn--dark">
-              See all {projects.length} projects
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-                <path d="M5 12h14M13 6l6 6-6 6" />
-              </svg>
-            </Link>
-          </div>
         </section>
-
-        <Toolbox />
       </main>
       <SiteFooter />
     </>

@@ -17,9 +17,9 @@ export default function Toolbox() {
     <section className="toolbox" aria-labelledby="toolbox-title">
       <div className="toolbox__inner">
         <div>
-          <p className="kicker">03 — toolbox</p>
+          <p className="kicker">02 — toolbox</p>
           <h2 id="toolbox-title" className="section-title">
-            What every node runs on.
+            The tools behind the work.
           </h2>
         </div>
         <div className="toolbox__grid">

@@ -31,12 +31,12 @@ export default function SiteFooter() {
               GitHub
             </a>
           </div>
-          <p className="site-footer__mail">ishakkorichi09@gmail.com · Paris area, France</p>
+          <p className="site-footer__mail">ishakkorichi09@gmail.com</p>
         </div>
 
         <div className="site-footer__bottom">
           <nav aria-label="Footer" className="site-footer__nav">
-            <Link href="/">Journey</Link>
+            <Link href="/">Home</Link>
             <Link href="/work">All projects</Link>
             <Link href="/work/fds">FDS Institut</Link>
             <Link href="/work/tasshila">Tasshila</Link>

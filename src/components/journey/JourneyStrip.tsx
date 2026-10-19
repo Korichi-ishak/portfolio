@@ -10,9 +10,9 @@ export default function JourneyStrip({ slug }: { slug: string }) {
   return (
     <section className="strip" aria-labelledby="strip-title">
       <div className="strip__inner">
-        <p className="kicker">in the journey</p>
+        <p className="kicker">in the path</p>
         <h2 id="strip-title" className="strip__title">
-          {p.name} {here ? <>came out of <span className="strip__here-name">{here.short}</span>.</> : "is part of the journey."}
+          {p.name} {here ? <>came out of <span className="strip__here-name">{here.short}</span>.</> : "is part of the path."}
         </h2>
         <ol className="strip__nodes">
           {journey.map((n) => {
@@ -27,8 +27,8 @@ export default function JourneyStrip({ slug }: { slug: string }) {
           })}
         </ol>
         <div className="strip__links">
-          <Link href="/#journey" className="btn btn--ghost-dark">
-            See the whole journey
+          <Link href="/#path" className="btn btn--ghost-dark">
+            See the whole path
           </Link>
           <Link href={`/work/${next.slug}`} className="strip__next">
             <span className="strip__next-kicker">next project · {projectNumber(next.slug)}</span>

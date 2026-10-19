@@ -3,40 +3,43 @@
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 import { getProject } from "@/data/projects";
-import { journey, type JourneyNode } from "@/data/journey";
+import { laneInfo, rows, type JourneyItem, type Lane } from "@/data/journey";
 
 /*
-  The journey as a workflow. Real content is an ordered list of steps.
-  The cable (SVG) and the travelling dot are decoration, drawn from the
-  positions of the cards and driven by scroll. With reduced motion the
-  cable is shown fully drawn and nothing moves.
+  Two lanes read top to bottom: education on the left, experience on the right,
+  years in the middle. The content is an ordered list of years; the rails, the
+  moving dots and the merge into the footer are decoration drawn in SVG from the
+  card positions, driven by scroll. With reduced motion the rails are shown fully
+  drawn and nothing moves.
 */
 
-const ICON: Record<JourneyNode["kind"], string> = {
-  start: "M12 21s-7-6.2-7-11.5a7 7 0 0114 0C19 14.8 12 21 12 21z M12 7.5a2 2 0 100 4 2 2 0 000-4",
-  study: "M2 9l10-5 10 5-10 5-10-5z M6 11v5c3 2 9 2 12 0v-5",
-  work: "M4 8h16v11H4z M9 8V5h6v3",
-  freelance: "M4 12a8 8 0 0114-5.3M20 12a8 8 0 01-14 5.3 M18 3v4h-4 M6 21v-4h4",
-  now: "M12 3v4 M12 17v4 M3 12h4 M17 12h4 M12 9a3 3 0 100 6 3 3 0 000-6",
+const LANES: Lane[] = ["education", "experience"];
+const ICON: Record<Lane, string> = {
+  education: "M2 9l10-5 10 5-10 5-10-5z M6 11v5c3 2 9 2 12 0v-5",
+  experience: "M4 8h16v11H4z M9 8V5h6v3",
 };
 
-function NodeCard({ n, index }: { n: JourneyNode; index: number }) {
+function LaneIcon({ lane }: { lane: Lane }) {
   return (
-    <article className={`wf-card wf-card--${n.kind}`} aria-labelledby={`wf-${n.id}`}>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d={ICON[lane]} />
+    </svg>
+  );
+}
+
+function Card({ n }: { n: JourneyItem }) {
+  return (
+    <article className="wf-card" data-lane={n.lane} aria-labelledby={`wf-${n.id}`}>
       <span className="wf-port wf-port--in" aria-hidden="true" />
       <header className="wf-card__head">
-        <span className="wf-card__icon" aria-hidden="true">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-            <path d={ICON[n.kind]} />
-          </svg>
+        <span className="wf-lane-badge">
+          <LaneIcon lane={n.lane} />
+          {laneInfo[n.lane].label}
         </span>
-        <span className="wf-card__tag">
-          {String(index + 1).padStart(2, "0")} · {n.label}
-        </span>
+        <span className="wf-card__when">{n.when}</span>
         {n.note && <span className="wf-card__note">{n.note}</span>}
       </header>
       <div className="wf-card__body">
-        {n.when && <p className="wf-card__when">{n.when}</p>}
         <h3 id={`wf-${n.id}`} className="wf-card__title">
           {n.title}
         </h3>
@@ -46,7 +49,7 @@ function NodeCard({ n, index }: { n: JourneyNode; index: number }) {
         {n.projects && n.projects.length > 0 && (
           <div className="wf-card__projects">
             <p className="wf-card__projects-label" id={`wf-${n.id}-p`}>
-              {n.projects.length > 1 ? "Projects from this step" : "Read the case study"}
+              {n.projects.length > 1 ? `${n.projects.length} projects from this step` : "Read the case study"}
             </p>
             <ul aria-labelledby={`wf-${n.id}-p`}>
               {n.projects.map((slug) => {
@@ -72,99 +75,120 @@ function NodeCard({ n, index }: { n: JourneyNode; index: number }) {
   );
 }
 
+type Rail = { base: SVGPathElement; live: SVGPathElement; dot: SVGGElement; cards: HTMLElement[]; total: number; stops: number[] };
+
 export default function Workflow() {
-  const listRef = useRef<HTMLOListElement>(null);
+  const rootRef = useRef<HTMLDivElement>(null);
   const svgRef = useRef<SVGSVGElement>(null);
-  const baseRef = useRef<SVGPathElement>(null);
-  const liveRef = useRef<SVGPathElement>(null);
-  const dotRef = useRef<SVGGElement>(null);
 
   useEffect(() => {
-    const list = listRef.current;
+    const root = rootRef.current;
     const svg = svgRef.current;
-    const base = baseRef.current;
-    const live = liveRef.current;
-    const dot = dotRef.current;
-    if (!list || !svg || !base || !live || !dot) return;
-
+    if (!root || !svg) return;
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
-    let total = 0;
+    const q = <T extends Element>(s: string) => svg.querySelector(s) as T;
+    let rails: Rail[] = [];
     let frame = 0;
-    let stops: number[] = []; // path length at which each card is reached
+
+    const lengthAtY = (path: SVGPathElement, total: number, y: number) => {
+      let lo = 0, hi = total;
+      for (let k = 0; k < 24; k++) {
+        const m = (lo + hi) / 2;
+        if (path.getPointAtLength(m).y < y) lo = m;
+        else hi = m;
+      }
+      return hi;
+    };
 
     const layout = () => {
-      const box = list.getBoundingClientRect();
-      const cards = Array.from(list.querySelectorAll<HTMLElement>(".wf-card"));
-      svg.setAttribute("viewBox", `0 0 ${box.width} ${box.height}`);
-      svg.style.height = `${box.height}px`;
-      let d = "";
-      cards.forEach((card, i) => {
-        const r = card.getBoundingClientRect();
-        const x = r.left - box.left + r.width / 2;
-        const top = r.top - box.top;
-        const bottom = r.bottom - box.top;
-        if (i === 0) d = `M ${x} ${Math.max(0, top - 60)} L ${x} ${top}`;
-        else {
-          const prev = cards[i - 1].getBoundingClientRect();
-          const px = prev.left - box.left + prev.width / 2;
-          const py = prev.bottom - box.top;
-          const mid = (py + top) / 2;
-          d += ` M ${px} ${py} C ${px} ${mid}, ${x} ${mid}, ${x} ${top}`;
+      const box = root.getBoundingClientRect();
+      const W = box.width, H = box.height;
+      svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+      svg.style.height = `${H}px`;
+      const rel = (r: DOMRect) => ({ x: r.left - box.left + r.width / 2, top: r.top - box.top, bottom: r.bottom - box.top });
+      const mergeX = W / 2;
+      const mergeY = H - 70;
+      const narrow = window.matchMedia("(max-width: 899px)").matches;
+      const groups: { key: string; cards: HTMLElement[]; start: { x: number; y: number } }[] = [];
+
+      if (narrow) {
+        const cards = Array.from(root.querySelectorAll<HTMLElement>(".wf-card"));
+        const f = rel(cards[0].getBoundingClientRect());
+        groups.push({ key: "experience", cards, start: { x: f.x, y: Math.max(0, f.top - 50) } });
+      } else {
+        for (const lane of LANES) {
+          const head = root.querySelector<HTMLElement>(`.wf-head[data-lane="${lane}"]`)!;
+          const h = rel(head.getBoundingClientRect());
+          groups.push({ key: lane, cards: Array.from(root.querySelectorAll<HTMLElement>(`.wf-card[data-lane="${lane}"]`)), start: { x: h.x, y: h.bottom } });
         }
-        if (i === cards.length - 1) d += ` M ${x} ${bottom} L ${x} ${box.height}`;
-      });
-      base.setAttribute("d", d);
-      live.setAttribute("d", d);
-      total = live.getTotalLength();
-      live.style.strokeDasharray = `${total}`;
-      // where each card's input port sits along the path
-      stops = cards.map((card) => {
-        const r = card.getBoundingClientRect();
-        const y = r.top - box.top;
-        let lo = 0, hi = total;
-        for (let k = 0; k < 24; k++) {
-          const m = (lo + hi) / 2;
-          if (live.getPointAtLength(m).y < y) lo = m;
-          else hi = m;
+      }
+
+      rails = LANES.map((lane) => {
+        const g = groups.find((x) => x.key === lane);
+        const base = q<SVGPathElement>(`.wf-rail--${lane} .wf-cable__base`);
+        const live = q<SVGPathElement>(`.wf-rail--${lane} .wf-cable__live`);
+        const dot = q<SVGGElement>(`.wf-rail--${lane} .wf-dot`);
+        if (!g) {
+          base.setAttribute("d", "");
+          live.setAttribute("d", "");
+          dot.style.opacity = "0";
+          return { base, live, dot, cards: [], total: 0, stops: [] };
         }
-        return hi;
+        const x = g.start.x;
+        let d = `M ${x} ${g.start.y}`;
+        let lastBottom = g.start.y;
+        let lastX = x;
+        for (const c of g.cards) {
+          const r = rel(c.getBoundingClientRect());
+          if (Math.abs(r.x - lastX) > 1) {
+            const mid = (lastBottom + r.top) / 2;
+            d += ` C ${lastX} ${mid}, ${r.x} ${mid}, ${r.x} ${r.top}`;
+          } else d += ` L ${r.x} ${r.top}`;
+          d += ` L ${r.x} ${r.bottom}`;
+          lastBottom = r.bottom;
+          lastX = r.x;
+        }
+        // merge into the centre, then down into the footer
+        d += ` C ${lastX} ${(lastBottom + mergeY) / 2}, ${mergeX} ${mergeY - 40}, ${mergeX} ${mergeY} L ${mergeX} ${H}`;
+        base.setAttribute("d", d);
+        live.setAttribute("d", d);
+        const total = live.getTotalLength();
+        live.style.strokeDasharray = `${total}`;
+        const stops = g.cards.map((c) => lengthAtY(live, total, rel(c.getBoundingClientRect()).top + 2));
+        return { base, live, dot, cards: g.cards, total, stops };
       });
       update();
     };
 
     const update = () => {
       frame = 0;
-      const cards = Array.from(list.querySelectorAll<HTMLElement>(".wf-card"));
       if (reduce.matches) {
-        live.style.strokeDashoffset = "0";
-        dot.style.opacity = "0";
-        cards.forEach((c) => c.setAttribute("data-on", "true"));
+        rails.forEach((r) => {
+          r.live.style.strokeDashoffset = "0";
+          r.dot.style.opacity = "0";
+          r.cards.forEach((c) => c.setAttribute("data-on", "true"));
+        });
         return;
       }
-      const box = list.getBoundingClientRect();
-      const focus = window.innerHeight * 0.62;
-      const progress = Math.min(1, Math.max(0, (focus - box.top) / box.height));
-      // follow the path by height, not by length, so the dot stays near the reading line
-      const targetY = progress * box.height;
-      let lo = 0, hi = total;
-      for (let k = 0; k < 22; k++) {
-        const m = (lo + hi) / 2;
-        if (live.getPointAtLength(m).y < targetY) lo = m;
-        else hi = m;
-      }
-      const len = hi;
-      live.style.strokeDashoffset = `${total - len}`;
-      const pt = live.getPointAtLength(len);
-      dot.setAttribute("transform", `translate(${pt.x} ${pt.y})`);
-      dot.style.opacity = progress > 0 && progress < 1 ? "1" : "0";
-      cards.forEach((c, i) => c.setAttribute("data-on", String(len >= stops[i] - 2)));
+      const box = root.getBoundingClientRect();
+      const progress = Math.min(1, Math.max(0, (window.innerHeight * 0.6 - box.top) / box.height));
+      const y = progress * box.height;
+      rails.forEach((r) => {
+        if (!r.total) return;
+        const len = lengthAtY(r.live, r.total, y);
+        r.live.style.strokeDashoffset = `${r.total - len}`;
+        const pt = r.live.getPointAtLength(len);
+        r.dot.setAttribute("transform", `translate(${pt.x} ${pt.y})`);
+        r.dot.style.opacity = progress > 0.01 && progress < 0.995 ? "1" : "0";
+        r.cards.forEach((c, i) => c.setAttribute("data-on", String(len >= r.stops[i])));
+      });
     };
 
     const onScroll = () => {
       if (!frame) frame = requestAnimationFrame(update);
     };
-    const ro = new ResizeObserver(() => layout());
-    ro.observe(list);
+    const ro = new ResizeObserver(layout);
+    ro.observe(root);
     window.addEventListener("scroll", onScroll, { passive: true });
     reduce.addEventListener("change", update);
     layout();
@@ -177,19 +201,46 @@ export default function Workflow() {
   }, []);
 
   return (
-    <div className="wf">
+    <div ref={rootRef} className="wf">
       <svg ref={svgRef} className="wf-cable" aria-hidden="true" focusable="false" preserveAspectRatio="none">
-        <path ref={baseRef} className="wf-cable__base" />
-        <path ref={liveRef} className="wf-cable__live" />
-        <g ref={dotRef} className="wf-dot">
-          <circle r="14" className="wf-dot__halo" />
-          <circle r="6" className="wf-dot__core" />
-        </g>
+        {LANES.map((lane) => (
+          <g key={lane} className={`wf-rail wf-rail--${lane}`}>
+            <path className="wf-cable__base" />
+            <path className="wf-cable__live" />
+            <g className="wf-dot">
+              <circle r="13" className="wf-dot__halo" />
+              <circle r="6" className="wf-dot__core" />
+            </g>
+          </g>
+        ))}
       </svg>
-      <ol ref={listRef} className="wf-list">
-        {journey.map((n, i) => (
-          <li key={n.id} className={`wf-step ${i % 2 ? "wf-step--right" : "wf-step--left"}`}>
-            <NodeCard n={n} index={i} />
+
+      <div className="wf-heads">
+        {LANES.map((lane) => (
+          <p key={lane} className="wf-head" data-lane={lane}>
+            <span className="wf-head__icon">
+              <LaneIcon lane={lane} />
+            </span>
+            <span>
+              <b>{laneInfo[lane].label}</b>
+              <span className="wf-head__hint">{laneInfo[lane].hint}</span>
+            </span>
+          </p>
+        ))}
+      </div>
+
+      <ol className="wf-rows">
+        {rows.map((row, i) => (
+          <li key={i} className="wf-row">
+            <p className="wf-year">
+              <span className="sr-only">From </span>
+              {row.year}
+            </p>
+            {row.items.map((n) => (
+              <div key={n.id} className="wf-slot" data-lane={n.lane}>
+                <Card n={n} />
+              </div>
+            ))}
           </li>
         ))}
       </ol>
