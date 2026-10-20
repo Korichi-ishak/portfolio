@@ -1,4 +1,4 @@
-import { getProject, img, type Project } from "@/data/projects";
+import { getProject, img, isFreelance, type Project } from "@/data/projects";
 import { readable, ratio } from "@/lib/contrast";
 import { storyThemes, themeFromProject, type Theme } from "./theme";
 
@@ -19,7 +19,7 @@ export function CaseFile({ slug, methods = false }: { slug: string; methods?: bo
   const rows: [string, string][] = [
     ["client", p.client],
     ["role", p.role],
-    ["timeline", [p.date, p.duration].filter(Boolean).join(" · ")],
+    ["timeline", isFreelance(p) ? p.duration : [p.date, p.duration].filter(Boolean).join(" · ")],
     ["platform", p.platform],
   ];
   const file = (

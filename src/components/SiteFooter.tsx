@@ -32,7 +32,7 @@ export default function SiteFooter({ lang = "en" }: { lang?: Lang }) {
               GitHub
             </a>
           </div>
-          <p className="site-footer__mail">ishakkorichi09@gmail.com</p>
+          
         </div>
 
         <div className="site-footer__bottom">

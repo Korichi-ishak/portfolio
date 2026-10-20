@@ -1,4 +1,8 @@
+import Term from "@/components/Term";
+import { keyOf } from "@/data/glossary";
 import { dict, type Lang } from "@/i18n";
+
+const RECORD = ["startup", "tcf", "pse"];
 
 const skills = [
   { k: "languages", items: ["TypeScript", "JavaScript", "Python", "PHP", "SQL", "R", "Java", "C"] },
@@ -28,7 +32,7 @@ export default function Toolbox({ lang = "en" }: { lang?: Lang }) {
                 <ul className="pill-list">
                   {g.items.map((s) => (
                     <li key={s} className="pill">
-                      {s}
+                      <Term k={keyOf(s) ?? ""} lang={lang}>{s}</Term>
                     </li>
                   ))}
                 </ul>
@@ -38,10 +42,10 @@ export default function Toolbox({ lang = "en" }: { lang?: Lang }) {
           <div>
             <h3 className="toolbox__label">{t.record}</h3>
             <ul className="record">
-              {t.extras.map((e) => (
+              {t.extras.map((e, i) => (
                 <li key={e.t}>
                   <span className="record__head">
-                    <b>{e.t}</b>
+                    <b><Term k={RECORD[i]} lang={lang}>{e.t}</Term></b>
                     <span className="record__year">{e.y}</span>
                   </span>
                   <span className="record__text">{e.d}</span>

@@ -1,5 +1,10 @@
 import Link from "next/link";
+import Term from "@/components/Term";
+import FigmaFrame from "./FigmaFrame";
 import { dict, localize, type Lang } from "@/i18n";
+
+const KICKER: Record<string, string> = { "full-stack": "fullstack", accessible: "accessible", web: "web", mobile: "mobile" };
+const TAGKEYS = ["fullstack", "accessible", "daily"];
 
 
 /* Generated from the validated maquette (Main.dc.html), then edited by hand. */
@@ -50,81 +55,14 @@ export default function HomeIntro({ lang = "en" }: { lang?: Lang }) {
               letterSpacing: "0.04em",
             }}
           >
-            crm · erp · web · mobile · full-stack
+            {t.hero.kicker.map((w, i) => (
+              <span key={w}>
+                {i > 0 && <span aria-hidden="true"> · </span>}
+                <Term k={KICKER[w]} lang={lang}>{w}</Term>
+              </span>
+            ))}
           </p>
-          <div
-            style={{
-              position: "relative",
-              display: "inline-block",
-              padding: "4px 22px 10px",
-              border: "1.5px solid #2B4BFF",
-            }}
-          >
-            {" "}
-            <span
-              style={{
-                position: "absolute",
-                top: "-5px",
-                left: "-5px",
-                width: "8px",
-                height: "8px",
-                background: "#fff",
-                border: "1.5px solid #2B4BFF",
-                boxSizing: "border-box",
-              }}
-            ></span>{" "}
-            <span
-              style={{
-                position: "absolute",
-                top: "-5px",
-                right: "-5px",
-                width: "8px",
-                height: "8px",
-                background: "#fff",
-                border: "1.5px solid #2B4BFF",
-                boxSizing: "border-box",
-              }}
-            ></span>{" "}
-            <span
-              style={{
-                position: "absolute",
-                bottom: "-5px",
-                left: "-5px",
-                width: "8px",
-                height: "8px",
-                background: "#fff",
-                border: "1.5px solid #2B4BFF",
-                boxSizing: "border-box",
-              }}
-            ></span>{" "}
-            <span
-              style={{
-                position: "absolute",
-                bottom: "-5px",
-                right: "-5px",
-                width: "8px",
-                height: "8px",
-                background: "#fff",
-                border: "1.5px solid #2B4BFF",
-                boxSizing: "border-box",
-              }}
-            ></span>{" "}
-            <span
-              style={{
-                position: "absolute",
-                top: "-30px",
-                left: "-2px",
-                background: "#2B4BFF",
-                color: "#fff",
-                fontFamily: "'JetBrains Mono', monospace",
-                fontSize: "11px",
-                padding: "4px 8px",
-                borderRadius: "4px 4px 4px 0",
-                whiteSpace: "nowrap",
-              }}
-            >
-              H1 · Fill × Hug
-            </span>{" "}
+          <FigmaFrame lang={lang} label={<Term k="h1" lang={lang}>H1 · Fill × Hug</Term>}>
             <h1
               style={{
                 margin: "0",
@@ -136,7 +74,7 @@ export default function HomeIntro({ lang = "en" }: { lang?: Lang }) {
             >
               <span className="sr-only">Ishak </span>Korichi<span aria-hidden="true" style={{ color: "#8E8C84", fontWeight: "600" }}>’26</span>
             </h1>
-          </div>
+          </FigmaFrame>
           <p
             style={{
               margin: "40px 0 0",
@@ -181,7 +119,7 @@ export default function HomeIntro({ lang = "en" }: { lang?: Lang }) {
               {t.hero.projects}
             </Link>
           </div>
-          <div aria-hidden="true" style={{ position: "absolute", top: "14px", right: "3%" }}>
+          <div className="hero-deco" style={{ position: "absolute", top: "14px", right: "3%" }}>
             {" "}
             <span
               style={{
@@ -194,10 +132,10 @@ export default function HomeIntro({ lang = "en" }: { lang?: Lang }) {
                 fontWeight: "500",
               }}
             >
-              {t.hero.tags[0]}
+              <Term k={TAGKEYS[0]} lang={lang}>{t.hero.tags[0]}</Term>
             </span>{" "}
           </div>
-          <div aria-hidden="true" style={{ position: "absolute", top: "47%", left: "0" }}>
+          <div className="hero-deco" style={{ position: "absolute", top: "47%", left: "0" }}>
             {" "}
             <span
               style={{
@@ -210,10 +148,10 @@ export default function HomeIntro({ lang = "en" }: { lang?: Lang }) {
                 fontWeight: "500",
               }}
             >
-              {t.hero.tags[1]}
+              <Term k={TAGKEYS[1]} lang={lang}>{t.hero.tags[1]}</Term>
             </span>{" "}
           </div>
-          <div aria-hidden="true" style={{ position: "absolute", bottom: "24px", right: "8%" }}>
+          <div className="hero-deco" style={{ position: "absolute", bottom: "24px", right: "8%" }}>
             {" "}
             <span
               style={{
@@ -226,10 +164,10 @@ export default function HomeIntro({ lang = "en" }: { lang?: Lang }) {
                 fontWeight: "500",
               }}
             >
-              {t.hero.tags[2]}
+              <Term k={TAGKEYS[2]} lang={lang}>{t.hero.tags[2]}</Term>
             </span>{" "}
           </div>
-          <div aria-hidden="true" style={{ position: "absolute", top: "6%", left: "9%" }}>
+          <div className="hero-deco" style={{ position: "absolute", top: "6%", left: "9%" }}>
             {" "}
             <span
               style={{
@@ -242,7 +180,7 @@ export default function HomeIntro({ lang = "en" }: { lang?: Lang }) {
                 borderRadius: "6px",
               }}
             >
-              {"<"}Hero /{">"}
+              <Term k="hero" lang={lang}>{"<"}Hero /{">"}</Term>
             </span>{" "}
           </div>
           <div
@@ -389,7 +327,7 @@ export default function HomeIntro({ lang = "en" }: { lang?: Lang }) {
                 }}
               ></span>{" "}
               <img
-                src="/img/87beb1500b044cded092e095374dd38a.jpg"
+                src="/img/portrait.jpg"
                 alt={t.about.portrait}
                 style={{
                   display: "block",
@@ -401,7 +339,7 @@ export default function HomeIntro({ lang = "en" }: { lang?: Lang }) {
                 }}
               />
             </div>{" "}
-            <span aria-hidden="true"
+            <span
               style={{
                 position: "absolute",
                 bottom: "-28px",
@@ -411,7 +349,7 @@ export default function HomeIntro({ lang = "en" }: { lang?: Lang }) {
                 color: "#2B4BFF",
               }}
             >
-              portrait.jpg
+              <Term k="portrait" lang={lang}>portrait.jpg</Term>
             </span>{" "}
           </div>
           <div style={{ flex: "999 1 520px", minWidth: "0" }}>

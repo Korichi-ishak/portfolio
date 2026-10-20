@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState, type FormEvent, type KeyboardEvent, type ReactNode } from "react";
+import Term from "@/components/Term";
+import { entry, keyOf, projectEntry, termProps } from "@/data/glossary";
 import { dict, localize, type Lang } from "@/i18n";
 
 /*
@@ -220,7 +222,7 @@ export default function ProjectTerminal({ lang, items }: { lang: Lang; items: Te
               {t.help.map(([c, d]) => (
                 <div key={c}>
                   <dt>
-                    <button type="button" className="tw__run" onClick={() => run(c.replace(/ <.*>/, ""))}>
+                    <button type="button" className="tw__run" onClick={() => run(c.replace(/ <.*>/, ""))} {...termProps(entry(`cmd:${c.split(" ")[0]}`, lang), false)}>
                       {c}
                     </button>
                   </dt>
@@ -249,7 +251,7 @@ export default function ProjectTerminal({ lang, items }: { lang: Lang; items: Te
                   <tr key={p.slug}>
                     <td className="tw__num">{p.num}</td>
                     <td>
-                      <Link href={localize(lang, `/work/${p.slug}`)} className="tw__name" data-kind={p.kind}>
+                      <Link href={localize(lang, `/work/${p.slug}`)} className="tw__name" data-kind={p.kind} {...termProps(projectEntry(lang, p.what, p.stack, p.kind === "academic"), false)}>
                         {p.name}
                       </Link>
                       <span className="tw__what-inline">{p.what}</span>
@@ -295,7 +297,14 @@ export default function ProjectTerminal({ lang, items }: { lang: Lang; items: Te
                 </div>
                 <div>
                   <dt>{t.stack}</dt>
-                  <dd>{p.stack.join(" · ")}</dd>
+                  <dd>
+                    {p.stack.map((s, i) => (
+                      <span key={s}>
+                        {i > 0 && " · "}
+                        <Term k={keyOf(s) ?? ""} lang={lang}>{s}</Term>
+                      </span>
+                    ))}
+                  </dd>
                 </div>
               </dl>
               <p className="tw__text">{p.lead}</p>

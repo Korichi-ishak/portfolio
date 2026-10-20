@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Term from "@/components/Term";
 import { journey, nodeOfProject, textOf } from "@/data/journey";
 import { dict, localize, type Lang } from "@/i18n";
 import { getProject, nextProject, projectNumber } from "@/data/projects";
@@ -23,7 +24,7 @@ export default function JourneyStrip({ slug, lang = "en" }: { slug: string; lang
               <li key={n.id} className={`strip__node${current ? " strip__node--here" : ""}`} aria-current={current ? "step" : undefined}>
                 <span className="strip__dot" aria-hidden="true" />
                 <span className="strip__when">{textOf(n, lang).when}</span>
-                <span className="strip__name">{textOf(n, lang).short.replace(/^(my (role at )?|mon (poste à |activité )?|ma |la )/, "")}</span>
+                <span className="strip__name"><Term k={n.id} lang={lang}>{textOf(n, lang).short.replace(/^(my (role at )?|mon (poste à |activité )?|ma |la )/, "")}</Term></span>
               </li>
             );
           })}

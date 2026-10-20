@@ -9,6 +9,8 @@ import "@/components/stories/tasshila.css";
 import "@/components/stories/velo.css";
 import "@/components/stories/wassalni.css";
 import type { Lang } from "@/i18n";
+import { personJsonLd } from "@/lib/seo";
+import Tooltips from "@/components/Tooltips";
 
 /** <html> for one language: each language has its own root layout so `lang` is right for screen readers. */
 export default function Shell({ lang, children }: { lang: Lang; children: React.ReactNode }) {
@@ -27,7 +29,10 @@ export default function Shell({ lang, children }: { lang: Lang; children: React.
       </head>
       <body>
         <div id="top" />
+        {/* who this site is about, for search engines */}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd(lang)).replace(/</g, "\\u003c") }} />
         {children}
+        <Tooltips />
       </body>
     </html>
   );

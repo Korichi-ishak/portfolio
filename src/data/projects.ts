@@ -66,7 +66,7 @@ export const projects = raw as unknown as Project[];
 
 /** Card data for the grid (short label + thumbnail background). */
 export const cards: Record<string, { what: string; year: string; bg: string }> = {
-  fds: { what: "CRM · ERP · e-learning", year: "2026", bg: "#FBF6EC" },
+  fds: { what: "Management platform · e-learning", year: "2026", bg: "#FBF6EC" },
   goodloc: { what: "Driving school", year: "2025", bg: "#F26B2A" },
   elite: { what: "Consulting firm", year: "2025", bg: "#111110" },
   velo: { what: "Smoothie bikes", year: "2025", bg: "#FBEFE3" },
@@ -87,7 +87,7 @@ export const cards: Record<string, { what: string; year: string; bg: string }> =
 /** Academic & startup projects (shown under their own heading on /work). */
 /** French card labels. */
 export const whatFr: Record<string, string> = {
-  fds: "CRM · ERP · e-learning",
+  fds: "Plateforme de gestion · e-learning",
   goodloc: "Auto-école",
   elite: "Cabinet de conseil",
   velo: "Vélos à smoothies",
@@ -111,6 +111,9 @@ const files = imageMap as Record<string, string>;
 
 /** Local path of an asset id (images were exported from the maquette). */
 export const img = (id: string) => (id ? `/img/${files[id] || id + ".jpg"}` : "");
+
+/** Freelance missions show no dates anywhere on the site. */
+export const isFreelance = (p: { duration: string }) => /freelance/i.test(p.duration);
 
 export const getProject = (slug: string) => projects.find((p) => p.slug === slug);
 

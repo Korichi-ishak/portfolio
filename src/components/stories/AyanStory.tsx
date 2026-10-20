@@ -68,7 +68,7 @@ export default function AyanStory() {
         >
           <div style={{ flex: "1 1 420px", minWidth: "0", position: "relative", zIndex: "2" }}>
             <p className="hud" style={{ margin: "0", fontSize: "14px", letterSpacing: ".2em", color: "#60A5FA" }}>
-              EdTech · 2025 – 2026
+              EdTech · freelance
             </p>
             <h1
               className="hud"

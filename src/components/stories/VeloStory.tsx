@@ -86,7 +86,7 @@ export default function VeloStory() {
                 <p className="mono" style={{ margin: "0", fontSize: "10px", color: "#7A6A62" }}>
                   prep
                 </p>
-                <p style={{ margin: "3px 0 0", fontWeight: "700", fontSize: "14px" }}>2025 · freelance</p>
+                <p style={{ margin: "3px 0 0", fontWeight: "700", fontSize: "14px" }}>freelance</p>
               </div>
               <div>
                 <p className="mono" style={{ margin: "0", fontSize: "10px", color: "#7A6A62" }}>

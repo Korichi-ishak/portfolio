@@ -129,13 +129,13 @@ export const rows: JourneyRow[] = [
     items: [
       {
         id: "fds",
-        fr: { short: "mon poste à FDS Institut", title: "Responsable de la transformation digitale", org: "FDS Institut", when: "mai – sept. 2026", text: "Le CRM, l'ERP et la plateforme e-learning d'un centre de langues certifié Goethe — conçus et développés seul." },
+        fr: { short: "mon poste à FDS Institut", title: "Responsable de la transformation digitale", org: "FDS Institut", when: "mai – sept. 2026", text: "La plateforme de gestion et l'espace e-learning d'un centre de langues certifié Goethe — conçus et développés seul." },
         lane: "experience",
         short: "my role at FDS Institut",
         title: "Head of Digital Transformation",
         org: "FDS Institut",
         when: "May – Sep 2026",
-        text: "The CRM, ERP and e-learning platform of a Goethe-certified language centre — designed and built alone.",
+        text: "The management platform and e-learning space of a Goethe-certified language centre — designed and built alone.",
         stack: "Next.js · TypeScript · Supabase · PostgreSQL",
         projects: ["fds"],
       },

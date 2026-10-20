@@ -2,7 +2,9 @@
 
 import Link from "next/link";
 import { useEffect, useRef } from "react";
-import { getProject } from "@/data/projects";
+import Term from "@/components/Term";
+import { keyOf, projectEntry, termProps } from "@/data/glossary";
+import { academic, cards, getProject, whatFr } from "@/data/projects";
 import { rows, textOf, type JourneyItem, type Lane } from "@/data/journey";
 import { dict, localize, type Lang } from "@/i18n";
 
@@ -44,11 +46,20 @@ function Card({ n, lang }: { n: JourneyItem; lang: Lang }) {
       </header>
       <div className="wf-card__body">
         <h3 id={`wf-${n.id}`} className="wf-card__title">
-          {x.title}
+          <Term k={n.id} lang={lang}>{x.title}</Term>
         </h3>
         <p className="wf-card__org">{x.org}</p>
         {x.text && <p className="wf-card__text">{x.text}</p>}
-        {n.stack && <p className="wf-card__stack">{n.stack}</p>}
+        {n.stack && (
+          <p className="wf-card__stack">
+            {n.stack.split(" · ").map((s, i) => (
+              <span key={s}>
+                {i > 0 && " · "}
+                <Term k={keyOf(s) ?? ""} lang={lang}>{s}</Term>
+              </span>
+            ))}
+          </p>
+        )}
         {n.projects && n.projects.length > 0 && (
           <div className="wf-card__projects">
             <p className="wf-card__projects-label" id={`wf-${n.id}-p`}>
@@ -60,7 +71,7 @@ function Card({ n, lang }: { n: JourneyItem; lang: Lang }) {
                 if (!p) return null;
                 return (
                   <li key={slug}>
-                    <Link href={localize(lang, `/work/${slug}`)} className="wf-chip">
+                    <Link href={localize(lang, `/work/${slug}`)} className="wf-chip" data-tt-w={p.name} {...termProps(projectEntry(lang, (lang === "fr" ? whatFr[slug] : cards[slug]?.what) ?? "", p.stack, academic.includes(slug)), false)}>
                       {p.name}
                       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" aria-hidden="true">
                         <path d="M5 12h14M13 6l6 6-6 6" />

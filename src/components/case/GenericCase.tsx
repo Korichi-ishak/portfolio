@@ -1,5 +1,7 @@
 import type { CSSProperties, ReactNode } from "react";
 import { fontsHref, img, type Project } from "@/data/projects";
+import Term from "@/components/Term";
+import { keyOf } from "@/data/glossary";
 import { CaseFile, Personas } from "./blocks";
 import { ratio as contrast, readable } from "@/lib/contrast";
 import { themeFromProject } from "./theme";
@@ -405,7 +407,7 @@ export default function GenericCase({ p }: { p: Project }) {
             ))}
           </div>
           <div style={{ marginTop: 50, display: "flex", flexWrap: "wrap", alignItems: "center", gap: 10 }}>
-            {p.stack.map((s) => <span key={s} style={{ padding: "9px 16px", borderRadius: 999, border: "1px solid rgba(255,255,255,.22)", fontSize: 14 }}>{s}</span>)}
+            {p.stack.map((s) => <span key={s} style={{ padding: "9px 16px", borderRadius: 999, border: "1px solid rgba(255,255,255,.22)", fontSize: 14 }}><Term k={keyOf(s) ?? ""} lang="en">{s}</Term></span>)}
             {p.url && (
               <a href={p.url} target="_blank" rel="noreferrer" style={{ marginLeft: "auto", display: "inline-flex", alignItems: "center", gap: 10, minHeight: 52, padding: "0 26px", borderRadius: 999, background: c.primary, color: fill, fontWeight: 800, textDecoration: "none" }}>
                 {p.liveLabel || "Visit the site"}
