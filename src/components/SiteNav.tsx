@@ -96,7 +96,7 @@ export default function SiteNav() {
         <ul className="tb__lang" aria-label={t.nav.lang}>
           {langs.map((l) => (
             <li key={l}>
-              <a href={switchPath(pathname, l)} hrefLang={l} lang={l} className="tb__lang-link" aria-current={l === lang ? "true" : undefined}>
+              <a href={`${switchPath(pathname, l)}?lang=${l}`} hrefLang={l} lang={l} className="tb__lang-link" aria-current={l === lang ? "true" : undefined}>
                 <span aria-hidden="true">{l.toUpperCase()}</span>
                 <span className="sr-only">{l === "en" ? "English" : "Français"}</span>
               </a>

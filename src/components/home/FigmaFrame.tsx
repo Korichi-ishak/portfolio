@@ -167,7 +167,7 @@ export default function FigmaFrame({ lang, label, children }: { lang: Lang; labe
         {(["tl", "tr", "bl", "br"] as Corner[]).map((c) => (
           <span key={c} className={`ff__h ff__h--${c}`} aria-hidden="true" onPointerDown={onHandleDown(c)} />
         ))}
-        <span className="ff__label">{edited ? t.fixed : label}</span>
+        <span className="ff__label" aria-hidden="true">{edited ? t.fixed : label}</span>
         {children}
         {edited && (
           <span className="ff__size" aria-hidden="true">

@@ -11,7 +11,7 @@ export default function SiteFooter({ lang = "en" }: { lang?: Lang }) {
         <span className="site-footer__cable" aria-hidden="true" />
         <div className="site-footer__node">
           <span className="wf-port wf-port--in" aria-hidden="true" />
-          <p className="site-footer__tag">
+          <p className="site-footer__tag" aria-hidden="true">
             <span aria-hidden="true">●</span> {t.tag}
           </p>
           <h2 id="footer-title" className="site-footer__title">

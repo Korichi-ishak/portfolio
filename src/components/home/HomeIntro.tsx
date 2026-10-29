@@ -62,7 +62,7 @@ export default function HomeIntro({ lang = "en" }: { lang?: Lang }) {
               </span>
             ))}
           </p>
-          <FigmaFrame lang={lang} label={<Term k="h1" lang={lang}>H1 · Fill × Hug</Term>}>
+          <FigmaFrame lang={lang} label={<Term k="h1" lang={lang} decorative>H1 · Fill × Hug</Term>}>
             <h1
               style={{
                 margin: "0",
@@ -180,7 +180,7 @@ export default function HomeIntro({ lang = "en" }: { lang?: Lang }) {
                 borderRadius: "6px",
               }}
             >
-              <Term k="hero" lang={lang}>{"<"}Hero /{">"}</Term>
+              <Term k="hero" lang={lang} decorative>{"<"}Hero /{">"}</Term>
             </span>{" "}
           </div>
           <div
@@ -349,7 +349,7 @@ export default function HomeIntro({ lang = "en" }: { lang?: Lang }) {
                 color: "#2B4BFF",
               }}
             >
-              <Term k="portrait" lang={lang}>portrait.jpg</Term>
+              <Term k="portrait" lang={lang} decorative>portrait.jpg</Term>
             </span>{" "}
           </div>
           <div style={{ flex: "999 1 520px", minWidth: "0" }}>
